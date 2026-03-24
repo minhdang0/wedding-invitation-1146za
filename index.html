@@ -13,58 +13,71 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <style>
     :root {
-      --bg: #060f1e;
-      --gold: #e9ce9e;
-      --gold-dim: rgba(233,206,158,0.55);
-      --gold-line: rgba(233,206,158,0.2);
+      /* ── LIGHT THEME ── */
+      --bg:          #f8f5f0;          /* nền kem trắng */
+      --navy:        #1a2a3a;          /* xanh than đậm – màu chữ chính */
+      --navy-mid:    #2c3e50;          /* xanh than vừa */
+      --navy-dim:    rgba(26,42,58,.55);
+      --navy-line:   rgba(26,42,58,.18);
+      --navy-soft:   rgba(26,42,58,.08);
+
+      /* ── HERO ── */
+      --hero-gold:   var(--navy);
+      --hero-line:   var(--navy-line);
+
+      /* ── Shared ── */
+      --accent:      #1a2a3a;
     }
 
     *, *::before, *::after { box-sizing: border-box; }
-
     html { overflow-x: hidden; }
 
     body {
       font-family: "Montserrat", sans-serif;
       scroll-behavior: smooth;
       background-color: var(--bg);
-      color: var(--gold);
+      color: var(--navy);
       overflow-x: hidden;
       margin: 0; padding: 0;
     }
 
     /* ── Typography ── */
-    .font-serif   { font-family: "Playfair Display", serif; }
-    .font-luxury  { font-family: "Great Vibes", cursive; }
-    .font-cormorant { font-family: "Cormorant Garamond", serif; }
+    .font-serif    { font-family: "Playfair Display", serif; }
+    .font-luxury   { font-family: "Great Vibes", cursive; }
+    .font-cormorant{ font-family: "Cormorant Garamond", serif; }
 
-    .gold-text  { color: var(--gold); text-shadow: 0 2px 8px rgba(212,175,55,.3); }
-    .gold-light { color: var(--gold); }
+    /* light-theme text helpers */
+    .navy-text  { color: var(--navy); text-shadow: none; }
+    .navy-light { color: var(--navy); }
+
+    /* hero-only gold helpers (scoped inside .hero-section) */
+    .hero-section .gold-text  { color: var(--hero-gold); text-shadow: 0 2px 8px rgba(212,175,55,.3); }
+    .hero-section .gold-light { color: var(--hero-gold); }
 
     .label-sm {
       font-size: .72rem; letter-spacing: .28em;
-      text-transform: uppercase; color: var(--gold);
-      opacity: .85; font-weight: 600;
+      text-transform: uppercase; color: var(--navy);
+      opacity: .75; font-weight: 600;
     }
     .section-title {
       font-size: .78rem; letter-spacing: .32em;
-      text-transform: uppercase; color: var(--gold);
-      opacity: .95; font-weight: 700;
-      text-shadow: 0 0 12px rgba(212,175,55,.4);
+      text-transform: uppercase; color: var(--navy);
+      opacity: .85; font-weight: 700;
     }
     .meta-text {
-      color: var(--gold); opacity: .75;
+      color: var(--navy); opacity: .65;
       font-size: .78rem; line-height: 1.75;
     }
 
     /* ── Petals ── */
     .petal {
-      position: absolute; background-color: var(--gold);
+      position: absolute; background-color: var(--navy);
       border-radius: 150% 0 150% 0;
-      opacity: .7; pointer-events: none;
+      opacity: .15; pointer-events: none;
       animation: fall linear infinite; z-index: 100;
     }
     @keyframes fall {
-      0%   { transform: translate(0,-10%) rotate(0deg); opacity:.5; }
+      0%   { transform: translate(0,-10%) rotate(0deg); opacity:.3; }
       100% { transform: translate(100px,100vh) rotate(360deg); opacity:0; }
     }
 
@@ -72,14 +85,14 @@
     .reveal { opacity:0; transform:translateY(30px); transition:all 1s ease-out; }
     .reveal.active { opacity:1; transform:translateY(0); }
 
-    /* ── Photo frame ── */
+    /* ── Photo frame – navy border ── */
     .photo-frame {
-      border: 3px solid var(--gold);
-      box-shadow: 0 0 20px rgba(212,175,55,.15);
+      border: 3px solid var(--navy);
+      box-shadow: 0 0 20px rgba(26,42,58,.12);
     }
 
     /* ═══════════════════════════════════════════
-       HERO — LUXURY REDESIGN
+       HERO — kept dark, overlay REMOVED so photo shows bright
     ═══════════════════════════════════════════ */
     .hero-section {
       position: relative;
@@ -89,26 +102,22 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
+      background-color: var(--bg);   /* light base */
     }
     @media (max-width: 640px) {
       .hero-section { min-height: calc(100svh - 100px); }
     }
 
-    /* Vignette layer */
+    /* ── NO dark vignette overlay on hero ──
+       We only keep a very subtle bottom fade so text is readable */
     .hero-section::after {
       content: '';
       position: absolute; inset: 0; z-index: 1;
-      background:
-        radial-gradient(ellipse 80% 60% at 50% 40%, transparent 20%, rgba(6,15,30,.55) 70%),
-        linear-gradient(to bottom, rgba(6,15,30,.55) 0%, rgba(6,15,30,.3) 40%, rgba(6,15,30,.85) 100%);
+      background: linear-gradient(to bottom,
+        rgba(248,245,240,.08) 0%,
+        rgba(248,245,240,.0)  35%,
+        rgba(248,245,240,.55) 100%);
       pointer-events: none;
-    }
-    @media (max-width: 640px) {
-      .hero-section::after {
-        background:
-          radial-gradient(ellipse 80% 60% at 50% 40%, transparent 25%, rgba(6,15,30,.3) 70%),
-          linear-gradient(to bottom, rgba(6,15,30,.35) 0%, rgba(6,15,30,.1) 40%, rgba(6,15,30,.7) 100%);
-      }
     }
 
     /* Animated gold border frame */
@@ -120,17 +129,15 @@
     }
     .hero-frame svg { width: 100%; height: 100%; }
 
-    /* Corner ornament */
     @keyframes corner-glow {
-      0%,100% { opacity:.35; }
-      50%      { opacity:.75; }
+      0%,100% { opacity:.45; }
+      50%      { opacity:.9; }
     }
     .hero-frame .corner { animation: corner-glow 3.5s ease-in-out infinite; }
     .hero-frame .corner:nth-child(2) { animation-delay:.9s; }
     .hero-frame .corner:nth-child(3) { animation-delay:1.8s; }
     .hero-frame .corner:nth-child(4) { animation-delay:2.7s; }
 
-    /* Shimmer line across hero */
     @keyframes shimmer-h {
       0%   { transform: translateX(-110%); }
       100% { transform: translateX(110%); }
@@ -139,7 +146,7 @@
       position: absolute;
       top: 50%; left: 0;
       width: 100%; height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(233,206,158,.6), transparent);
+      background: linear-gradient(90deg, transparent, rgba(26,42,58,.45), transparent);
       z-index: 3;
       pointer-events: none;
       animation: shimmer-h 5s ease-in-out infinite;
@@ -158,7 +165,6 @@
       align-items: center;
     }
 
-    /* Date badge top */
     .hero-badge {
       display: inline-flex;
       align-items: center;
@@ -169,16 +175,16 @@
     }
     .hero-badge span {
       font-size: .65rem; letter-spacing: .45em;
-      text-transform: uppercase; color: var(--gold); opacity: .85;
+      text-transform: uppercase; color: var(--hero-gold); opacity: .9;
       font-weight: 600;
     }
     .hero-badge-line {
       width: clamp(30px, 6vw, 60px); height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gold));
-      opacity: .5;
+      background: linear-gradient(90deg, transparent, var(--navy));
+      opacity: .4;
     }
     .hero-badge-line.right {
-      background: linear-gradient(90deg, var(--gold), transparent);
+      background: linear-gradient(90deg, var(--navy), transparent);
     }
 
     @keyframes fadeSlideDown {
@@ -194,16 +200,13 @@
       to   { opacity:1; }
     }
 
-    /* Names */
     .hero-name {
       font-family: "Great Vibes", cursive;
-      color: var(--gold);
+      color: var(--navy);
       line-height: 1;
-      text-shadow:
-        0 0 40px rgba(233,206,158,.35),
-        0 0 80px rgba(233,206,158,.15),
-        0 3px 12px rgba(0,0,0,.5);
-      font-size: clamp(2.2rem, 10vw, 6.5rem);
+      text-shadow: none;
+      font-size: clamp(2.8rem, 12vw, 7.5rem);
+      font-weight: 500;
       opacity: 0;
     }
     .hero-name.n1 { animation: fadeSlideDown .9s .55s ease forwards; }
@@ -211,14 +214,13 @@
 
     .hero-amp {
       font-family: "Cormorant Garamond", serif;
-      font-style: italic; font-weight: 300;
+      font-style: italic; font-weight: 600;
       font-size: clamp(1.6rem, 4vw, 2.5rem);
-      color: var(--gold); opacity: 0;
+      color: var(--hero-gold); opacity: 0;
       animation: fadeIn .8s .65s ease forwards;
       letter-spacing: .05em;
     }
 
-    /* Ornament divider */
     .hero-ornament {
       display: flex; align-items: center; justify-content: center;
       gap: clamp(8px, 2vw, 16px);
@@ -228,21 +230,20 @@
       width: 100%;
     }
     .hero-ornament-line {
-      height: 1px; flex: 1; max-width: clamp(60px, 15vw, 160px);
-      background: linear-gradient(90deg, transparent, rgba(233,206,158,.5));
+      height: 2px; flex: 1; max-width: clamp(60px, 15vw, 160px);
+      background: linear-gradient(90deg, transparent, rgba(26,42,58,.7));
     }
     .hero-ornament-line.right {
-      background: linear-gradient(90deg, rgba(233,206,158,.5), transparent);
+      background: linear-gradient(90deg, rgba(26,42,58,.7), transparent);
     }
     .hero-ornament-diamond {
-      width: 6px; height: 6px;
-      background: var(--gold);
+      width: 9px; height: 9px;
+      background: var(--navy);
       transform: rotate(45deg);
-      opacity: .7;
-      box-shadow: 0 0 8px rgba(233,206,158,.6);
+      opacity: .8;
+      box-shadow: none;
     }
 
-    /* Date */
     .hero-date-row {
       display: flex; align-items: center; justify-content: center;
       gap: clamp(8px, 3vw, 28px);
@@ -254,33 +255,33 @@
       font-family: "Cormorant Garamond", serif;
       font-weight: 300;
       font-size: clamp(1.8rem, 7vw, 5rem);
-      color: var(--gold);
+      color: var(--hero-gold);
       line-height: 1;
       letter-spacing: -.01em;
     }
     .hero-date-sep {
       width: 1px; height: clamp(24px, 5vw, 52px);
-      background: rgba(233,206,158,.35);
+      background: rgba(26,42,58,.5);
       flex-shrink: 0;
+      width: 2px;
     }
     .hero-date-label {
       font-size: clamp(.6rem, 1.5vw, .72rem);
       letter-spacing: .3em; text-transform: uppercase;
-      color: var(--gold); opacity: .75; font-weight: 600;
+      color: var(--hero-gold); opacity: .9; font-weight: 700;
       line-height: 1.6;
     }
 
-    /* CTA button */
     .hero-cta {
       margin-top: clamp(.8rem, 3vw, 2.5rem);
       opacity: 0;
       animation: fadeSlideUp .9s 1.15s ease forwards;
     }
     .hero-cta button {
-      border: 1px solid rgba(233,206,158,.4);
+      border: 1px solid rgba(26,42,58,.35);
       padding: clamp(.6rem, 1.5vw, .8rem) clamp(1.5rem, 5vw, 2.5rem);
       background: transparent;
-      color: var(--gold);
+      color: var(--navy);
       font-family: "Montserrat", sans-serif;
       font-size: clamp(.6rem, 1.5vw, .7rem);
       letter-spacing: .25em;
@@ -294,10 +295,10 @@
     .hero-cta button::before {
       content: '';
       position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(233,206,158,.12), transparent);
+      background: linear-gradient(135deg, rgba(26,42,58,.1), transparent);
       opacity: 0; transition: opacity .3s;
     }
-    .hero-cta button:hover { border-color: rgba(233,206,158,.75); }
+    .hero-cta button:hover { border-color: rgba(26,42,58,.65); }
     .hero-cta button:hover::before { opacity: 1; }
 
     /* ═══════════════════════════════════════════
@@ -308,6 +309,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      background-color: var(--bg);
     }
 
     .section-inner {
@@ -350,9 +352,7 @@
 
     @media (max-width: 640px) {
       .profile-card,
-      .profile-card.reverse {
-        flex-direction: column;
-      }
+      .profile-card.reverse { flex-direction: column; }
     }
 
     .profile-photo {
@@ -369,13 +369,22 @@
       flex: 1;
       padding: clamp(1rem, 3vw, 2rem);
       border-radius: 1rem;
-      background: rgba(212,175,55,.06);
-      border: 1px solid rgba(212,175,55,.2);
+      background: rgba(26,42,58,.05);
+      border: 1px solid var(--navy-line);
       text-align: center;
     }
     @media (min-width: 641px) {
       .profile-card .profile-text { text-align: left; }
       .profile-card.reverse .profile-text { text-align: right; }
+    }
+
+    /* profile name in navy */
+    .profile-name {
+      font-family: "Great Vibes", cursive;
+      color: var(--navy);
+      font-size: clamp(2.4rem, 8vw, 4rem);
+      line-height: 1.1;
+      text-shadow: none;
     }
 
     /* ═══════════════════════════════════════════
@@ -396,8 +405,8 @@
       margin: 0 clamp(-24px, -3.5vw, -45px);
       transition: transform .45s cubic-bezier(.23,1,.32,1), box-shadow .45s;
       cursor: pointer;
-      border: 2px solid var(--gold);
-      box-shadow: 0 15px 35px rgba(0,0,0,.4);
+      border: 2px solid var(--navy);         /* navy border */
+      box-shadow: 0 15px 35px rgba(26,42,58,.15);
       border-radius: 4px;
       overflow: hidden;
       position: relative;
@@ -409,7 +418,7 @@
       .fan-item:hover {
         transform: rotate(0deg) scale(1.1) translateY(-20px) !important;
         z-index: 100 !important;
-        box-shadow: 0 30px 60px rgba(0,0,0,.6), 0 0 30px rgba(212,175,55,.2);
+        box-shadow: 0 30px 60px rgba(26,42,58,.25), 0 0 30px rgba(26,42,58,.15);
       }
     }
     .fan-item.tapped {
@@ -421,7 +430,7 @@
        GALLERY GRID
     ═══════════════════════════════════════════ */
     .gallery-section {
-      border-top: 1px solid var(--gold-line);
+      border-top: 1px solid var(--navy-line);
     }
 
     .gallery-grid {
@@ -441,7 +450,6 @@
       .gallery-col  { gap: 10px; }
       .col-offset   { margin-top: 24px; }
       .col-offset-2 { margin-top: 12px; }
-      .gallery-item.extra-tall { height: auto; aspect-ratio: 2/3; }
     }
     @media (max-width: 480px) {
       .gallery-grid { gap: 8px; }
@@ -455,23 +463,24 @@
       }
     }
 
-    @keyframes shimmy {
-      0%   { transform: scale(1.06) rotate(-1.2deg); }
-      25%  { transform: scale(1.07) rotate(1.2deg); }
-      50%  { transform: scale(1.065) rotate(-.7deg); }
-      75%  { transform: scale(1.07) rotate(.7deg); }
-      100% { transform: scale(1.06) rotate(0deg); }
+    /* Gallery star glow – navy tones */
+    @keyframes starGlow1 {
+      0%,100% { filter: drop-shadow(0 0 3px rgba(26,42,58,.15)); }
+      50%      { filter: drop-shadow(0 0 12px rgba(26,42,58,.4)); }
     }
-    @keyframes glowPulse {
-      0%   { box-shadow: 0 6px 20px rgba(0,0,0,.35), 0 0 0 rgba(212,175,55,0); }
-      55%  { box-shadow: 0 12px 36px rgba(0,0,0,.5), 0 0 30px rgba(212,175,55,.45); }
-      100% { box-shadow: 0 10px 30px rgba(0,0,0,.45), 0 0 18px rgba(212,175,55,.28); }
+    @keyframes starGlow2 {
+      0%,100% { filter: drop-shadow(0 0 2px rgba(26,42,58,.1)); }
+      50%      { filter: drop-shadow(0 0 16px rgba(26,42,58,.45)); }
+    }
+    @keyframes starGlow3 {
+      0%,100% { filter: drop-shadow(0 0 4px rgba(26,42,58,.12)); }
+      50%      { filter: drop-shadow(0 0 10px rgba(26,42,58,.38)); }
     }
 
     .gallery-item {
       position: relative; overflow: hidden;
-      border-radius: 12px; border: 1px solid rgba(212,175,55,.18);
-      cursor: pointer; background: rgba(212,175,55,.05);
+      border-radius: 12px; border: 1px solid var(--navy-line);
+      cursor: pointer; background: rgba(26,42,58,.04);
       aspect-ratio: 3/4;
       transition: box-shadow .45s ease;
       -webkit-transform: translateZ(0);
@@ -485,66 +494,51 @@
       width: 100%; height: 100%; object-fit: cover; display: block;
       border-radius: 11px;
       transition: filter .8s ease;
-      filter: brightness(.88) saturate(.9);
+      filter: brightness(.92) saturate(.88);
     }
     .gallery-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(180deg, transparent 50%, rgba(10,25,47,.75) 100%);
+      background: linear-gradient(180deg, transparent 50%, rgba(26,42,58,.55) 100%);
       display: flex; align-items: flex-end; justify-content: center;
       padding-bottom: 18px; opacity: 0;
       transition: opacity .5s ease; border-radius: 11px;
     }
     .gallery-icon {
-      color: var(--gold); font-size: 1.4rem; opacity: .8;
+      color: #fff; font-size: 1.4rem; opacity: .8;
       transform: scale(.7); transition: transform .4s ease;
-    }
-
-    /* ── Gallery star glow pulse ── */
-    @keyframes starGlow1 {
-      0%,100% { filter: drop-shadow(0 0 3px rgba(233,206,158,.2)); }
-      50%      { filter: drop-shadow(0 0 12px rgba(233,206,158,.7)); }
-    }
-    @keyframes starGlow2 {
-      0%,100% { filter: drop-shadow(0 0 2px rgba(233,206,158,.15)); }
-      50%      { filter: drop-shadow(0 0 16px rgba(233,206,158,.8)); }
-    }
-    @keyframes starGlow3 {
-      0%,100% { filter: drop-shadow(0 0 4px rgba(233,206,158,.18)); }
-      50%      { filter: drop-shadow(0 0 10px rgba(233,206,158,.65)); }
     }
 
     .gallery-item.glow-1 { animation: starGlow1 3.2s ease-in-out infinite; }
     .gallery-item.glow-2 { animation: starGlow2 4.1s ease-in-out infinite; }
     .gallery-item.glow-3 { animation: starGlow3 2.8s ease-in-out infinite; }
 
-    /* Star sparkle particles */
     .star-spark {
       position: absolute;
       pointer-events: none;
       z-index: 10;
       animation: sparkFloat linear infinite;
-      color: var(--gold);
+      color: var(--navy);
       font-size: 10px;
       line-height: 1;
       opacity: 0;
-      text-shadow: 0 0 6px rgba(233,206,158,.9);
+      text-shadow: 0 0 4px rgba(26,42,58,.5);
     }
     @keyframes sparkFloat {
-      0%   { opacity:0;   transform: translate(0,0)       scale(.6) rotate(0deg);   }
-      15%  { opacity:.9; }
-      85%  { opacity:.6; }
+      0%   { opacity:0;   transform: translate(0,0) scale(.6) rotate(0deg); }
+      15%  { opacity:.7; }
+      85%  { opacity:.4; }
       100% { opacity:0;   transform: translate(var(--sx), var(--sy)) scale(1.2) rotate(var(--sr)); }
     }
     .gallery-item::after {
       content: ''; position: absolute; inset: 0; border-radius: 11px;
-      border: 1px solid rgba(212,175,55,0);
+      border: 1px solid rgba(26,42,58,0);
       transition: border-color .4s ease; pointer-events: none; z-index: 5;
     }
-    .gallery-item.touched { box-shadow: 0 0 22px rgba(212,175,55,.35), 0 12px 36px rgba(0,0,0,.5); }
-    .gallery-item.touched img { filter: brightness(1.05) saturate(1.15); }
+    .gallery-item.touched { box-shadow: 0 0 22px rgba(26,42,58,.2), 0 12px 36px rgba(26,42,58,.18); }
+    .gallery-item.touched img { filter: brightness(1.05) saturate(1.1); }
     .gallery-item.touched .gallery-overlay { opacity: 1; }
     .gallery-item.touched .gallery-icon { transform: scale(1.15); }
-    .gallery-item.touched::after { border-color: rgba(212,175,55,.5); }
+    .gallery-item.touched::after { border-color: rgba(26,42,58,.35); }
 
     .gallery-reveal {
       opacity: 0; transform: translateY(40px);
@@ -554,25 +548,48 @@
     .gallery-reveal.in-view { opacity: 1; transform: translateY(0); }
 
     /* ═══════════════════════════════════════════
-       RỒNG PHƯỢNG
+       RỒNG PHƯỢNG — CSS mask (navy colour)
     ═══════════════════════════════════════════ */
     .rong-img, .phuong-img {
       position: absolute; pointer-events: none; user-select: none;
-      object-fit: contain;
-      filter: sepia(1) saturate(5) hue-rotate(5deg) brightness(1.4);
-      z-index: 0; top: 50%; transform: translateY(-50%);
+      object-fit: contain; z-index: 0; top: 50%; transform: translateY(-50%);
+
+      /* Hide the original image pixels; show our colour instead */
+      background-color: var(--navy);
+      -webkit-mask-size: contain;
+      mask-size: contain;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-position: center;
+      mask-position: center;
+
+      /* The <img> src still drives layout but is invisible */
+      color: transparent;
+      opacity: .22;
     }
-    .rong-img  { left: 0;  width: clamp(140px,18vw,320px); opacity: .18; }
-    .phuong-img{ right: 0; width: clamp(120px,16vw,280px); opacity: .16; }
+    .rong-img {
+      -webkit-mask-image: url("./assets/img/rong.webp");
+      mask-image: url("./assets/img/rong.webp");
+      left: 0; width: clamp(140px,18vw,320px);
+    }
+    .phuong-img {
+      -webkit-mask-image: url("./assets/img/phuong.webp");
+      mask-image: url("./assets/img/phuong.webp");
+      right: 0; width: clamp(120px,16vw,280px);
+      opacity: .18;
+    }
 
     @media (max-width: 768px) {
-      .rong-img  { width: 26vw; opacity: .12; }
-      .phuong-img{ width: 24vw; opacity: .10; }
+      .rong-img  { width: 26vw; opacity: .14; }
+      .phuong-img{ width: 24vw; opacity: .12; }
     }
     @media (max-width: 480px) {
-      .rong-img  { width: 30vw; opacity: .09; }
-      .phuong-img{ width: 28vw; opacity: .08; }
+      .rong-img  { width: 30vw; opacity: .10; }
+      .phuong-img{ width: 28vw; opacity: .09; }
     }
+
+    /* ── The <img> inside rong/phuong must be invisible (mask handles colour) ── */
+    .rong-img img, .phuong-img img { opacity: 0; display: block; }
 
     .rp-section { position: relative; overflow: hidden; }
     .rp-section > *:not(.rong-img):not(.phuong-img) { position: relative; z-index: 1; }
@@ -586,9 +603,9 @@
     }
     .seal-bg {
       position: absolute; inset: 0;
-      background: radial-gradient(circle at 35% 35%, #e9ce9e, rgb(203,176,128));
+      background: radial-gradient(circle at 35% 35%, #2c3e50, #1a2a3a);
       border-radius: 9999px;
-      box-shadow: 0 0 20px rgba(233,206,158,.6), inset 0 3px 8px rgba(255,255,255,.4), inset 0 -3px 8px rgba(0,0,0,.3);
+      box-shadow: 0 0 20px rgba(26,42,58,.4), inset 0 3px 8px rgba(255,255,255,.1), inset 0 -3px 8px rgba(0,0,0,.2);
       z-index: 1;
       animation: seal-scale 3.2s ease-in-out infinite;
     }
@@ -596,10 +613,12 @@
       position: absolute; inset: 0; margin: auto;
       display: flex; align-items: center; justify-content: center;
       z-index: 2;
-      background-color: #030a11;
+      background-color: var(--bg);
       mask-image: url("./assets/img/chinese_happiness.webp");
       mask-size: contain; mask-repeat: no-repeat; mask-position: center;
-      width: 58px; height: 58px; opacity: .95;
+      -webkit-mask-image: url("./assets/img/chinese_happiness.webp");
+      -webkit-mask-size: contain; -webkit-mask-repeat: no-repeat; -webkit-mask-position: center;
+      width: 58px; height: 58px; opacity: .9;
       animation: seal-scale 3.2s ease-in-out infinite;
     }
     @keyframes seal-scale {
@@ -607,13 +626,13 @@
       50%     { transform: scale(1.1); }
     }
     .seal-bubble {
-      position: absolute; background: #f5e8b8;
+      position: absolute; background: var(--navy);
       border-radius: 50%; pointer-events: none; z-index: 3;
-      box-shadow: 0 0 12px rgba(212,175,55,.9); opacity: .85;
+      box-shadow: 0 0 8px rgba(26,42,58,.5); opacity: .5;
       animation: bubble-rise 3.8s linear infinite;
     }
     @keyframes bubble-rise {
-      0%   { transform: translateY(15px) scale(.6); opacity: .9; }
+      0%   { transform: translateY(15px) scale(.6); opacity: .7; }
       100% { transform: translateY(-110px) scale(.1); opacity: 0; }
     }
 
@@ -629,7 +648,7 @@
       position: relative; z-index: 2; width: 160px;
       animation: shake-idle 2.5s ease-in-out infinite;
       transform-origin: center bottom;
-      filter: drop-shadow(0 10px 30px rgba(212,175,55,.25));
+      filter: drop-shadow(0 10px 30px rgba(26,42,58,.15));
     }
     .envelope-svg { width: 100%; display: block; }
 
@@ -641,7 +660,7 @@
     }
     .lixí-wrapper:hover .lixí-envelope {
       animation: shake-hover .3s ease-in-out infinite;
-      filter: drop-shadow(0 0 20px rgba(212,175,55,.6));
+      filter: drop-shadow(0 0 20px rgba(26,42,58,.35));
     }
     @keyframes shake-hover {
       0%,100% { transform: rotate(-7deg) scale(1.05); }
@@ -656,11 +675,11 @@
       position: absolute;
       width: 42px; height: 22px; border-radius: 3px;
       display: flex; align-items: center; justify-content: center;
-      font-size: 7px; font-weight: bold; color: #1a4a1a;
+      font-size: 7px; font-weight: bold; color: #fff;
       animation: money-fall linear infinite;
       opacity: 0; left: 50%; top: 30%;
       font-family: monospace;
-      box-shadow: 0 2px 6px rgba(0,0,0,.4);
+      box-shadow: 0 2px 6px rgba(0,0,0,.3);
     }
     @keyframes money-fall {
       0%   { opacity:0; transform: translateX(-50%) translateY(0) rotate(0deg); }
@@ -670,7 +689,7 @@
     }
 
     /* ═══════════════════════════════════════════
-       WEDDING INFO — responsive date block
+       WEDDING INFO
     ═══════════════════════════════════════════ */
     .date-block {
       display: flex;
@@ -680,10 +699,10 @@
     }
     .date-num {
       font-size: clamp(2.8rem, 10vw, 4rem);
-      font-weight: 300; color: var(--gold);
+      font-weight: 300; color: var(--navy);
       padding: 0 clamp(.6rem, 2vw, 1.5rem);
-      border-left:  1px solid rgba(212,175,55,.35);
-      border-right: 1px solid rgba(212,175,55,.35);
+      border-left:  1px solid var(--navy-line);
+      border-right: 1px solid var(--navy-line);
       line-height: 1;
     }
 
@@ -698,7 +717,6 @@
       .parents-grid { grid-template-columns: 1fr; }
     }
 
-    /* Reception row */
     .reception-row {
       display: flex;
       justify-content: center;
@@ -706,7 +724,7 @@
     }
     .reception-sep {
       width: 1px;
-      background: rgba(212,175,55,.25);
+      background: var(--navy-line);
       flex-shrink: 0;
     }
 
@@ -714,8 +732,8 @@
     .rsvp-card {
       padding: clamp(1.5rem, 5vw, 3rem);
       border-radius: clamp(1.2rem, 4vw, 2rem);
-      background: rgba(212,175,55,.05);
-      border: 1px solid rgba(212,175,55,.2);
+      background: rgba(26,42,58,.04);
+      border: 1px solid var(--navy-line);
       width: 100%;
     }
 
@@ -728,8 +746,8 @@
     /* Floral bg */
     .floral-bg {
       position: absolute; width: clamp(200px,35vw,400px);
-      opacity: .12; pointer-events: none; z-index: 0;
-      filter: sepia(1) hue-rotate(10deg) saturate(2);
+      opacity: .06; pointer-events: none; z-index: 0;
+      filter: none;
     }
     .top-floral    { top: -50px; left: -50px; }
     .bottom-floral { bottom: -50px; right: -50px; transform: rotate(180deg); }
@@ -747,14 +765,24 @@
     #toast {
       position: fixed; bottom: 1.5rem; left: 50%;
       transform: translate(-50%, 8rem);
-      background: rgba(233,206,158,.15);
-      border: 1px solid rgba(233,206,158,.4);
-      color: var(--gold);
+      background: rgba(26,42,58,.9);
+      border: 1px solid rgba(26,42,58,.6);
+      color: #fff;
       padding: .75rem 1.5rem; border-radius: 100px;
       font-size: .75rem; letter-spacing: .12em;
       transition: transform .4s ease;
       z-index: 9999; white-space: nowrap;
     }
+
+    /* Divider lines – navy */
+    .divider-navy {
+      height: 1px;
+      background: var(--navy-line);
+      width: 100%;
+    }
+
+    /* Section border-top utility */
+    .border-navy-top { border-top: 1px solid var(--navy-line); }
   </style>
 </head>
 
@@ -764,16 +792,16 @@
   <div id="petal-container" class="fixed inset-0 pointer-events-none z-50"></div>
 
   <!-- ════════════════════════════════
-       HERO — LUXURY
+       HERO — DARK (giữ nguyên màu tối, bỏ lớp phủ đen nặng)
   ════════════════════════════════ -->
   <section class="hero-section">
 
-    <!-- Background photo -->
+    <!-- Background photo – opacity cao hơn vì không còn lớp phủ đen -->
     <div class="absolute inset-0 z-0">
-      <img src="./assets/img/image1.jpg"  class="hero-img-desktop w-full h-full object-cover" style="opacity:.28;object-position:center center" alt="" />
-      <img src="./assets/img/image17.jpg" class="hero-img-mobile  w-full h-full object-cover" style="opacity:.55;object-position:center top" alt="" />
-      <div class="absolute inset-0"
-        style="background:linear-gradient(to bottom,rgba(6,15,30,.6) 0%,rgba(6,15,30,.25) 45%,rgba(6,15,30,.9) 100%)"></div>
+      <img src="./assets/img/image1.jpg"  class="hero-img-desktop w-full h-full object-cover" style="opacity:.45;object-position:center center" alt="" />
+      <img src="./assets/img/image17.jpg" class="hero-img-mobile  w-full h-full object-cover" style="opacity:.50;object-position:center top" alt="" />
+      <!-- Fade nhẹ ở đáy -->
+      <div class="absolute inset-0" style="background:linear-gradient(to bottom,rgba(248,245,240,.08) 0%,rgba(248,245,240,0) 35%,rgba(248,245,240,.62) 100%)"></div>
     </div>
 
     <!-- Shimmer line -->
@@ -782,55 +810,45 @@
     <!-- Decorative corner frame -->
     <div class="hero-frame" aria-hidden="true">
       <svg viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Corner TL -->
-        <g class="corner" stroke="#e9ce9e" stroke-width=".4" fill="none" opacity=".4">
+        <g class="corner" stroke="#1a2a3a" stroke-width=".8" fill="none" opacity=".75">
           <line x1="0" y1="8" x2="0" y2="0"/><line x1="0" y1="0" x2="8" y2="0"/>
           <line x1="3" y1="3" x2="3" y2="0"/><line x1="0" y1="3" x2="3" y2="3"/>
         </g>
-        <!-- Corner TR -->
-        <g class="corner" stroke="#e9ce9e" stroke-width=".4" fill="none" opacity=".4">
+        <g class="corner" stroke="#1a2a3a" stroke-width=".8" fill="none" opacity=".75">
           <line x1="92" y1="0" x2="100" y2="0"/><line x1="100" y1="0" x2="100" y2="8"/>
           <line x1="97" y1="0" x2="97" y2="3"/><line x1="97" y1="3" x2="100" y2="3"/>
         </g>
-        <!-- Corner BL -->
-        <g class="corner" stroke="#e9ce9e" stroke-width=".4" fill="none" opacity=".4">
+        <g class="corner" stroke="#1a2a3a" stroke-width=".8" fill="none" opacity=".75">
           <line x1="0" y1="92" x2="0" y2="100"/><line x1="0" y1="100" x2="8" y2="100"/>
           <line x1="0" y1="97" x2="3" y2="97"/><line x1="3" y1="97" x2="3" y2="100"/>
         </g>
-        <!-- Corner BR -->
-        <g class="corner" stroke="#e9ce9e" stroke-width=".4" fill="none" opacity=".4">
+        <g class="corner" stroke="#1a2a3a" stroke-width=".8" fill="none" opacity=".75">
           <line x1="100" y1="92" x2="100" y2="100"/><line x1="92" y1="100" x2="100" y2="100"/>
           <line x1="100" y1="97" x2="97" y2="97"/><line x1="97" y1="97" x2="97" y2="100"/>
         </g>
-        <!-- Top center ornament -->
-        <g stroke="#e9ce9e" stroke-width=".25" fill="none" opacity=".3">
+        <g stroke="#1a2a3a" stroke-width=".55" fill="none" opacity=".65">
           <line x1="38" y1="0" x2="46" y2="0"/>
           <line x1="54" y1="0" x2="62" y2="0"/>
-          <circle cx="50" cy="0" r="1.2" fill="#e9ce9e" opacity=".5"/>
+          <circle cx="50" cy="0" r="1.2" fill="#1a2a3a" opacity=".6"/>
         </g>
-        <!-- Bottom center ornament -->
-        <g stroke="#e9ce9e" stroke-width=".25" fill="none" opacity=".3">
+        <g stroke="#1a2a3a" stroke-width=".55" fill="none" opacity=".65">
           <line x1="38" y1="100" x2="46" y2="100"/>
           <line x1="54" y1="100" x2="62" y2="100"/>
-          <circle cx="50" cy="100" r="1.2" fill="#e9ce9e" opacity=".5"/>
+          <circle cx="50" cy="100" r="1.2" fill="#1a2a3a" opacity=".6"/>
         </g>
       </svg>
     </div>
 
     <!-- Main content -->
     <div class="hero-content">
-
-      <!-- Save the date badge -->
       <div class="hero-badge">
         <div class="hero-badge-line"></div>
         <span>Save The Date</span>
         <div class="hero-badge-line right"></div>
       </div>
 
-      <!-- Name 1 -->
       <h1 class="hero-name n1">Jung Kook</h1>
 
-      <!-- Amp -->
       <div class="hero-ornament" style="margin:.4rem 0">
         <div class="hero-ornament-line"></div>
         <div class="hero-ornament-diamond"></div>
@@ -839,10 +857,8 @@
         <div class="hero-ornament-line right"></div>
       </div>
 
-      <!-- Name 2 -->
       <h1 class="hero-name n2">Phan Thưởng</h1>
 
-      <!-- Date row -->
       <div class="hero-date-row">
         <div class="hero-date-label">Thứ Sáu</div>
         <div class="hero-date-sep"></div>
@@ -851,20 +867,18 @@
         <div class="hero-date-label">Tháng 12<br/>2026</div>
       </div>
 
-      <!-- CTA -->
       <div class="hero-cta">
         <button onclick="document.getElementById('profile').scrollIntoView({behavior:'smooth'})">
           Xem Thư Ngỏ
         </button>
       </div>
-
     </div>
   </section>
 
   <!-- ════════════════════════════════
        PROFILE
   ════════════════════════════════ -->
-  <section id="profile" class="profile-section section-wrapper" style="border-top:1px solid var(--gold-line)">
+  <section id="profile" class="profile-section section-wrapper border-navy-top">
     <img src="https://png.pngtree.com/png-vector/20230303/ourmid/pngtree-bouquet-of-dried-flowers-and-leaves-png-image_6630449.png" class="floral-bg top-floral" alt="" />
     <img src="https://png.pngtree.com/png-vector/20230303/ourmid/pngtree-bouquet-of-dried-flowers-and-leaves-png-image_6630449.png" class="floral-bg bottom-floral" alt="" />
 
@@ -873,12 +887,12 @@
       <!-- Groom -->
       <div class="profile-card reveal">
         <div class="photo-frame profile-photo" style="transform:rotate(-2deg)">
-          <img src="./assets/img/image2.jpg" style="width:100%;height:clamp(220px,40vw,480px);object-fit:cover;object-position:top;display:block" alt="Groom" />
+          <img src="./assets/img/image2.jpg" style="width:100%;height:clamp(220px,70vw,480px);object-fit:cover;object-position:top;display:block" alt="Groom" />
         </div>
         <div class="profile-text">
           <p class="label-sm" style="margin-bottom:.5rem">Trưởng Nam</p>
-          <h2 class="font-luxury gold-text" style="font-size:clamp(2.4rem,8vw,4rem);line-height:1.1">Jung Kook</h2>
-          <p style="margin-top:1.25rem;line-height:1.8;font-style:italic;color:var(--gold);opacity:.85;font-size:.9rem">
+          <h2 class="profile-name">Jung Kook</h2>
+          <p style="margin-top:1.25rem;line-height:1.8;font-style:italic;color:var(--navy);opacity:.75;font-size:.9rem">
             "Tình yêu không chỉ là lời nói, mà là cách chúng ta cùng bước đi qua những năm tháng."
           </p>
         </div>
@@ -886,20 +900,20 @@
 
       <!-- Divider -->
       <div style="display:flex;align-items:center;justify-content:center;gap:1rem;margin:clamp(2rem,5vw,3.5rem) 0">
-        <div style="height:1px;flex:1;background:var(--gold)"></div>
-        <span style="color:var(--gold);opacity:.5">✦</span>
-        <div style="height:1px;flex:1;background:var(--gold)"></div>
+        <div style="height:1px;flex:1;background:var(--navy-line)"></div>
+        <span style="color:var(--navy);opacity:.4">✦</span>
+        <div style="height:1px;flex:1;background:var(--navy-line)"></div>
       </div>
 
       <!-- Bride -->
       <div class="profile-card reverse reveal">
         <div class="photo-frame profile-photo" style="transform:rotate(2deg)">
-          <img src="./assets/img/image3.jpg" style="width:100%;height:clamp(220px,40vw,480px);object-fit:cover;object-position:top;display:block" alt="Bride" />
+          <img src="./assets/img/image3.jpg" style="width:100%;height:clamp(220px,70vw,480px);object-fit:cover;object-position:top;display:block" alt="Bride" />
         </div>
         <div class="profile-text">
           <p class="label-sm" style="margin-bottom:.5rem">Út Nữ</p>
-          <h2 class="font-luxury gold-text" style="font-size:clamp(2.4rem,8vw,4rem);line-height:1.1">Phan Thưởng</h2>
-          <p style="margin-top:1.25rem;line-height:1.8;font-style:italic;color:var(--gold);opacity:.85;font-size:.9rem">
+          <h2 class="profile-name">Phan Thưởng</h2>
+          <p style="margin-top:1.25rem;line-height:1.8;font-style:italic;color:var(--navy);opacity:.75;font-size:.9rem">
             "Em chọn cùng anh viết tiếp chương hạnh phúc nhất đời mình."
           </p>
         </div>
@@ -911,9 +925,9 @@
   <!-- ════════════════════════════════
        FAN ALBUM
   ════════════════════════════════ -->
-  <section class="section-wrapper reveal" style="padding:clamp(3rem,8vw,6rem) 0;border-top:1px solid var(--gold-line)">
+  <section class="section-wrapper reveal border-navy-top" style="padding:clamp(3rem,8vw,6rem) 0">
     <div class="section-inner-wide" style="text-align:center">
-      <h2 class="font-luxury gold-text" style="font-size:clamp(2.5rem,8vw,4rem);margin-bottom:clamp(2rem,5vw,3rem)">Khoảnh Khắc Hạnh Phúc</h2>
+      <h2 class="font-luxury navy-text" style="font-size:clamp(2.5rem,8vw,4rem);margin-bottom:clamp(2rem,5vw,3rem)">Khoảnh Khắc Hạnh Phúc</h2>
       <div class="fan-container">
         <div class="fan-item" style="transform:rotate(-15deg) translateY(20px);z-index:11"><img src="./assets/img/image4.jpg" class="w-full h-full object-cover" /></div>
         <div class="fan-item" style="transform:rotate(-7deg) translateY(10px);z-index:13" ><img src="./assets/img/image5.jpg" class="w-full h-full object-cover" /></div>
@@ -931,11 +945,11 @@
     <div class="section-inner-wide">
 
       <div class="text-center gallery-reveal" style="margin-bottom:clamp(2rem,5vw,4rem)">
-        <h2 class="font-luxury gold-text" style="font-size:clamp(2.5rem,8vw,4.5rem)">Những Phút Giây Bên Nhau</h2>
+        <h2 class="font-luxury navy-text" style="font-size:clamp(2.5rem,8vw,4.5rem)">Những Phút Giây Bên Nhau</h2>
         <div style="display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1.25rem">
-          <div style="height:1px;width:60px;background:var(--gold)"></div>
-          <span style="color:var(--gold);opacity:.5">✦</span>
-          <div style="height:1px;width:60px;background:var(--gold)"></div>
+          <div style="height:1px;width:60px;background:var(--navy-line)"></div>
+          <span style="color:var(--navy);opacity:.4">✦</span>
+          <div style="height:1px;width:60px;background:var(--navy-line)"></div>
         </div>
       </div>
 
@@ -964,9 +978,16 @@
   <!-- ════════════════════════════════
        WEDDING INFO
   ════════════════════════════════ -->
-  <section class="rp-section section-wrapper reveal" style="padding:clamp(3rem,8vw,5rem) 0;border-top:1px solid var(--gold-line)">
-    <img src="./assets/img/rong.webp"   class="rong-img"   alt="" style="top:27%;left:-20px;opacity:.22" />
-    <img src="./assets/img/phuong.webp" class="phuong-img" alt="" style="top:27%;right:-20px;opacity:.20" />
+  <section class="rp-section section-wrapper reveal border-navy-top" style="padding:clamp(3rem,8vw,5rem) 0">
+
+    <!-- Rồng – dùng CSS mask để đổi màu thành xanh than -->
+    <div class="rong-img" style="top:27%;left:-20px;width:clamp(140px,18vw,320px);height:clamp(180px,24vw,420px)">
+      <img src="./assets/img/rong.webp" alt="" style="width:100%;height:100%;object-fit:contain;opacity:0;display:block" />
+    </div>
+    <!-- Phượng – dùng CSS mask -->
+    <div class="phuong-img" style="top:27%;right:-20px;width:clamp(120px,16vw,280px);height:clamp(160px,22vw,380px)">
+      <img src="./assets/img/phuong.webp" alt="" style="width:100%;height:100%;object-fit:contain;opacity:0;display:block" />
+    </div>
 
     <div class="section-inner-narrow" style="text-align:center">
 
@@ -978,15 +999,15 @@
       </div>
 
       <!-- Parents -->
-      <div class="parents-grid" style="margin-bottom:clamp(2rem,5vw,3.5rem);padding-bottom:clamp(2rem,5vw,3rem);border-bottom:1px solid rgba(212,175,55,.2)">
+      <div class="parents-grid" style="margin-bottom:clamp(2rem,5vw,3.5rem);padding-bottom:clamp(2rem,5vw,3rem);border-bottom:1px solid var(--navy-line)">
         <div style="text-align:center">
           <p class="label-sm" style="margin-bottom:.75rem">Nhà Trai</p>
-          <p style="font-size:.85rem;font-weight:600;color:var(--gold);line-height:1.7">Nguyễn Văn Hùng<br />Trần Thị Lan</p>
+          <p style="font-size:.85rem;font-weight:600;color:var(--navy);line-height:1.7">Nguyễn Văn Hùng<br />Trần Thị Lan</p>
           <p class="meta-text" style="margin-top:.5rem">Số 96 Nguyễn Vân Bình,<br />Yên Bắc Duy Tiên Hà Nam</p>
         </div>
         <div style="text-align:center">
           <p class="label-sm" style="margin-bottom:.75rem">Nhà Gái</p>
-          <p style="font-size:.85rem;font-weight:600;color:var(--gold);line-height:1.7">Lê Văn Bình<br />Phạm Thị Mai</p>
+          <p style="font-size:.85rem;font-weight:600;color:var(--navy);line-height:1.7">Lê Văn Bình<br />Phạm Thị Mai</p>
           <p class="meta-text" style="margin-top:.5rem">Số 213 Nguyễn Hữu Tiến,<br />Đồng Văn Duy Tiên Hà Nam</p>
         </div>
       </div>
@@ -995,49 +1016,49 @@
       <p class="section-title" style="margin-top:.4rem;margin-bottom:clamp(1.5rem,4vw,2.5rem)">LỄ THÀNH HÔN CỦA CON CHÚNG TÔI</p>
 
       <div style="margin-bottom:clamp(2rem,5vw,3.5rem)">
-        <h2 class="font-luxury gold-text" style="font-size:clamp(2.4rem,9vw,4rem)">Jung Kook</h2>
+        <h2 class="font-luxury navy-text" style="font-size:clamp(2.4rem,9vw,4rem)">Jung Kook</h2>
         <p class="label-sm" style="margin-top:.3rem">Trưởng Nam</p>
-        <div class="font-luxury gold-light" style="font-size:clamp(1.8rem,5vw,2.5rem);opacity:.65;padding:.5rem 0">&</div>
-        <h2 class="font-luxury gold-text" style="font-size:clamp(2.4rem,9vw,4rem)">Phan Thưởng</h2>
+        <div class="font-luxury navy-light" style="font-size:clamp(1.8rem,5vw,2.5rem);opacity:.45;padding:.5rem 0">&</div>
+        <h2 class="font-luxury navy-text" style="font-size:clamp(2.4rem,9vw,4rem)">Phan Thưởng</h2>
         <p class="label-sm" style="margin-top:.3rem">Út Nữ</p>
       </div>
 
       <!-- Lễ thành hôn -->
-      <div style="padding:clamp(1.5rem,5vw,2.5rem) 0;margin-bottom:1.5rem;border-top:1px solid rgba(212,175,55,.2);border-bottom:1px solid rgba(212,175,55,.2)">
+      <div style="padding:clamp(1.5rem,5vw,2.5rem) 0;margin-bottom:1.5rem;border-top:1px solid var(--navy-line);border-bottom:1px solid var(--navy-line)">
         <p class="section-title" style="margin-bottom:1rem">Lễ Thành Hôn được cử hành tại tư gia</p>
         <p class="label-sm">Vào lúc</p>
-        <h3 style="font-size:clamp(3rem,12vw,5rem);font-weight:300;color:var(--gold);letter-spacing:-.01em;margin:.5rem 0">09:00</h3>
-        <div class="date-block" style="padding-top:1rem;border-top:1px solid rgba(212,175,55,.15);margin-top:.5rem">
+        <h3 style="font-size:clamp(3rem,12vw,5rem);font-weight:300;color:var(--navy);letter-spacing:-.01em;margin:.5rem 0">09:00</h3>
+        <div class="date-block" style="padding-top:1rem;border-top:1px solid var(--navy-line);margin-top:.5rem">
           <span class="label-sm">Thứ Sáu</span>
           <span class="date-num">19</span>
           <span class="label-sm">Tháng 12</span>
         </div>
-        <p style="font-size:clamp(1.2rem,4vw,1.5rem);font-weight:300;color:var(--gold);letter-spacing:.2em;margin:.75rem 0 .25rem">2026</p>
+        <p style="font-size:clamp(1.2rem,4vw,1.5rem);font-weight:300;color:var(--navy);letter-spacing:.2em;margin:.75rem 0 .25rem">2026</p>
         <p class="meta-text" style="font-style:italic">(Tức ngày 19/11 Bính Ngọ)</p>
       </div>
 
       <!-- Tiệc cưới -->
-      <div style="padding:clamp(1.5rem,5vw,2.5rem) 0;margin-bottom:1.5rem;border-bottom:1px solid rgba(212,175,55,.2)">
+      <div style="padding:clamp(1.5rem,5vw,2.5rem) 0;margin-bottom:1.5rem;border-bottom:1px solid var(--navy-line)">
         <p class="section-title" style="margin-bottom:1.5rem">THÔNG TIN TIỆC CƯỚI</p>
         <p class="label-sm">Tiệc cưới sẽ diễn ra vào lúc</p>
-        <h3 style="font-size:clamp(3rem,12vw,5rem);font-weight:300;color:var(--gold);letter-spacing:-.01em;margin:.5rem 0">10:30</h3>
-        <div class="date-block" style="padding-top:1rem;border-top:1px solid rgba(212,175,55,.15);margin-top:.5rem">
+        <h3 style="font-size:clamp(3rem,12vw,5rem);font-weight:300;color:var(--navy);letter-spacing:-.01em;margin:.5rem 0">10:30</h3>
+        <div class="date-block" style="padding-top:1rem;border-top:1px solid var(--navy-line);margin-top:.5rem">
           <span class="label-sm">Thứ Sáu</span>
           <span class="date-num">19</span>
           <span class="label-sm">Tháng 12</span>
         </div>
-        <p style="font-size:clamp(1.2rem,4vw,1.5rem);font-weight:300;color:var(--gold);letter-spacing:.2em;margin:.75rem 0 .25rem">2026</p>
+        <p style="font-size:clamp(1.2rem,4vw,1.5rem);font-weight:300;color:var(--navy);letter-spacing:.2em;margin:.75rem 0 .25rem">2026</p>
         <p class="meta-text" style="font-style:italic">(Tức ngày 19/11 Bính Ngọ)</p>
 
-        <div class="reception-row" style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid rgba(212,175,55,.15)">
+        <div class="reception-row" style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--navy-line)">
           <div style="text-align:center">
             <p class="label-sm" style="margin-bottom:.25rem">Đón khách</p>
-            <p style="font-size:1.1rem;font-weight:600;color:var(--gold)">17:00</p>
+            <p style="font-size:1.1rem;font-weight:600;color:var(--navy)">17:00</p>
           </div>
           <div class="reception-sep"></div>
           <div style="text-align:center">
             <p class="label-sm" style="margin-bottom:.25rem">Khai tiệc</p>
-            <p style="font-size:1.1rem;font-weight:600;color:var(--gold)">18:30</p>
+            <p style="font-size:1.1rem;font-weight:600;color:var(--navy)">18:30</p>
           </div>
         </div>
       </div>
@@ -1045,11 +1066,11 @@
       <!-- Địa điểm -->
       <div style="margin-top:clamp(1.5rem,4vw,2.5rem)">
         <p class="section-title" style="margin-bottom:1rem">Địa điểm</p>
-        <p style="font-size:.875rem;font-weight:600;color:var(--gold)">Tư gia họ nhà trai</p>
+        <p style="font-size:.875rem;font-weight:600;color:var(--navy)">Tư gia họ nhà trai</p>
         <p class="meta-text" style="margin-top:.4rem">Số 213 Nguyễn Hữu Tiến<br />Đồng Văn Duy Tiên Hà Nam</p>
-        <div style="border-radius:1rem;overflow:hidden;height:clamp(180px,40vw,260px);opacity:.4;filter:grayscale(1);border:1px solid rgba(212,175,55,.2);margin-top:1.5rem;transition:opacity 1s,filter 1s"
-          onmouseenter="this.style.opacity='.8';this.style.filter='grayscale(0)'"
-          onmouseleave="this.style.opacity='.4';this.style.filter='grayscale(1)'">
+        <div style="border-radius:1rem;overflow:hidden;height:clamp(180px,40vw,260px);opacity:.55;filter:grayscale(.6);border:1px solid var(--navy-line);margin-top:1.5rem;transition:opacity 1s,filter 1s"
+          onmouseenter="this.style.opacity='.9';this.style.filter='grayscale(0)'"
+          onmouseleave="this.style.opacity='.55';this.style.filter='grayscale(.6)'">
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.3496668747447!2d106.6998492758385!3d10.784509159046772!2m3!1f0!2f0!3f0!3m2!1i1024!2i1024!4t31.1!3m3!1m2!1s0x31752f49459560a9%3A0xc173f47e3a96606c!2sGEM%20CENTER!5e0!3m2!1svi!2s!4v1715678000000!5m2!1svi!2s"
             width="100%" height="100%" style="border:0" allowfullscreen="" loading="lazy"></iframe>
         </div>
@@ -1061,10 +1082,10 @@
   <!-- ════════════════════════════════
        LÌ XÌ
   ════════════════════════════════ -->
-  <section class="section-wrapper reveal" style="padding:clamp(3rem,8vw,6rem) 0;border-top:1px solid var(--gold-line)">
+  <section class="section-wrapper reveal border-navy-top" style="padding:clamp(3rem,8vw,6rem) 0">
     <div class="section-inner-narrow" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:2rem">
 
-      <p class="font-luxury gold-text" style="font-size:clamp(2rem,7vw,3rem);text-shadow:0 0 20px rgba(212,175,55,.5)">
+      <p class="font-luxury navy-text" style="font-size:clamp(2rem,7vw,3rem)">
         Mừng Hạnh Phúc
       </p>
 
@@ -1104,31 +1125,31 @@
   <!-- ════════════════════════════════
        RSVP
   ════════════════════════════════ -->
-  <section class="section-wrapper reveal" style="padding:clamp(3rem,8vw,6rem) 0;border-top:1px solid var(--gold-line)">
+  <section class="section-wrapper reveal border-navy-top" style="padding:clamp(3rem,8vw,6rem) 0">
     <div class="section-inner-narrow" style="display:flex;flex-direction:column;align-items:center;text-align:center">
 
-      <h2 class="font-luxury gold-text" style="font-size:clamp(2.8rem,9vw,5rem);margin-bottom:clamp(1.5rem,4vw,2.5rem)">Lời Chúc Phúc</h2>
+      <h2 class="font-luxury navy-text" style="font-size:clamp(2.8rem,9vw,5rem);margin-bottom:clamp(1.5rem,4vw,2.5rem)">Lời Chúc Phúc</h2>
 
       <div class="rsvp-card">
         <input type="text" placeholder="Tên của bạn"
-          style="width:100%;background:transparent;border:none;border-bottom:2px solid rgba(212,175,55,.3);padding:.9rem 0;text-align:center;font-size:1rem;outline:none;color:var(--gold);margin-bottom:1.5rem;display:block" />
+          style="width:100%;background:transparent;border:none;border-bottom:2px solid var(--navy-line);padding:.9rem 0;text-align:center;font-size:1rem;outline:none;color:var(--navy);margin-bottom:1.5rem;display:block" />
 
         <div class="rsvp-btns" style="margin-bottom:1.5rem">
-          <button style="padding:.9rem;border-radius:.9rem;font-size:.8rem;border:2px solid rgba(212,175,55,.3);color:var(--gold);background:transparent;cursor:pointer;transition:border-color .2s,background .2s;width:100%"
-            onmouseover="this.style.borderColor='rgba(212,175,55,.7)';this.style.background='rgba(212,175,55,.06)'"
-            onmouseout="this.style.borderColor='rgba(212,175,55,.3)';this.style.background='transparent'">Sẽ đến dự</button>
-          <button style="padding:.9rem;border-radius:.9rem;font-size:.8rem;border:2px solid rgba(212,175,55,.3);color:var(--gold);background:transparent;cursor:pointer;transition:border-color .2s,background .2s;width:100%"
-            onmouseover="this.style.borderColor='rgba(212,175,55,.7)';this.style.background='rgba(212,175,55,.06)'"
-            onmouseout="this.style.borderColor='rgba(212,175,55,.3)';this.style.background='transparent'">Rất tiếc vắng mặt</button>
+          <button style="padding:.9rem;border-radius:.9rem;font-size:.8rem;border:2px solid var(--navy-line);color:var(--navy);background:transparent;cursor:pointer;transition:border-color .2s,background .2s;width:100%"
+            onmouseover="this.style.borderColor='rgba(26,42,58,.5)';this.style.background='rgba(26,42,58,.06)'"
+            onmouseout="this.style.borderColor='var(--navy-line)';this.style.background='transparent'">Sẽ đến dự</button>
+          <button style="padding:.9rem;border-radius:.9rem;font-size:.8rem;border:2px solid var(--navy-line);color:var(--navy);background:transparent;cursor:pointer;transition:border-color .2s,background .2s;width:100%"
+            onmouseover="this.style.borderColor='rgba(26,42,58,.5)';this.style.background='rgba(26,42,58,.06)'"
+            onmouseout="this.style.borderColor='var(--navy-line)';this.style.background='transparent'">Rất tiếc vắng mặt</button>
         </div>
 
         <textarea placeholder="Gửi lời chúc đến chúng mình nhé..."
           rows="3"
-          style="width:100%;background:transparent;border:none;border-bottom:2px solid rgba(212,175,55,.3);padding:.9rem 0;text-align:center;font-family:inherit;font-size:.9rem;outline:none;color:var(--gold);resize:none;margin-bottom:1.5rem;display:block"></textarea>
+          style="width:100%;background:transparent;border:none;border-bottom:2px solid var(--navy-line);padding:.9rem 0;text-align:center;font-family:inherit;font-size:.9rem;outline:none;color:var(--navy);resize:none;margin-bottom:1.5rem;display:block"></textarea>
 
-        <button style="width:100%;padding:1.1rem;border-radius:.9rem;font-weight:700;letter-spacing:.2em;font-size:.72rem;text-transform:uppercase;background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.5);color:var(--gold);cursor:pointer;transition:background .2s,transform .2s"
-          onmouseover="this.style.background='rgba(212,175,55,.22)';this.style.transform='scale(1.02)'"
-          onmouseout="this.style.background='rgba(212,175,55,.12)';this.style.transform='scale(1)'">GỬI LỜI CHÚC</button>
+        <button style="width:100%;padding:1.1rem;border-radius:.9rem;font-weight:700;letter-spacing:.2em;font-size:.72rem;text-transform:uppercase;background:rgba(26,42,58,.08);border:1px solid rgba(26,42,58,.35);color:var(--navy);cursor:pointer;transition:background .2s,transform .2s"
+          onmouseover="this.style.background='rgba(26,42,58,.15)';this.style.transform='scale(1.02)'"
+          onmouseout="this.style.background='rgba(26,42,58,.08)';this.style.transform='scale(1)'">GỬI LỜI CHÚC</button>
       </div>
 
     </div>
@@ -1137,8 +1158,8 @@
   <!-- ════════════════════════════════
        FOOTER
   ════════════════════════════════ -->
-  <footer class="section-wrapper" style="padding:clamp(3rem,8vw,5rem) 0;border-top:1px solid var(--gold-line);text-align:center">
-    <p class="font-luxury gold-text" style="font-size:clamp(2.2rem,7vw,4rem);margin-bottom:.75rem">Thank You</p>
+  <footer class="section-wrapper border-navy-top" style="padding:clamp(3rem,8vw,5rem) 0;text-align:center">
+    <p class="font-luxury navy-text" style="font-size:clamp(2.2rem,7vw,4rem);margin-bottom:.75rem">Thank You</p>
     <p class="label-sm" style="letter-spacing:.4em">Jung Kook &amp; Phan Thưởng · Wedding 2026</p>
   </footer>
 
@@ -1199,14 +1220,12 @@
     );
     document.querySelectorAll(".gallery-reveal").forEach(el => gObs.observe(el));
 
-    /* ── Gallery star glow & sparkles ── */
+    /* Gallery star glow & sparkles */
     const glowClasses = ["glow-1","glow-2","glow-3"];
     const sparkSymbols = ["✦","✧","⋆","·","✦","✧"];
 
     document.querySelectorAll(".gallery-item").forEach((item, i) => {
-      // Assign staggered glow class
       item.classList.add(glowClasses[i % 3]);
-      // Stagger animation start
       item.style.animationDelay = (i * 0.38) + "s";
     });
 
@@ -1214,7 +1233,6 @@
       const spark = document.createElement("span");
       spark.className = "star-spark";
       spark.textContent = sparkSymbols[Math.floor(Math.random() * sparkSymbols.length)];
-      // Random position along all 4 borders
       const side = Math.floor(Math.random() * 4);
       const pct  = Math.random() * 90 + 5;
       if (side === 0) { spark.style.top = "0%";    spark.style.left  = pct+"%"; }
@@ -1234,13 +1252,10 @@
       setTimeout(() => spark.remove(), dur * 1000 + 100);
     }
 
-    // Spawn sparks on each visible gallery item continuously — no touch needed
     const sparkObs = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (e.isIntersecting) {
-          // Burst nhiều sao ngay khi vào view
           for (let i = 0; i < 12; i++) setTimeout(() => spawnSpark(e.target), i * 80);
-          // Liên tục spawn nhiều sao
           const interval = setInterval(() => {
             if (document.contains(e.target)) {
               spawnSpark(e.target);
