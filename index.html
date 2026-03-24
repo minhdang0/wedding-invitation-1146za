@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jung Kook & Phan Thưởng - Wedding Invitation</title>
+  <title>Hoàng Quyến & Phan Thưởng - Wedding Invitation</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Great+Vibes&display=swap"
@@ -828,7 +828,7 @@
       </div>
 
       <!-- Name 1 -->
-      <h1 class="hero-name n1">Jung Kook</h1>
+      <h1 class="hero-name n1">Hoàng Quyến</h1>
 
       <!-- Amp -->
       <div class="hero-ornament" style="margin:.4rem 0">
@@ -877,7 +877,7 @@
         </div>
         <div class="profile-text">
           <p class="label-sm" style="margin-bottom:.5rem">Trưởng Nam</p>
-          <h2 class="font-luxury gold-text" style="font-size:clamp(2.4rem,8vw,4rem);line-height:1.1">Jung Kook</h2>
+          <h2 class="font-luxury gold-text" style="font-size:clamp(2.4rem,8vw,4rem);line-height:1.1">Hoàng Quyến</h2>
           <p style="margin-top:1.25rem;line-height:1.8;font-style:italic;color:var(--gold);opacity:.85;font-size:.9rem">
             "Tình yêu không chỉ là lời nói, mà là cách chúng ta cùng bước đi qua những năm tháng."
           </p>
@@ -995,7 +995,7 @@
       <p class="section-title" style="margin-top:.4rem;margin-bottom:clamp(1.5rem,4vw,2.5rem)">LỄ THÀNH HÔN CỦA CON CHÚNG TÔI</p>
 
       <div style="margin-bottom:clamp(2rem,5vw,3.5rem)">
-        <h2 class="font-luxury gold-text" style="font-size:clamp(2.4rem,9vw,4rem)">Jung Kook</h2>
+        <h2 class="font-luxury gold-text" style="font-size:clamp(2.4rem,9vw,4rem)">Hoàng Quyến</h2>
         <p class="label-sm" style="margin-top:.3rem">Trưởng Nam</p>
         <div class="font-luxury gold-light" style="font-size:clamp(1.8rem,5vw,2.5rem);opacity:.65;padding:.5rem 0">&</div>
         <h2 class="font-luxury gold-text" style="font-size:clamp(2.4rem,9vw,4rem)">Phan Thưởng</h2>
@@ -1139,7 +1139,7 @@
   ════════════════════════════════ -->
   <footer class="section-wrapper" style="padding:clamp(3rem,8vw,5rem) 0;border-top:1px solid var(--gold-line);text-align:center">
     <p class="font-luxury gold-text" style="font-size:clamp(2.2rem,7vw,4rem);margin-bottom:.75rem">Thank You</p>
-    <p class="label-sm" style="letter-spacing:.4em">Jung Kook &amp; Phan Thưởng · Wedding 2026</p>
+    <p class="label-sm" style="letter-spacing:.4em">Hoàng Quyến &amp; Phan Thưởng · Wedding 2026</p>
   </footer>
 
   <!-- ════════════════════════════════
@@ -1214,34 +1214,40 @@
       const spark = document.createElement("span");
       spark.className = "star-spark";
       spark.textContent = sparkSymbols[Math.floor(Math.random() * sparkSymbols.length)];
-      // Random position along border
+      // Random position along all 4 borders
       const side = Math.floor(Math.random() * 4);
       const pct  = Math.random() * 90 + 5;
-      if (side === 0) { spark.style.top = "0%";   spark.style.left = pct+"%"; }
+      if (side === 0) { spark.style.top = "0%";    spark.style.left  = pct+"%"; }
       if (side === 1) { spark.style.top = pct+"%"; spark.style.right = "0%"; }
-      if (side === 2) { spark.style.bottom = "0%"; spark.style.left = pct+"%"; }
-      if (side === 3) { spark.style.top = pct+"%"; spark.style.left = "0%"; }
-      const sx = (Math.random() - .5) * 36;
-      const sy = (Math.random() - .5) * 36 - 12;
-      const sr = (Math.random() - .5) * 180;
-      const dur = 1.4 + Math.random() * 1.2;
+      if (side === 2) { spark.style.bottom = "0%"; spark.style.left  = pct+"%"; }
+      if (side === 3) { spark.style.top = pct+"%"; spark.style.left  = "0%"; }
+      const sx = (Math.random() - .5) * 60;
+      const sy = (Math.random() - .5) * 60 - 20;
+      const sr = (Math.random() - .5) * 270;
+      const dur = 1.0 + Math.random() * 1.4;
       spark.style.setProperty("--sx", sx+"px");
       spark.style.setProperty("--sy", sy+"px");
       spark.style.setProperty("--sr", sr+"deg");
       spark.style.animationDuration = dur + "s";
-      spark.style.fontSize = (8 + Math.random() * 8) + "px";
+      spark.style.fontSize = (10 + Math.random() * 14) + "px";
       item.appendChild(spark);
       setTimeout(() => spark.remove(), dur * 1000 + 100);
     }
 
-    // Spawn sparks on each visible gallery item continuously
+    // Spawn sparks on each visible gallery item continuously — no touch needed
     const sparkObs = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (e.isIntersecting) {
+          // Burst nhiều sao ngay khi vào view
+          for (let i = 0; i < 12; i++) setTimeout(() => spawnSpark(e.target), i * 80);
+          // Liên tục spawn nhiều sao
           const interval = setInterval(() => {
-            if (document.contains(e.target)) spawnSpark(e.target);
-            else clearInterval(interval);
-          }, 900 + Math.random() * 600);
+            if (document.contains(e.target)) {
+              spawnSpark(e.target);
+              spawnSpark(e.target);
+              spawnSpark(e.target);
+            } else clearInterval(interval);
+          }, 120);
           e.target._sparkInterval = interval;
         } else {
           clearInterval(e.target._sparkInterval);
