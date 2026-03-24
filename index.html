@@ -1255,7 +1255,7 @@
     const sparkObs = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (e.isIntersecting) {
-          for (let i = 0; i < 12; i++) setTimeout(() => spawnSpark(e.target), i * 80);
+          for (let i = 0; i < 12; i++) setTimeout(() => spawnSpark(e.target), i * 200);
           const interval = setInterval(() => {
             if (document.contains(e.target)) {
               spawnSpark(e.target);
