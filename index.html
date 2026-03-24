@@ -473,8 +473,8 @@
       border-radius: 12px; border: 1px solid rgba(212,175,55,.18);
       cursor: pointer; background: rgba(212,175,55,.05);
       aspect-ratio: 3/4;
-      will-change: transform, box-shadow;
-      transition: transform .45s cubic-bezier(.23,1,.32,1), box-shadow .45s ease;
+      will-change: auto;
+      transition: box-shadow .45s ease;
     }
     .gallery-item.tall       { aspect-ratio: 3/5; }
     .gallery-item.extra-tall { height: 520px; aspect-ratio: unset; }
@@ -498,12 +498,41 @@
       transform: scale(.7); transition: transform .4s ease;
     }
 
-    @media (hover: hover) and (pointer: fine) {
-      .gallery-item:hover { transform: scale(1.04); box-shadow: 0 0 22px rgba(212,175,55,.35), 0 12px 36px rgba(0,0,0,.5); }
-      .gallery-item:hover img { transform: scale(1.07); filter: brightness(1) saturate(1.1); }
-      .gallery-item:hover .gallery-overlay { opacity: 1; }
-      .gallery-item:hover .gallery-icon { transform: scale(1.2); }
-      .gallery-item:hover::after { border-color: rgba(212,175,55,.55); }
+    /* ── Gallery star glow pulse ── */
+    @keyframes starGlow1 {
+      0%,100% { box-shadow: 0 0 8px 2px rgba(233,206,158,.15), 0 0 0px 0px rgba(233,206,158,0); }
+      50%      { box-shadow: 0 0 22px 6px rgba(233,206,158,.45), 0 0 40px 10px rgba(233,206,158,.15); }
+    }
+    @keyframes starGlow2 {
+      0%,100% { box-shadow: 0 0 6px 1px rgba(233,206,158,.1), 0 0 0px 0px rgba(233,206,158,0); }
+      50%      { box-shadow: 0 0 28px 8px rgba(233,206,158,.5), 0 0 50px 14px rgba(233,206,158,.18); }
+    }
+    @keyframes starGlow3 {
+      0%,100% { box-shadow: 0 0 10px 3px rgba(233,206,158,.12), 0 0 0px 0px rgba(233,206,158,0); }
+      50%      { box-shadow: 0 0 18px 5px rgba(233,206,158,.4), 0 0 35px 8px rgba(233,206,158,.12); }
+    }
+
+    .gallery-item.glow-1 { animation: starGlow1 3.2s ease-in-out infinite; }
+    .gallery-item.glow-2 { animation: starGlow2 4.1s ease-in-out infinite; }
+    .gallery-item.glow-3 { animation: starGlow3 2.8s ease-in-out infinite; }
+
+    /* Star sparkle particles */
+    .star-spark {
+      position: absolute;
+      pointer-events: none;
+      z-index: 10;
+      animation: sparkFloat linear infinite;
+      color: var(--gold);
+      font-size: 10px;
+      line-height: 1;
+      opacity: 0;
+      text-shadow: 0 0 6px rgba(233,206,158,.9);
+    }
+    @keyframes sparkFloat {
+      0%   { opacity:0;   transform: translate(0,0)       scale(.6) rotate(0deg);   }
+      15%  { opacity:.9; }
+      85%  { opacity:.6; }
+      100% { opacity:0;   transform: translate(var(--sx), var(--sy)) scale(1.2) rotate(var(--sr)); }
     }
     .gallery-item::after {
       content: ''; position: absolute; inset: 0; border-radius: 11px;
@@ -1168,6 +1197,57 @@
       { threshold:.12, rootMargin:"0px 0px -60px 0px" }
     );
     document.querySelectorAll(".gallery-reveal").forEach(el => gObs.observe(el));
+
+    /* ── Gallery star glow & sparkles ── */
+    const glowClasses = ["glow-1","glow-2","glow-3"];
+    const sparkSymbols = ["✦","✧","⋆","·","✦","✧"];
+
+    document.querySelectorAll(".gallery-item").forEach((item, i) => {
+      // Assign staggered glow class
+      item.classList.add(glowClasses[i % 3]);
+      // Stagger animation start
+      item.style.animationDelay = (i * 0.38) + "s";
+    });
+
+    function spawnSpark(item) {
+      const spark = document.createElement("span");
+      spark.className = "star-spark";
+      spark.textContent = sparkSymbols[Math.floor(Math.random() * sparkSymbols.length)];
+      // Random position along border
+      const side = Math.floor(Math.random() * 4);
+      const pct  = Math.random() * 90 + 5;
+      if (side === 0) { spark.style.top = "0%";   spark.style.left = pct+"%"; }
+      if (side === 1) { spark.style.top = pct+"%"; spark.style.right = "0%"; }
+      if (side === 2) { spark.style.bottom = "0%"; spark.style.left = pct+"%"; }
+      if (side === 3) { spark.style.top = pct+"%"; spark.style.left = "0%"; }
+      const sx = (Math.random() - .5) * 36;
+      const sy = (Math.random() - .5) * 36 - 12;
+      const sr = (Math.random() - .5) * 180;
+      const dur = 1.4 + Math.random() * 1.2;
+      spark.style.setProperty("--sx", sx+"px");
+      spark.style.setProperty("--sy", sy+"px");
+      spark.style.setProperty("--sr", sr+"deg");
+      spark.style.animationDuration = dur + "s";
+      spark.style.fontSize = (8 + Math.random() * 8) + "px";
+      item.appendChild(spark);
+      setTimeout(() => spark.remove(), dur * 1000 + 100);
+    }
+
+    // Spawn sparks on each visible gallery item continuously
+    const sparkObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const interval = setInterval(() => {
+            if (document.contains(e.target)) spawnSpark(e.target);
+            else clearInterval(interval);
+          }, 900 + Math.random() * 600);
+          e.target._sparkInterval = interval;
+        } else {
+          clearInterval(e.target._sparkInterval);
+        }
+      });
+    }, { threshold: .1 });
+    document.querySelectorAll(".gallery-item").forEach(el => sparkObs.observe(el));
 
     /* Money */
     const bills = [
