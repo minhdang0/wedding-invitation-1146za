@@ -510,8 +510,8 @@
       border: 1px solid rgba(212,175,55,0);
       transition: border-color .4s ease; pointer-events: none; z-index: 5;
     }
-    .gallery-item.touched { animation: shimmy .45s ease forwards, glowPulse .5s ease forwards; }
-    .gallery-item.touched img { transform: scale(1.07); filter: brightness(1.05) saturate(1.15); }
+    .gallery-item.touched { box-shadow: 0 0 22px rgba(212,175,55,.35), 0 12px 36px rgba(0,0,0,.5); }
+    .gallery-item.touched img { filter: brightness(1.05) saturate(1.15); }
     .gallery-item.touched .gallery-overlay { opacity: 1; }
     .gallery-item.touched .gallery-icon { transform: scale(1.15); }
     .gallery-item.touched::after { border-color: rgba(212,175,55,.5); }
@@ -843,7 +843,7 @@
       <!-- Groom -->
       <div class="profile-card reveal">
         <div class="photo-frame profile-photo" style="transform:rotate(-2deg)">
-          <img src="./assets/img/image2.jpg" style="width:100%;height:clamp(220px,70vw,480px);object-fit:cover;object-position:top;display:block" alt="Groom" />
+          <img src="./assets/img/image2.jpg" style="width:100%;height:clamp(220px,40vw,480px);object-fit:cover;object-position:top;display:block" alt="Groom" />
         </div>
         <div class="profile-text">
           <p class="label-sm" style="margin-bottom:.5rem">Trưởng Nam</p>
@@ -864,7 +864,7 @@
       <!-- Bride -->
       <div class="profile-card reverse reveal">
         <div class="photo-frame profile-photo" style="transform:rotate(2deg)">
-          <img src="./assets/img/image3.jpg" style="width:100%;height:clamp(220px,70vw,480px);object-fit:cover;object-position:top;display:block" alt="Bride" />
+          <img src="./assets/img/image3.jpg" style="width:100%;height:clamp(220px,40vw,480px);object-fit:cover;object-position:top;display:block" alt="Bride" />
         </div>
         <div class="profile-text">
           <p class="label-sm" style="margin-bottom:.5rem">Út Nữ</p>
