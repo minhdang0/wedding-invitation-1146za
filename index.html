@@ -13,19 +13,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <style>
     :root {
-      /* ── LIGHT THEME ── */
-      --bg:          #f8f5f0;          /* nền kem trắng */
-      --navy:        #1a2a3a;          /* xanh than đậm – màu chữ chính */
-      --navy-mid:    #2c3e50;          /* xanh than vừa */
+      --bg:          #f8f5f0;
+      --navy:        #1a2a3a;
+      --navy-mid:    #2c3e50;
       --navy-dim:    rgba(26,42,58,.55);
       --navy-line:   rgba(26,42,58,.18);
       --navy-soft:   rgba(26,42,58,.08);
-
-      /* ── HERO ── */
       --hero-gold:   var(--navy);
       --hero-line:   var(--navy-line);
-
-      /* ── Shared ── */
       --accent:      #1a2a3a;
     }
 
@@ -41,16 +36,13 @@
       margin: 0; padding: 0;
     }
 
-    /* ── Typography ── */
     .font-serif    { font-family: "Playfair Display", serif; }
     .font-luxury   { font-family: "Great Vibes", cursive; }
     .font-cormorant{ font-family: "Cormorant Garamond", serif; }
 
-    /* light-theme text helpers */
     .navy-text  { color: var(--navy); text-shadow: none; }
     .navy-light { color: var(--navy); }
 
-    /* hero-only gold helpers (scoped inside .hero-section) */
     .hero-section .gold-text  { color: var(--hero-gold); text-shadow: 0 2px 8px rgba(212,175,55,.3); }
     .hero-section .gold-light { color: var(--hero-gold); }
 
@@ -81,19 +73,15 @@
       100% { transform: translate(100px,100vh) rotate(360deg); opacity:0; }
     }
 
-    /* ── Reveal ── */
     .reveal { opacity:0; transform:translateY(30px); transition:all 1s ease-out; }
     .reveal.active { opacity:1; transform:translateY(0); }
 
-    /* ── Photo frame – navy border ── */
     .photo-frame {
       border: 3px solid var(--navy);
       box-shadow: 0 0 20px rgba(26,42,58,.12);
     }
 
-    /* ═══════════════════════════════════════════
-       HERO — kept dark, overlay REMOVED so photo shows bright
-    ═══════════════════════════════════════════ */
+    /* ── HERO ── */
     .hero-section {
       position: relative;
       width: 100%;
@@ -102,14 +90,12 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      background-color: var(--bg);   /* light base */
+      background-color: var(--bg);
     }
     @media (max-width: 640px) {
       .hero-section { min-height: calc(100svh - 100px); }
     }
 
-    /* ── NO dark vignette overlay on hero ──
-       We only keep a very subtle bottom fade so text is readable */
     .hero-section::after {
       content: '';
       position: absolute; inset: 0; z-index: 1;
@@ -120,7 +106,6 @@
       pointer-events: none;
     }
 
-    /* Animated gold border frame */
     .hero-frame {
       position: absolute;
       inset: clamp(12px, 2.5vw, 28px);
@@ -241,7 +226,6 @@
       background: var(--navy);
       transform: rotate(45deg);
       opacity: .8;
-      box-shadow: none;
     }
 
     .hero-date-row {
@@ -260,10 +244,9 @@
       letter-spacing: -.01em;
     }
     .hero-date-sep {
-      width: 1px; height: clamp(24px, 5vw, 52px);
+      width: 2px; height: clamp(24px, 5vw, 52px);
       background: rgba(26,42,58,.5);
       flex-shrink: 0;
-      width: 2px;
     }
     .hero-date-label {
       font-size: clamp(.6rem, 1.5vw, .72rem);
@@ -301,9 +284,7 @@
     .hero-cta button:hover { border-color: rgba(26,42,58,.65); }
     .hero-cta button:hover::before { opacity: 1; }
 
-    /* ═══════════════════════════════════════════
-       CENTERING FOUNDATION
-    ═══════════════════════════════════════════ */
+    /* ── Layout ── */
     .section-wrapper {
       width: 100%;
       display: flex;
@@ -311,63 +292,42 @@
       align-items: center;
       background-color: var(--bg);
     }
-
     .section-inner {
-      width: 100%;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 clamp(1rem, 5vw, 2rem);
+      width: 100%; max-width: 900px;
+      margin: 0 auto; padding: 0 clamp(1rem, 5vw, 2rem);
     }
-
     .section-inner-wide {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 clamp(1rem, 5vw, 2rem);
+      width: 100%; max-width: 1200px;
+      margin: 0 auto; padding: 0 clamp(1rem, 5vw, 2rem);
     }
-
     .section-inner-narrow {
-      width: 100%;
-      max-width: 640px;
-      margin: 0 auto;
-      padding: 0 clamp(1rem, 5vw, 1.5rem);
+      width: 100%; max-width: 640px;
+      margin: 0 auto; padding: 0 clamp(1rem, 5vw, 1.5rem);
     }
 
-    /* ═══════════════════════════════════════════
-       PROFILE SECTION
-    ═══════════════════════════════════════════ */
+    /* ── Profile ── */
     .profile-section {
       padding: clamp(3rem, 8vw, 6rem) 0;
-      position: relative;
-      overflow: hidden;
+      position: relative; overflow: hidden;
     }
-
     .profile-card {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: clamp(1.5rem, 4vw, 3rem);
+      display: flex; flex-direction: row;
+      align-items: center; gap: clamp(1.5rem, 4vw, 3rem);
     }
     .profile-card.reverse { flex-direction: row-reverse; }
-
     @media (max-width: 640px) {
       .profile-card,
       .profile-card.reverse { flex-direction: column; }
     }
-
     .profile-photo {
-      flex: 0 0 auto;
-      width: 100%;
+      flex: 0 0 auto; width: 100%;
       max-width: clamp(220px, 40vw, 380px);
     }
-
     @media (max-width: 640px) {
       .profile-photo { max-width: 100%; }
     }
-
     .profile-text {
-      flex: 1;
-      padding: clamp(1rem, 3vw, 2rem);
+      flex: 1; padding: clamp(1rem, 3vw, 2rem);
       border-radius: 1rem;
       background: rgba(26,42,58,.05);
       border: 1px solid var(--navy-line);
@@ -377,43 +337,30 @@
       .profile-card .profile-text { text-align: left; }
       .profile-card.reverse .profile-text { text-align: right; }
     }
-
-    /* profile name in navy */
     .profile-name {
       font-family: "Great Vibes", cursive;
       color: var(--navy);
       font-size: clamp(2.4rem, 8vw, 4rem);
-      line-height: 1.1;
-      text-shadow: none;
+      line-height: 1.1; text-shadow: none;
     }
 
-    /* ═══════════════════════════════════════════
-       FAN GALLERY
-    ═══════════════════════════════════════════ */
+    /* ── Fan ── */
     .fan-container {
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
+      display: flex; justify-content: center; align-items: flex-end;
       height: clamp(260px, 45vw, 520px);
-      overflow: visible;
-      padding-bottom: 1rem;
+      overflow: visible; padding-bottom: 1rem;
     }
-
     .fan-item {
       width: clamp(100px, 15vw, 240px);
       height: clamp(160px, 24vw, 380px);
       margin: 0 clamp(-24px, -3.5vw, -45px);
       transition: transform .45s cubic-bezier(.23,1,.32,1), box-shadow .45s;
       cursor: pointer;
-      border: 2px solid var(--navy);         /* navy border */
+      border: 2px solid var(--navy);
       box-shadow: 0 15px 35px rgba(26,42,58,.15);
-      border-radius: 4px;
-      overflow: hidden;
-      position: relative;
-      flex-shrink: 0;
-      will-change: transform;
+      border-radius: 4px; overflow: hidden;
+      position: relative; flex-shrink: 0; will-change: transform;
     }
-
     @media (hover: hover) {
       .fan-item:hover {
         transform: rotate(0deg) scale(1.1) translateY(-20px) !important;
@@ -426,25 +373,15 @@
       z-index: 100 !important;
     }
 
-    /* ═══════════════════════════════════════════
-       GALLERY GRID
-    ═══════════════════════════════════════════ */
-    .gallery-section {
-      border-top: 1px solid var(--navy-line);
-    }
-
+    /* ── Gallery ── */
+    .gallery-section { border-top: 1px solid var(--navy-line); }
     .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-      align-items: start;
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 14px; align-items: start;
     }
-    .gallery-col {
-      display: flex; flex-direction: column; gap: 14px;
-    }
-    .col-offset  { margin-top: 40px; }
-    .col-offset-2{ margin-top: 20px; }
-
+    .gallery-col { display: flex; flex-direction: column; gap: 14px; }
+    .col-offset   { margin-top: 40px; }
+    .col-offset-2 { margin-top: 20px; }
     @media (max-width: 900px) {
       .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
       .gallery-col  { gap: 10px; }
@@ -463,28 +400,26 @@
       }
     }
 
-    /* Gallery star glow – navy tones */
+    /* ── Gallery glow — navy đồng nhất với màu chữ tiêu đề, luôn bật ── */
     @keyframes starGlow1 {
-      0%,100% { filter: drop-shadow(0 0 3px rgba(26,42,58,.15)); }
-      50%      { filter: drop-shadow(0 0 12px rgba(26,42,58,.4)); }
+      0%,100% { box-shadow: 0 4px 18px rgba(26,42,58,.28), 0 0 8px rgba(26,42,58,.18); }
+      50%      { box-shadow: 0 4px 32px rgba(26,42,58,.58), 0 0 22px rgba(26,42,58,.38); }
     }
     @keyframes starGlow2 {
-      0%,100% { filter: drop-shadow(0 0 2px rgba(26,42,58,.1)); }
-      50%      { filter: drop-shadow(0 0 16px rgba(26,42,58,.45)); }
+      0%,100% { box-shadow: 0 4px 16px rgba(26,42,58,.22), 0 0 6px rgba(26,42,58,.14); }
+      50%      { box-shadow: 0 4px 38px rgba(26,42,58,.62), 0 0 26px rgba(26,42,58,.42); }
     }
     @keyframes starGlow3 {
-      0%,100% { filter: drop-shadow(0 0 4px rgba(26,42,58,.12)); }
-      50%      { filter: drop-shadow(0 0 10px rgba(26,42,58,.38)); }
+      0%,100% { box-shadow: 0 4px 20px rgba(26,42,58,.25), 0 0 10px rgba(26,42,58,.16); }
+      50%      { box-shadow: 0 4px 30px rgba(26,42,58,.55), 0 0 20px rgba(26,42,58,.35); }
     }
 
     .gallery-item {
       position: relative; overflow: hidden;
-      border-radius: 12px; border: 1px solid var(--navy-line);
+      border-radius: 12px; border: 1px solid rgba(26,42,58,.22);
       cursor: pointer; background: rgba(26,42,58,.04);
       aspect-ratio: 3/4;
-      transition: box-shadow .45s ease;
-      -webkit-transform: translateZ(0);
-      transform: translateZ(0);
+      -webkit-transform: translateZ(0); transform: translateZ(0);
     }
     .gallery-item.tall       { aspect-ratio: 3/5; }
     .gallery-item.extra-tall { height: 520px; aspect-ratio: unset; }
@@ -504,41 +439,44 @@
       transition: opacity .5s ease; border-radius: 11px;
     }
     .gallery-icon {
-      color: #fff; font-size: 1.4rem; opacity: .8;
+      color: #d4af37; font-size: 1.4rem; opacity: .9;
       transform: scale(.7); transition: transform .4s ease;
     }
 
+    /* glow classes — luôn animate không cần hover */
     .gallery-item.glow-1 { animation: starGlow1 3.2s ease-in-out infinite; }
     .gallery-item.glow-2 { animation: starGlow2 4.1s ease-in-out infinite; }
     .gallery-item.glow-3 { animation: starGlow3 2.8s ease-in-out infinite; }
 
+    /* ── Star spark — vàng sáng ── */
     .star-spark {
       position: absolute;
       pointer-events: none;
       z-index: 10;
       animation: sparkFloat linear infinite;
-      color: var(--navy);
+      color: #e8d5a0;
       font-size: 10px;
       line-height: 1;
       opacity: 0;
-      text-shadow: 0 0 4px rgba(26,42,58,.5);
+      text-shadow: 0 0 5px rgba(240,200,100,.4), 0 0 12px rgba(212,175,55,.25);
     }
     @keyframes sparkFloat {
       0%   { opacity:0;   transform: translate(0,0) scale(.6) rotate(0deg); }
-      15%  { opacity:.7; }
-      85%  { opacity:.4; }
-      100% { opacity:0;   transform: translate(var(--sx), var(--sy)) scale(1.2) rotate(var(--sr)); }
+      15%  { opacity:.55; }
+      85%  { opacity:.25; }
+      100% { opacity:0;   transform: translate(var(--sx), var(--sy)) scale(1.3) rotate(var(--sr)); }
     }
+
     .gallery-item::after {
       content: ''; position: absolute; inset: 0; border-radius: 11px;
-      border: 1px solid rgba(26,42,58,0);
-      transition: border-color .4s ease; pointer-events: none; z-index: 5;
+      border: 1px solid rgba(26,42,58,.2);
+      pointer-events: none; z-index: 5;
     }
-    .gallery-item.touched { box-shadow: 0 0 22px rgba(26,42,58,.2), 0 12px 36px rgba(26,42,58,.18); }
+
+    .gallery-item.touched { filter: brightness(1.05); }
     .gallery-item.touched img { filter: brightness(1.05) saturate(1.1); }
     .gallery-item.touched .gallery-overlay { opacity: 1; }
     .gallery-item.touched .gallery-icon { transform: scale(1.15); }
-    .gallery-item.touched::after { border-color: rgba(26,42,58,.35); }
 
     .gallery-reveal {
       opacity: 0; transform: translateY(40px);
@@ -547,56 +485,39 @@
     }
     .gallery-reveal.in-view { opacity: 1; transform: translateY(0); }
 
-    /* ═══════════════════════════════════════════
-       RỒNG PHƯỢNG — CSS mask (navy colour)
-    ═══════════════════════════════════════════ */
+    /* ── Rồng Phượng ── */
     .rong-img, .phuong-img {
       position: absolute; pointer-events: none; user-select: none;
       object-fit: contain; z-index: 0; top: 50%; transform: translateY(-50%);
-
-      /* Hide the original image pixels; show our colour instead */
       background-color: var(--navy);
-      -webkit-mask-size: contain;
-      mask-size: contain;
-      -webkit-mask-repeat: no-repeat;
-      mask-repeat: no-repeat;
-      -webkit-mask-position: center;
-      mask-position: center;
-
-      /* The <img> src still drives layout but is invisible */
-      color: transparent;
-      opacity: .22;
+      -webkit-mask-size: contain; mask-size: contain;
+      -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+      -webkit-mask-position: center; mask-position: center;
+      color: transparent; opacity: .22;
     }
     .rong-img {
       -webkit-mask-image: url("./assets/img/rong.webp");
       mask-image: url("./assets/img/rong.webp");
-      left: 0; width: clamp(140px,18vw,320px);
+      left: -30px; width: clamp(200px,26vw,420px);
     }
     .phuong-img {
       -webkit-mask-image: url("./assets/img/phuong.webp");
       mask-image: url("./assets/img/phuong.webp");
-      right: 0; width: clamp(120px,16vw,280px);
-      opacity: .18;
+      right: -30px; width: clamp(180px,24vw,380px); opacity: .18;
     }
-
     @media (max-width: 768px) {
-      .rong-img  { width: 26vw; opacity: .14; }
-      .phuong-img{ width: 24vw; opacity: .12; }
+      .rong-img  { left: -20px; width: 34vw; opacity: .14; }
+      .phuong-img{ right: -20px; width: 32vw; opacity: .12; }
     }
     @media (max-width: 480px) {
-      .rong-img  { width: 30vw; opacity: .10; }
-      .phuong-img{ width: 28vw; opacity: .09; }
+      .rong-img  { left: -12px; width: 38vw; opacity: .10; }
+      .phuong-img{ right: -12px; width: 36vw; opacity: .09; }
     }
-
-    /* ── The <img> inside rong/phuong must be invisible (mask handles colour) ── */
     .rong-img img, .phuong-img img { opacity: 0; display: block; }
-
     .rp-section { position: relative; overflow: hidden; }
     .rp-section > *:not(.rong-img):not(.phuong-img) { position: relative; z-index: 1; }
 
-    /* ═══════════════════════════════════════════
-       CHINESE SEAL
-    ═══════════════════════════════════════════ */
+    /* ── Chinese Seal ── */
     .chinese-seal {
       position: relative; width: 70px; height: 70px;
       margin: 24px auto 32px;
@@ -636,15 +557,13 @@
       100% { transform: translateY(-110px) scale(.1); opacity: 0; }
     }
 
-    /* ═══════════════════════════════════════════
-       LÌ XÌ
-    ═══════════════════════════════════════════ */
-    .lixí-wrapper { cursor: pointer; }
-    .lixí-scene {
+    /* ── Lì xì ── */
+    .lixi-wrapper { cursor: pointer; }
+    .lixi-scene {
       position: relative; width: 160px; height: 240px;
       display: flex; align-items: flex-end; justify-content: center;
     }
-    .lixí-envelope {
+    .lixi-envelope {
       position: relative; z-index: 2; width: 160px;
       animation: shake-idle 2.5s ease-in-out infinite;
       transform-origin: center bottom;
@@ -658,7 +577,7 @@
       50%     { transform: rotate(-2deg); }
       75%     { transform: rotate(2deg); }
     }
-    .lixí-wrapper:hover .lixí-envelope {
+    .lixi-wrapper:hover .lixi-envelope {
       animation: shake-hover .3s ease-in-out infinite;
       filter: drop-shadow(0 0 20px rgba(26,42,58,.35));
     }
@@ -688,13 +607,9 @@
       100% { opacity:0; transform: translateX(calc(-50% + var(--drift))) translateY(200px) rotate(var(--spin)); }
     }
 
-    /* ═══════════════════════════════════════════
-       WEDDING INFO
-    ═══════════════════════════════════════════ */
+    /* ── Wedding info ── */
     .date-block {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      display: flex; justify-content: center; align-items: center;
       gap: clamp(.8rem, 3vw, 2rem);
     }
     .date-num {
@@ -705,30 +620,20 @@
       border-right: 1px solid var(--navy-line);
       line-height: 1;
     }
-
-    /* Parents grid */
     .parents-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(1rem, 4vw, 2rem);
-      width: 100%;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: clamp(1rem, 4vw, 2rem); width: 100%;
     }
     @media (max-width: 380px) {
       .parents-grid { grid-template-columns: 1fr; }
     }
-
     .reception-row {
-      display: flex;
-      justify-content: center;
+      display: flex; justify-content: center;
       gap: clamp(1.5rem, 6vw, 4rem);
     }
-    .reception-sep {
-      width: 1px;
-      background: var(--navy-line);
-      flex-shrink: 0;
-    }
+    .reception-sep { width: 1px; background: var(--navy-line); flex-shrink: 0; }
 
-    /* RSVP card */
+    /* ── RSVP ── */
     .rsvp-card {
       padding: clamp(1.5rem, 5vw, 3rem);
       border-radius: clamp(1.2rem, 4vw, 2rem);
@@ -736,32 +641,23 @@
       border: 1px solid var(--navy-line);
       width: 100%;
     }
+    .rsvp-btns { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(.5rem, 2vw, 1rem); }
 
-    .rsvp-btns {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(.5rem, 2vw, 1rem);
-    }
-
-    /* Floral bg */
+    /* ── Floral ── */
     .floral-bg {
       position: absolute; width: clamp(200px,35vw,400px);
-      opacity: .06; pointer-events: none; z-index: 0;
-      filter: none;
+      opacity: .06; pointer-events: none; z-index: 0; filter: none;
     }
     .top-floral    { top: -50px; left: -50px; }
     .bottom-floral { bottom: -50px; right: -50px; transform: rotate(180deg); }
 
-    /* Hero image swap on mobile */
     .hero-img-desktop { display: block; }
     .hero-img-mobile  { display: none; }
-
     @media (max-width: 640px) {
       .hero-img-desktop { display: none; }
       .hero-img-mobile  { display: block; }
     }
 
-    /* Toast */
     #toast {
       position: fixed; bottom: 1.5rem; left: 50%;
       transform: translate(-50%, 8rem);
@@ -774,15 +670,21 @@
       z-index: 9999; white-space: nowrap;
     }
 
-    /* Divider lines – navy */
-    .divider-navy {
-      height: 1px;
-      background: var(--navy-line);
-      width: 100%;
-    }
-
-    /* Section border-top utility */
+    .divider-navy { height: 1px; background: var(--navy-line); width: 100%; }
     .border-navy-top { border-top: 1px solid var(--navy-line); }
+
+    /* ── Section headings — responsive wrap ── */
+    .section-heading {
+      font-family: "Great Vibes", cursive;
+      color: var(--navy);
+      line-height: 1.15;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      white-space: nowrap;
+    }
+    @media (max-width: 600px) {
+      .section-heading { white-space: normal; font-size: clamp(2rem,10vw,3rem) !important; }
+    }
   </style>
 </head>
 
@@ -791,23 +693,16 @@
   <div id="toast">✦ Đã sao chép số tài khoản</div>
   <div id="petal-container" class="fixed inset-0 pointer-events-none z-50"></div>
 
-  <!-- ════════════════════════════════
-       HERO — DARK (giữ nguyên màu tối, bỏ lớp phủ đen nặng)
-  ════════════════════════════════ -->
+  <!-- ════ HERO ════ -->
   <section class="hero-section">
-
-    <!-- Background photo – opacity cao hơn vì không còn lớp phủ đen -->
     <div class="absolute inset-0 z-0">
       <img src="./assets/img/image1.jpg"  class="hero-img-desktop w-full h-full object-cover" style="opacity:.45;object-position:center center" alt="" />
       <img src="./assets/img/image17.jpg" class="hero-img-mobile  w-full h-full object-cover" style="opacity:.50;object-position:center top" alt="" />
-      <!-- Fade nhẹ ở đáy -->
       <div class="absolute inset-0" style="background:linear-gradient(to bottom,rgba(248,245,240,.08) 0%,rgba(248,245,240,0) 35%,rgba(248,245,240,.62) 100%)"></div>
     </div>
 
-    <!-- Shimmer line -->
     <div class="hero-shimmer"></div>
 
-    <!-- Decorative corner frame -->
     <div class="hero-frame" aria-hidden="true">
       <svg viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
         <g class="corner" stroke="#1a2a3a" stroke-width=".8" fill="none" opacity=".75">
@@ -839,7 +734,6 @@
       </svg>
     </div>
 
-    <!-- Main content -->
     <div class="hero-content">
       <div class="hero-badge">
         <div class="hero-badge-line"></div>
@@ -875,16 +769,12 @@
     </div>
   </section>
 
-  <!-- ════════════════════════════════
-       PROFILE
-  ════════════════════════════════ -->
+  <!-- ════ PROFILE ════ -->
   <section id="profile" class="profile-section section-wrapper border-navy-top">
     <img src="https://png.pngtree.com/png-vector/20230303/ourmid/pngtree-bouquet-of-dried-flowers-and-leaves-png-image_6630449.png" class="floral-bg top-floral" alt="" />
     <img src="https://png.pngtree.com/png-vector/20230303/ourmid/pngtree-bouquet-of-dried-flowers-and-leaves-png-image_6630449.png" class="floral-bg bottom-floral" alt="" />
 
     <div class="section-inner" style="position:relative;z-index:1">
-
-      <!-- Groom -->
       <div class="profile-card reveal">
         <div class="photo-frame profile-photo" style="transform:rotate(-2deg)">
           <img src="./assets/img/image2.jpg" style="width:100%;height:clamp(220px,70vw,480px);object-fit:cover;object-position:top;display:block" alt="Groom" />
@@ -898,14 +788,12 @@
         </div>
       </div>
 
-      <!-- Divider -->
       <div style="display:flex;align-items:center;justify-content:center;gap:1rem;margin:clamp(2rem,5vw,3.5rem) 0">
         <div style="height:1px;flex:1;background:var(--navy-line)"></div>
         <span style="color:var(--navy);opacity:.4">✦</span>
         <div style="height:1px;flex:1;background:var(--navy-line)"></div>
       </div>
 
-      <!-- Bride -->
       <div class="profile-card reverse reveal">
         <div class="photo-frame profile-photo" style="transform:rotate(2deg)">
           <img src="./assets/img/image3.jpg" style="width:100%;height:clamp(220px,70vw,480px);object-fit:cover;object-position:top;display:block" alt="Bride" />
@@ -918,16 +806,13 @@
           </p>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- ════════════════════════════════
-       FAN ALBUM
-  ════════════════════════════════ -->
+  <!-- ════ FAN ALBUM ════ -->
   <section class="section-wrapper reveal border-navy-top" style="padding:clamp(3rem,8vw,6rem) 0">
     <div class="section-inner-wide" style="text-align:center">
-      <h2 class="font-luxury navy-text" style="font-size:clamp(2.5rem,8vw,4rem);margin-bottom:clamp(2rem,5vw,3rem)">Khoảnh Khắc Hạnh Phúc</h2>
+      <h2 class="font-luxury navy-text section-heading" style="font-size:clamp(2.5rem,7vw,4rem);margin-bottom:clamp(2rem,5vw,3rem)">Khoảnh Khắc Hạnh Phúc</h2>
       <div class="fan-container">
         <div class="fan-item" style="transform:rotate(-15deg) translateY(20px);z-index:11"><img src="./assets/img/image4.jpg" class="w-full h-full object-cover" /></div>
         <div class="fan-item" style="transform:rotate(-7deg) translateY(10px);z-index:13" ><img src="./assets/img/image5.jpg" class="w-full h-full object-cover" /></div>
@@ -938,14 +823,12 @@
     </div>
   </section>
 
-  <!-- ════════════════════════════════
-       GALLERY
-  ════════════════════════════════ -->
+  <!-- ════ GALLERY ════ -->
   <section class="gallery-section section-wrapper" style="padding:clamp(3rem,8vw,6rem) 0">
     <div class="section-inner-wide">
 
       <div class="text-center gallery-reveal" style="margin-bottom:clamp(2rem,5vw,4rem)">
-        <h2 class="font-luxury navy-text" style="font-size:clamp(2.5rem,8vw,4.5rem)">Những Phút Giây Bên Nhau</h2>
+        <h2 class="font-luxury navy-text section-heading" style="font-size:clamp(2.5rem,7vw,4.5rem)">Những Phút Giây Bên Nhau</h2>
         <div style="display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1.25rem">
           <div style="height:1px;width:60px;background:var(--navy-line)"></div>
           <span style="color:var(--navy);opacity:.4">✦</span>
@@ -975,22 +858,10 @@
     </div>
   </section>
 
-  <!-- ════════════════════════════════
-       WEDDING INFO
-  ════════════════════════════════ -->
-  <section class="rp-section section-wrapper reveal border-navy-top" style="padding:clamp(3rem,8vw,5rem) 0">
-
-    <!-- Rồng – dùng CSS mask để đổi màu thành xanh than -->
-    <div class="rong-img" style="top:27%;left:-20px;width:clamp(140px,18vw,320px);height:clamp(180px,24vw,420px)">
-      <img src="./assets/img/rong.webp" alt="" style="width:100%;height:100%;object-fit:contain;opacity:0;display:block" />
-    </div>
-    <!-- Phượng – dùng CSS mask -->
-    <div class="phuong-img" style="top:27%;right:-20px;width:clamp(120px,16vw,280px);height:clamp(160px,22vw,380px)">
-      <img src="./assets/img/phuong.webp" alt="" style="width:100%;height:100%;object-fit:contain;opacity:0;display:block" />
-    </div>
+  <!-- ════ WEDDING INFO ════ -->
+  <section class="section-wrapper reveal border-navy-top" style="padding:clamp(3rem,8vw,5rem) 0">
 
     <div class="section-inner-narrow" style="text-align:center">
-
       <p class="section-title" style="margin-bottom:2.5rem">THÔNG TIN LỄ CƯỚI</p>
 
       <div class="chinese-seal" id="seal-container">
@@ -998,7 +869,6 @@
         <div class="seal-icon"></div>
       </div>
 
-      <!-- Parents -->
       <div class="parents-grid" style="margin-bottom:clamp(2rem,5vw,3.5rem);padding-bottom:clamp(2rem,5vw,3rem);border-bottom:1px solid var(--navy-line)">
         <div style="text-align:center">
           <p class="label-sm" style="margin-bottom:.75rem">Nhà Trai</p>
@@ -1015,15 +885,23 @@
       <p class="section-title">TRÂN TRỌNG BÁO TIN</p>
       <p class="section-title" style="margin-top:.4rem;margin-bottom:clamp(1.5rem,4vw,2.5rem)">LỄ THÀNH HÔN CỦA CON CHÚNG TÔI</p>
 
-      <div style="margin-bottom:clamp(2rem,5vw,3.5rem)">
-        <h2 class="font-luxury navy-text" style="font-size:clamp(2.4rem,9vw,4rem)">Jung Kook</h2>
-        <p class="label-sm" style="margin-top:.3rem">Trưởng Nam</p>
-        <div class="font-luxury navy-light" style="font-size:clamp(1.8rem,5vw,2.5rem);opacity:.45;padding:.5rem 0">&</div>
-        <h2 class="font-luxury navy-text" style="font-size:clamp(2.4rem,9vw,4rem)">Phan Thưởng</h2>
-        <p class="label-sm" style="margin-top:.3rem">Út Nữ</p>
+      <!-- ── Tên cô dâu chú rể + rồng phượng neo vào đây ── -->
+      <div style="position:relative;margin-bottom:clamp(2rem,5vw,3.5rem);padding:clamp(1rem,3vw,2rem) 0;overflow:visible">
+        <!-- Rồng bên trái -->
+        <div class="rong-img" style="top:50%;left:clamp(-160px,-22vw,-60px);width:clamp(180px,24vw,360px);height:clamp(220px,30vw,460px)">
+          <img src="./assets/img/rong.webp" alt="" style="width:100%;height:100%;object-fit:contain;opacity:0;display:block" />
+        </div>
+        <!-- Phượng bên phải -->
+        <div class="phuong-img" style="top:50%;right:clamp(-160px,-22vw,-60px);width:clamp(160px,22vw,340px);height:clamp(200px,28vw,440px)">
+          <img src="./assets/img/phuong.webp" alt="" style="width:100%;height:100%;object-fit:contain;opacity:0;display:block" />
+        </div>
+        <h2 class="font-luxury navy-text" style="font-size:clamp(2.4rem,9vw,4rem);position:relative;z-index:1">Jung Kook</h2>
+        <p class="label-sm" style="margin-top:.3rem;position:relative;z-index:1">Trưởng Nam</p>
+        <div class="font-luxury navy-light" style="font-size:clamp(1.8rem,5vw,2.5rem);opacity:.45;padding:.5rem 0;position:relative;z-index:1">&</div>
+        <h2 class="font-luxury navy-text" style="font-size:clamp(2.4rem,9vw,4rem);position:relative;z-index:1">Phan Thưởng</h2>
+        <p class="label-sm" style="margin-top:.3rem;position:relative;z-index:1">Út Nữ</p>
       </div>
 
-      <!-- Lễ thành hôn -->
       <div style="padding:clamp(1.5rem,5vw,2.5rem) 0;margin-bottom:1.5rem;border-top:1px solid var(--navy-line);border-bottom:1px solid var(--navy-line)">
         <p class="section-title" style="margin-bottom:1rem">Lễ Thành Hôn được cử hành tại tư gia</p>
         <p class="label-sm">Vào lúc</p>
@@ -1037,7 +915,6 @@
         <p class="meta-text" style="font-style:italic">(Tức ngày 19/11 Bính Ngọ)</p>
       </div>
 
-      <!-- Tiệc cưới -->
       <div style="padding:clamp(1.5rem,5vw,2.5rem) 0;margin-bottom:1.5rem;border-bottom:1px solid var(--navy-line)">
         <p class="section-title" style="margin-bottom:1.5rem">THÔNG TIN TIỆC CƯỚI</p>
         <p class="label-sm">Tiệc cưới sẽ diễn ra vào lúc</p>
@@ -1063,7 +940,6 @@
         </div>
       </div>
 
-      <!-- Địa điểm -->
       <div style="margin-top:clamp(1.5rem,4vw,2.5rem)">
         <p class="section-title" style="margin-bottom:1rem">Địa điểm</p>
         <p style="font-size:.875rem;font-weight:600;color:var(--navy)">Tư gia họ nhà trai</p>
@@ -1075,25 +951,20 @@
             width="100%" height="100%" style="border:0" allowfullscreen="" loading="lazy"></iframe>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- ════════════════════════════════
-       LÌ XÌ
-  ════════════════════════════════ -->
+  <!-- ════ LÌ XÌ ════ -->
   <section class="section-wrapper reveal border-navy-top" style="padding:clamp(3rem,8vw,6rem) 0">
     <div class="section-inner-narrow" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:2rem">
 
-      <p class="font-luxury navy-text" style="font-size:clamp(2rem,7vw,3rem)">
-        Mừng Hạnh Phúc
-      </p>
+      <p class="font-luxury navy-text" style="font-size:clamp(2rem,7vw,3rem)">Mừng Hạnh Phúc</p>
 
-      <div class="lixí-wrapper" style="display:flex;flex-direction:column;align-items:center;gap:1.5rem"
+      <div class="lixi-wrapper" style="display:flex;flex-direction:column;align-items:center;gap:1.5rem"
         onclick="copyToClipboard('1234567890','Chú rể & Cô dâu')">
-        <div class="lixí-scene" id="lixí-main">
+        <div class="lixi-scene" id="lixi-main">
           <div class="money-container" id="money-main"></div>
-          <div class="lixí-envelope">
+          <div class="lixi-envelope">
             <svg viewBox="0 0 180 260" xmlns="http://www.w3.org/2000/svg" class="envelope-svg">
               <rect x="5" y="5" width="170" height="250" rx="14" fill="url(#redGradMain)" />
               <rect x="5" y="5" width="170" height="250" rx="14" fill="none" stroke="#d4af37" stroke-width="3" />
@@ -1122,9 +993,7 @@
     </div>
   </section>
 
-  <!-- ════════════════════════════════
-       RSVP
-  ════════════════════════════════ -->
+  <!-- ════ RSVP ════ -->
   <section class="section-wrapper reveal border-navy-top" style="padding:clamp(3rem,8vw,6rem) 0">
     <div class="section-inner-narrow" style="display:flex;flex-direction:column;align-items:center;text-align:center">
 
@@ -1155,34 +1024,30 @@
     </div>
   </section>
 
-  <!-- ════════════════════════════════
-       FOOTER
-  ════════════════════════════════ -->
+  <!-- ════ FOOTER ════ -->
   <footer class="section-wrapper border-navy-top" style="padding:clamp(3rem,8vw,5rem) 0;text-align:center">
     <p class="font-luxury navy-text" style="font-size:clamp(2.2rem,7vw,4rem);margin-bottom:.75rem">Thank You</p>
     <p class="label-sm" style="letter-spacing:.4em">Jung Kook &amp; Phan Thưởng · Wedding 2026</p>
   </footer>
 
-  <!-- ════════════════════════════════
-       SCRIPTS
-  ════════════════════════════════ -->
+  <!-- ════ SCRIPTS ════ -->
   <script>
-    /* Petals */
+    /* ── Petals ── */
     function createPetal() {
       const c = document.getElementById("petal-container");
       if (!c) return;
       const p = document.createElement("div");
       p.className = "petal";
-      p.style.left = Math.random()*100 + "vw";
-      p.style.animationDuration = (Math.random()*4+6) + "s";
-      p.style.width  = (Math.random()*15+10) + "px";
-      p.style.height = (Math.random()*15+10) + "px";
+      p.style.left = Math.random() * 100 + "vw";
+      p.style.animationDuration = (Math.random() * 4 + 6) + "s";
+      p.style.width  = (Math.random() * 15 + 10) + "px";
+      p.style.height = (Math.random() * 15 + 10) + "px";
       c.appendChild(p);
       setTimeout(() => p.remove(), 10000);
     }
     setInterval(createPetal, 500);
 
-    /* Scroll reveal */
+    /* ── Scroll reveal ── */
     function reveal() {
       document.querySelectorAll(".reveal").forEach(el => {
         if (el.getBoundingClientRect().top < window.innerHeight - 100)
@@ -1192,37 +1057,38 @@
     window.addEventListener("scroll", reveal);
     reveal();
 
-    /* Fan touch */
+    /* ── Fan touch ── */
     document.querySelectorAll(".fan-item").forEach(item => {
       item.addEventListener("touchstart", () => {
         document.querySelectorAll(".fan-item").forEach(el => el.classList.remove("tapped"));
         item.classList.add("tapped");
-      }, {passive:true});
+      }, { passive: true });
     });
     document.addEventListener("touchstart", e => {
       if (!e.target.closest(".fan-item"))
         document.querySelectorAll(".fan-item").forEach(el => el.classList.remove("tapped"));
-    }, {passive:true});
+    }, { passive: true });
 
-    /* Gallery touch */
+    /* ── Gallery touch ── */
     document.querySelectorAll(".gallery-item").forEach(item => {
       item.addEventListener("touchstart", () => {
         document.querySelectorAll(".gallery-item.touched").forEach(el => el.classList.remove("touched"));
         item.classList.add("touched");
         setTimeout(() => item.classList.remove("touched"), 700);
-      }, {passive:true});
+      }, { passive: true });
     });
 
-    /* Gallery reveal */
+    /* ── Gallery reveal ── */
     const gObs = new IntersectionObserver(
       entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("in-view"); }),
-      { threshold:.12, rootMargin:"0px 0px -60px 0px" }
+      { threshold: .12, rootMargin: "0px 0px -60px 0px" }
     );
     document.querySelectorAll(".gallery-reveal").forEach(el => gObs.observe(el));
 
-    /* Gallery star glow & sparkles */
-    const glowClasses = ["glow-1","glow-2","glow-3"];
-    const sparkSymbols = ["✦","✧","⋆","·","✦","✧"];
+    /* ── Gallery star glow & sparkles — optimised ── */
+    const glowClasses  = ["glow-1", "glow-2", "glow-3"];
+    const sparkSymbols = ["✦", "✧", "⋆", "·", "✦", "✧"];
+    const MAX_SPARKS   = 14; // tối đa mỗi item
 
     document.querySelectorAll(".gallery-item").forEach((item, i) => {
       item.classList.add(glowClasses[i % 3]);
@@ -1230,39 +1096,48 @@
     });
 
     function spawnSpark(item) {
+      if (item.querySelectorAll(".star-spark").length >= MAX_SPARKS) return;
+
       const spark = document.createElement("span");
       spark.className = "star-spark";
       spark.textContent = sparkSymbols[Math.floor(Math.random() * sparkSymbols.length)];
-      const side = Math.floor(Math.random() * 4);
-      const pct  = Math.random() * 90 + 5;
-      if (side === 0) { spark.style.top = "0%";    spark.style.left  = pct+"%"; }
-      if (side === 1) { spark.style.top = pct+"%"; spark.style.right = "0%"; }
-      if (side === 2) { spark.style.bottom = "0%"; spark.style.left  = pct+"%"; }
-      if (side === 3) { spark.style.top = pct+"%"; spark.style.left  = "0%"; }
-      const sx = (Math.random() - .5) * 60;
-      const sy = (Math.random() - .5) * 60 - 20;
-      const sr = (Math.random() - .5) * 270;
-      const dur = 1.0 + Math.random() * 1.4;
-      spark.style.setProperty("--sx", sx+"px");
-      spark.style.setProperty("--sy", sy+"px");
-      spark.style.setProperty("--sr", sr+"deg");
+
+      // Dùng % để đặt vị trí, transform để di chuyển → GPU composite
+      const startX = 5 + Math.random() * 90;
+      const startY = 5 + Math.random() * 90;
+      spark.style.left = startX + "%";
+      spark.style.top  = startY + "%";
+
+      const angle  = Math.random() * Math.PI * 2;
+      const radius = 35 + Math.random() * 45;
+      const sx  = Math.cos(angle) * radius;
+      const sy  = Math.sin(angle) * radius - 15;
+      const sr  = (Math.random() - .5) * 270;
+      const dur = 1.2 + Math.random() * 1.2;
+
+      spark.style.setProperty("--sx",  sx  + "px");
+      spark.style.setProperty("--sy",  sy  + "px");
+      spark.style.setProperty("--sr",  sr  + "deg");
       spark.style.animationDuration = dur + "s";
-      spark.style.fontSize = (10 + Math.random() * 14) + "px";
+      spark.style.fontSize = (11 + Math.random() * 12) + "px";
       item.appendChild(spark);
-      setTimeout(() => spark.remove(), dur * 1000 + 100);
+      setTimeout(() => spark.remove(), dur * 1000 + 80);
     }
 
     const sparkObs = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (e.isIntersecting) {
-          for (let i = 0; i < 12; i++) setTimeout(() => spawnSpark(e.target), i * 200);
+          // Burst mạnh khi scroll vào
+          for (let i = 0; i < 10; i++)
+            setTimeout(() => spawnSpark(e.target), i * 100);
+
+          // Interval 140ms, mỗi tick spawn 3 sao
           const interval = setInterval(() => {
-            if (document.contains(e.target)) {
-              spawnSpark(e.target);
-              spawnSpark(e.target);
-              spawnSpark(e.target);
-            } else clearInterval(interval);
-          }, 120);
+            if (!document.contains(e.target)) { clearInterval(interval); return; }
+            spawnSpark(e.target);
+            spawnSpark(e.target);
+            spawnSpark(e.target);
+          }, 140);
           e.target._sparkInterval = interval;
         } else {
           clearInterval(e.target._sparkInterval);
@@ -1271,34 +1146,37 @@
     }, { threshold: .1 });
     document.querySelectorAll(".gallery-item").forEach(el => sparkObs.observe(el));
 
-    /* Money */
+    /* ── Money ── */
     const bills = [
-      {bg:"#2ecc71",text:"500K"},{bg:"#27ae60",text:"200K"},
-      {bg:"#f1c40f",text:"100K"},{bg:"#2980b9",text:"50K"},{bg:"#16a085",text:"500K"}
+      { bg: "#2ecc71", text: "500K" }, { bg: "#27ae60", text: "200K" },
+      { bg: "#f1c40f", text: "100K" }, { bg: "#2980b9", text: "50K"  },
+      { bg: "#16a085", text: "500K" }
     ];
     function spawnMoney(cid) {
       const c = document.getElementById(cid); if (!c) return;
       const bill = document.createElement("div");
       bill.className = "money-bill";
-      const b = bills[Math.floor(Math.random()*bills.length)];
+      const b = bills[Math.floor(Math.random() * bills.length)];
       bill.style.background = b.bg; bill.textContent = b.text;
-      const drift = (Math.random()-.5)*140, spin = (Math.random()-.5)*360,
-            delay = Math.random()*1.2, dur = 1.6+Math.random()*1.2;
-      bill.style.setProperty("--drift", drift+"px");
-      bill.style.setProperty("--spin",  spin+"deg");
-      bill.style.animationDuration = dur+"s";
-      bill.style.animationDelay    = delay+"s";
+      const drift = (Math.random() - .5) * 140,
+            spin  = (Math.random() - .5) * 360,
+            delay = Math.random() * 1.2,
+            dur   = 1.6 + Math.random() * 1.2;
+      bill.style.setProperty("--drift", drift + "px");
+      bill.style.setProperty("--spin",  spin  + "deg");
+      bill.style.animationDuration = dur   + "s";
+      bill.style.animationDelay    = delay + "s";
       c.appendChild(bill);
-      setTimeout(() => bill.remove(), (dur+delay)*1000+200);
+      setTimeout(() => bill.remove(), (dur + delay) * 1000 + 200);
     }
     setInterval(() => spawnMoney("money-main"), 900);
-    document.querySelectorAll(".lixí-wrapper").forEach(el => {
+    document.querySelectorAll(".lixi-wrapper").forEach(el => {
       let fi = null;
       el.addEventListener("mouseenter", () => { fi = setInterval(() => spawnMoney("money-main"), 100); });
       el.addEventListener("mouseleave", () => { clearInterval(fi); fi = null; });
     });
 
-    /* Clipboard */
+    /* ── Clipboard ── */
     function copyToClipboard(text) {
       navigator.clipboard.writeText(text).catch(() => {
         const ta = document.createElement("textarea");
@@ -1311,15 +1189,15 @@
       setTimeout(() => { toast.style.transform = "translate(-50%, 8rem)"; }, 2200);
     }
 
-    /* Seal bubbles */
+    /* ── Seal bubbles ── */
     function createBubble() {
       const c = document.getElementById("seal-container"); if (!c) return;
       const b = document.createElement("div"); b.className = "seal-bubble";
-      const s = Math.random()*9+5;
-      b.style.width  = s+"px"; b.style.height = s+"px";
-      b.style.left   = Math.random()*60+20 + "%";
+      const s = Math.random() * 9 + 5;
+      b.style.width  = s + "px"; b.style.height = s + "px";
+      b.style.left   = Math.random() * 60 + 20 + "%";
       b.style.bottom = "28%";
-      b.style.animationDuration = (Math.random()*1.8+3)+"s";
+      b.style.animationDuration = (Math.random() * 1.8 + 3) + "s";
       c.appendChild(b);
       setTimeout(() => b.remove(), 6500);
     }
