@@ -79,7 +79,7 @@
       letter-spacing: .28em;
       text-transform: uppercase;
       color: var(--navy);
-      opacity: .75;
+      opacity: .9;
       font-weight: 600;
     }
 
@@ -88,23 +88,155 @@
       letter-spacing: .32em;
       text-transform: uppercase;
       color: var(--navy);
-      opacity: .85;
+      opacity: .9;
       font-weight: 700;
     }
 
     .meta-text {
       color: var(--navy);
-      opacity: .65;
+      opacity: .9;
       font-size: .78rem;
       line-height: 1.75;
     }
 
-    
+    /* ── BG-MAIN DECORATION ── */
+    .bg-main-deco {
+      position: absolute;
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+      background-color: var(--navy);
+      -webkit-mask-image: url("./assets/img/bg-main.webp");
+      mask-image: url("./assets/img/bg-main.webp");
+      -webkit-mask-size: contain;
+      mask-size: contain;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-position: center;
+      mask-position: center;
+    }
+
+    /* top-left variant */
+    .bg-main-deco.tl {
+      top: -30px;
+      left: -40px;
+      width: clamp(180px, 28vw, 380px);
+      height: clamp(180px, 28vw, 380px);
+      opacity: 1;
+    }
+
+    /* top-right variant (flipped) */
+    .bg-main-deco.tr {
+      top: -30px;
+      right: -40px;
+      width: clamp(180px, 28vw, 380px);
+      height: clamp(180px, 28vw, 380px);
+      opacity: 1;
+      transform: scaleX(-1);
+    }
+
+    /* bottom-left */
+    .bg-main-deco.bl {
+      bottom: -30px;
+      left: -40px;
+      width: clamp(160px, 24vw, 340px);
+      height: clamp(160px, 24vw, 340px);
+      opacity: 1;
+      transform: scaleY(-1);
+    }
+
+    /* bottom-right */
+    .bg-main-deco.br {
+      bottom: -30px;
+      right: -40px;
+      width: clamp(160px, 24vw, 340px);
+      height: clamp(160px, 24vw, 340px);
+      opacity: 1;
+      transform: scale(-1, -1);
+    }
+
+    /* center-left (mid section accent) */
+    .bg-main-deco.cl {
+      top: 50%;
+      left: -50px;
+      transform: translateY(-50%);
+      width: clamp(140px, 20vw, 280px);
+      height: clamp(140px, 20vw, 280px);
+      opacity: 1;
+    }
+
+    /* center-right */
+    .bg-main-deco.cr {
+      top: 50%;
+      right: -50px;
+      transform: translateY(-50%) scaleX(-1);
+      width: clamp(140px, 20vw, 280px);
+      height: clamp(140px, 20vw, 280px);
+      opacity: 1;
+    }
+
+    /* small accent for narrow sections */
+    .bg-main-deco.sm-tl {
+      top: -20px;
+      left: -25px;
+      width: clamp(120px, 18vw, 240px);
+      height: clamp(120px, 18vw, 240px);
+      opacity: 1;
+    }
+
+    .bg-main-deco.sm-tr {
+      top: -20px;
+      right: -25px;
+      width: clamp(120px, 18vw, 240px);
+      height: clamp(120px, 18vw, 240px);
+      opacity: 1;
+      transform: scaleX(-1);
+    }
+
+    .bg-main-deco.sm-bl {
+      bottom: -20px;
+      left: -25px;
+      width: clamp(120px, 18vw, 240px);
+      height: clamp(120px, 18vw, 240px);
+      opacity: 1;
+      transform: scaleY(-1);
+    }
+
+    .bg-main-deco.sm-br {
+      bottom: -20px;
+      right: -25px;
+      width: clamp(120px, 18vw, 240px);
+      height: clamp(120px, 18vw, 240px);
+      opacity: 1;
+      transform: scale(-1, -1);
+    }
+
+    @media (max-width: 768px) {
+      .bg-main-deco.tl,
+      .bg-main-deco.tr { opacity:1; }
+      .bg-main-deco.bl,
+      .bg-main-deco.br { opacity:1; }
+      .bg-main-deco.cl,
+      .bg-main-deco.cr { opacity:1; }
+    }
+
+    @media (max-width: 480px) {
+      .bg-main-deco { opacity:1 !important; }
+    }
+
+    /* section relative wrapper must have overflow:hidden or visible depending on usage */
+    .deco-relative {
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ── end BG-MAIN ── */
+
     .petal {
       position: absolute;
       background-color: var(--navy);
       border-radius: 150% 0 150% 0;
-      opacity: .15;
+      opacity: .9;
       pointer-events: none;
       animation: fall linear infinite;
       z-index: 100;
@@ -113,7 +245,7 @@
     @keyframes fall {
       0% {
         transform: translate(0, -10%) rotate(0deg);
-        opacity: .3;
+        opacity: .9;
       }
 
       100% {
@@ -141,7 +273,6 @@
       z-index: 1;
     }
 
-    
     .hero-section {
       position: relative;
       width: 100%;
@@ -189,7 +320,7 @@
 
       0%,
       100% {
-        opacity: .45;
+        opacity: .9;
       }
 
       50% {
@@ -270,7 +401,7 @@
       width: clamp(30px, 6vw, 60px);
       height: 1px;
       background: linear-gradient(90deg, transparent, var(--navy));
-      opacity: .4;
+      opacity: .9;
     }
 
     .hero-badge-line.right {
@@ -367,7 +498,7 @@
       height: 9px;
       background: var(--navy);
       transform: rotate(45deg);
-      opacity: .8;
+      opacity: .9;
     }
 
     .hero-date-row {
@@ -445,7 +576,6 @@
       opacity: 1;
     }
 
-    
     .section-wrapper {
       width: 100%;
       display: flex;
@@ -475,7 +605,6 @@
       padding: 0 clamp(1rem, 5vw, 1.5rem);
     }
 
-    
     .profile-section {
       padding: clamp(3rem, 8vw, 6rem) 0;
       position: relative;
@@ -540,7 +669,6 @@
       text-shadow: none;
     }
 
-    
     .fan-container {
       display: flex;
       justify-content: center;
@@ -579,7 +707,6 @@
       z-index: 100 !important;
     }
 
-    
     .gallery-section {
       border-top: 1px solid var(--navy-line);
     }
@@ -770,11 +897,11 @@
       }
 
       15% {
-        opacity: .55;
+        opacity: .9;
       }
 
       85% {
-        opacity: .25;
+        opacity: .9;
       }
 
       100% {
@@ -821,7 +948,6 @@
       transform: translateY(0);
     }
 
-    
     .rong-img,
     .phuong-img {
       position: absolute;
@@ -839,7 +965,7 @@
       -webkit-mask-position: center;
       mask-position: center;
       color: transparent;
-      opacity: .22;
+      opacity: .9;
     }
 
     .rong-img {
@@ -854,20 +980,20 @@
       mask-image: url("./assets/img/phuong.webp");
       right: -30px;
       width: clamp(180px, 24vw, 380px);
-      opacity: .18;
+      opacity: .9;
     }
 
     @media (max-width: 768px) {
       .rong-img {
         left: -20px;
         width: 34vw;
-        opacity: .14;
+        opacity: .9;
       }
 
       .phuong-img {
         right: -20px;
         width: 32vw;
-        opacity: .12;
+        opacity: .9;
       }
     }
 
@@ -875,13 +1001,13 @@
       .rong-img {
         left: -12px;
         width: 38vw;
-        opacity: .10;
+        opacity: .9;
       }
 
       .phuong-img {
         right: -12px;
         width: 36vw;
-        opacity: .09;
+        opacity: .9;
       }
     }
 
@@ -901,7 +1027,6 @@
       z-index: 1;
     }
 
-    
     .chinese-seal {
       position: relative;
       width: 70px;
@@ -961,14 +1086,14 @@
       pointer-events: none;
       z-index: 3;
       box-shadow: 0 0 8px rgba(26, 42, 58, .5);
-      opacity: .5;
+      opacity: .9;
       animation: bubble-rise 3.8s linear infinite;
     }
 
     @keyframes bubble-rise {
       0% {
         transform: translateY(15px) scale(.6);
-        opacity: .7;
+        opacity: .9;
       }
 
       100% {
@@ -976,8 +1101,10 @@
         opacity: 0;
       }
     }
+    .info-detail-wedding {
+      position: relative;
+    }
 
-    
     .lixi-wrapper {
       cursor: pointer;
     }
@@ -1092,7 +1219,6 @@
       }
     }
 
-    
     .date-block {
       display: flex;
       justify-content: center;
@@ -1135,7 +1261,6 @@
       flex-shrink: 0;
     }
 
-    
     .rsvp-card {
       padding: clamp(1.5rem, 5vw, 3rem);
       border-radius: clamp(1.2rem, 4vw, 2rem);
@@ -1150,11 +1275,10 @@
       gap: clamp(.5rem, 2vw, 1rem);
     }
 
-    
     .floral-bg {
       position: absolute;
       width: clamp(200px, 35vw, 400px);
-      opacity: .06;
+      opacity: .9;
       pointer-events: none;
       z-index: 0;
       filter: none;
@@ -1216,7 +1340,6 @@
       border-top: 1px solid var(--navy-line);
     }
 
-    
     .section-heading {
       font-family: "Great Vibes", cursive;
       color: var(--navy);
@@ -1226,7 +1349,6 @@
       white-space: normal;
     }
 
-    
     .ls-heading {
       font-family: "Great Vibes", cursive;
       color: var(--navy);
@@ -1243,7 +1365,7 @@
       letter-spacing: .28em;
       text-transform: uppercase;
       color: var(--navy);
-      opacity: .55;
+      opacity: .9;
       text-align: center;
       margin-bottom: clamp(2.5rem, 6vw, 5rem);
     }
@@ -1333,7 +1455,7 @@
       height: 10px;
       background: var(--navy);
       border-radius: 50%;
-      opacity: .6;
+      opacity: .9;
       transition: transform .4s, opacity .4s;
     }
 
@@ -1429,13 +1551,13 @@
       color: var(--navy);
       line-height: 1;
       letter-spacing: -.01em;
-      opacity: .18;
+      opacity: .9;
       margin-bottom: .25rem;
       transition: opacity .8s .2s;
     }
 
     .ls-card.ls-visible .ls-year {
-      opacity: .22;
+      opacity: .9;
     }
 
     .ls-chapter {
@@ -1445,7 +1567,7 @@
       letter-spacing: .38em;
       text-transform: uppercase;
       color: var(--navy);
-      opacity: .5;
+      opacity: .9;
       margin-bottom: .6rem;
     }
 
@@ -1463,7 +1585,7 @@
       font-size: clamp(.88rem, 2vw, 1.05rem);
       line-height: 1.85;
       color: var(--navy);
-      opacity: .72;
+      opacity: .9;
       max-width: 380px;
     }
 
@@ -1503,7 +1625,7 @@
       font-style: italic;
       font-size: clamp(1.1rem, 3vw, 1.5rem);
       color: var(--navy);
-      opacity: .65;
+      opacity: .9;
       max-width: 540px;
       margin: 0 auto 1.5rem;
       line-height: 1.8;
@@ -1518,7 +1640,7 @@
       line-height: 0;
       position: absolute;
       color: var(--navy);
-      opacity: .15;
+      opacity: .9;
     }
 
     .ls-closing-quote::before {
@@ -1537,7 +1659,7 @@
       font-family: "Great Vibes", cursive;
       font-size: clamp(1.4rem, 4vw, 2rem);
       color: var(--navy);
-      opacity: .55;
+      opacity: .9;
     }
 
     .smoke-wrap {
@@ -1585,7 +1707,6 @@
       transform-origin: center bottom;
     }
 
-    
     .lantern-scene {
       display: flex;
       flex-direction: column;
@@ -1655,7 +1776,6 @@
       50%{opacity:1;transform:scaleX(1.18);}
     }
 
-    
     @keyframes fanFloat1 {
       0%,100% { transform: rotate(-15deg) translateY(20px); }
       50%      { transform: rotate(-15deg) translateY(12px) scale(1.015); }
@@ -1677,7 +1797,6 @@
       50%      { transform: rotate(15deg) translateY(12px) scale(1.015); }
     }
 
-    
     .fan-item .fan-shimmer {
       position: absolute;
       inset: 0;
@@ -1704,14 +1823,19 @@
 
 <body>
 
-  
   <audio id="bg-music" src="./assets/music/chamhoa.mp3" loop preload="auto"></audio>
 
   <div id="toast">✦ Đã sao chép số tài khoản</div>
   <div id="petal-container" class="fixed inset-0 pointer-events-none z-50"></div>
 
-  
+  <!-- ═══════════════ HERO ═══════════════ -->
   <section class="hero-section">
+    <!-- bg-main deco corners on hero (z-index above bg image, below content) -->
+    <div class="bg-main-deco tl" style="z-index:3;opacity:1"></div>
+    <div class="bg-main-deco tr" style="z-index:3;opacity:1"></div>
+    <div class="bg-main-deco bl" style="z-index:3;opacity:1"></div>
+    <div class="bg-main-deco br" style="z-index:3;opacity:1"></div>
+
     <div class="absolute inset-0 z-0">
       <img src="./assets/img/image1.jpg" class="hero-img-desktop w-full h-full object-cover"
         style="opacity:.45;object-position:center center" alt="" />
@@ -1798,8 +1922,12 @@
     </div>
   </section>
 
-  
-  <section id="profile" class="profile-section section-wrapper border-navy-top">
+  <!-- ═══════════════ PROFILE ═══════════════ -->
+  <section id="profile" class="profile-section section-wrapper border-navy-top" style="position:relative;overflow:visible">
+    <!-- bg-main deco -->
+    <div class="bg-main-deco tl"></div>
+    <div class="bg-main-deco br"></div>
+
     <img
       src="https://png.pngtree.com/png-vector/20230303/ourmid/pngtree-bouquet-of-dried-flowers-and-leaves-png-image_6630449.png"
       class="floral-bg top-floral" alt="" />
@@ -1809,7 +1937,6 @@
 
     <div class="section-inner" style="position:relative;z-index:1">
       <div class="profile-card reveal">
-        
         <div class="profile-photo smoke-wrap profile-photo-sway-1">
           <canvas class="smoke-canvas" id="smoke-groom"></canvas>
           <div class="photo-frame">
@@ -1834,7 +1961,6 @@
       </div>
 
       <div class="profile-card reverse reveal">
-        
         <div class="profile-photo smoke-wrap profile-photo-sway-2">
           <canvas class="smoke-canvas" id="smoke-bride"></canvas>
           <div class="photo-frame">
@@ -1854,9 +1980,15 @@
     </div>
   </section>
 
-  
-  <section class="section-wrapper reveal border-navy-top" style="padding:clamp(3rem,8vw,6rem) 0">
-    <div class="section-inner-wide" style="text-align:center">
+  <!-- ═══════════════ FAN / HAPPY MOMENTS ═══════════════ -->
+  <section class="section-wrapper reveal border-navy-top" style="padding:clamp(3rem,8vw,6rem) 0;position:relative;overflow:visible">
+    <!-- bg-main deco -->
+    <div class="bg-main-deco tl" style="opacity:1"></div>
+    <div class="bg-main-deco tr" style="opacity:1"></div>
+    <div class="bg-main-deco bl" style="opacity:1"></div>
+    <div class="bg-main-deco br" style="opacity:1"></div>
+
+    <div class="section-inner-wide" style="text-align:center;position:relative;z-index:1">
       <h2 class="font-luxury navy-text section-heading"
         style="font-size:clamp(2.5rem,7vw,4rem);margin-bottom:clamp(2rem,5vw,3rem)">Khoảnh Khắc Hạnh Phúc</h2>
       <div class="fan-container">
@@ -1884,9 +2016,15 @@
     </div>
   </section>
 
-  
-  <section class="section-wrapper border-navy-top" style="padding:clamp(3rem,8vw,7rem) 0;overflow:hidden">
-    <div class="section-inner-wide" style="position:relative">
+  <!-- ═══════════════ LOVE STORY ═══════════════ -->
+  <section class="section-wrapper border-navy-top" style="padding:clamp(3rem,8vw,7rem) 0;overflow:hidden;position:relative">
+    <!-- bg-main deco -->
+    <div class="bg-main-deco tl" style="opacity:1;width:clamp(200px,30vw,420px);height:clamp(200px,30vw,420px)"></div>
+    <div class="bg-main-deco tr" style="opacity:1;width:clamp(200px,30vw,420px);height:clamp(200px,30vw,420px)"></div>
+    <div class="bg-main-deco bl" style="opacity:1"></div>
+    <div class="bg-main-deco br" style="opacity:1"></div>
+
+    <div class="section-inner-wide" style="position:relative;z-index:1">
 
       <div style="text-align:center;margin-bottom:clamp(2.5rem,6vw,5rem)">
         <h2 class="ls-heading">Chuyện Tình Chúng Mình</h2>
@@ -1897,7 +2035,6 @@
           <div style="height:1px;width:clamp(40px,8vw,80px);background:var(--navy-line)"></div>
         </div>
 
-        
         <div class="lantern-scene">
           <div class="lantern-glow-ring"></div>
           <div class="lantern-wrap">
@@ -1945,8 +2082,6 @@
             </div>
           </div>
         </div>
-        
-
       </div>
 
       <div class="ls-timeline">
@@ -2016,9 +2151,15 @@
     </div>
   </section>
 
-  
-  <section class="gallery-section section-wrapper" style="padding:clamp(3rem,8vw,6rem) 0">
-    <div class="section-inner-wide">
+  <!-- ═══════════════ GALLERY ═══════════════ -->
+  <section class="gallery-section section-wrapper" style="padding:clamp(3rem,8vw,6rem) 0;position:relative;overflow:visible">
+    <!-- bg-main deco -->
+    <div class="bg-main-deco tl" style="opacity:1"></div>
+    <div class="bg-main-deco tr" style="opacity:1"></div>
+    <div class="bg-main-deco bl" style="opacity:1"></div>
+    <div class="bg-main-deco br" style="opacity:1"></div>
+
+    <div class="section-inner-wide" style="position:relative;z-index:1">
 
       <div class="text-center gallery-reveal" style="margin-bottom:clamp(2rem,5vw,4rem)">
         <h2 class="font-luxury navy-text section-heading" style="font-size:clamp(2.5rem,7vw,4.5rem)">Những Phút Giây Bên Nhau</h2>
@@ -2053,10 +2194,15 @@
     </div>
   </section>
 
-  
-  <section class="section-wrapper reveal border-navy-top" style="padding:clamp(3rem,8vw,5rem) 0">
+  <!-- ═══════════════ WEDDING INFO ═══════════════ -->
+  <section class="section-wrapper reveal border-navy-top" style="padding:clamp(3rem,8vw,5rem) 0;position:relative;overflow:visible">
+    <!-- bg-main deco -->
+    <div class="bg-main-deco tl" style="opacity:1"></div>
+    <div class="bg-main-deco tr" style="opacity:1"></div>
+    <div class="bg-main-deco bl" style="opacity:1"></div>
+    <div class="bg-main-deco br" style="opacity:1"></div>
 
-    <div class="section-inner-narrow" style="text-align:center">
+    <div class="section-inner-narrow" style="text-align:center;position:relative;z-index:1">
       <p class="section-title" style="margin-bottom:2.5rem">THÔNG TIN LỄ CƯỚI</p>
 
       <div class="chinese-seal" id="seal-container">
@@ -2095,7 +2241,12 @@
         <p class="label-sm" style="margin-top:.3rem;position:relative;z-index:1">Út Nữ</p>
       </div>
 
-      <div style="padding:clamp(1.5rem,5vw,2.5rem) 0;margin-bottom:1.5rem;border-top:1px solid var(--navy-line);border-bottom:1px solid var(--navy-line)">
+      <div style="padding:clamp(1.5rem,5vw,2.5rem) 0;margin-bottom:1.5rem;border-top:1px solid var(--navy-line);border-bottom:1px solid var(--navy-line); position: relative;">
+        <div class="bg-main-deco tl" style="opacity:1"></div>
+        <div class="bg-main-deco tr" style="opacity:1"></div>
+        <div class="bg-main-deco bl" style="opacity:1"></div>
+        <div class="bg-main-deco br" style="opacity:1"></div>
+
         <p class="section-title" style="margin-bottom:1rem">Lễ Thành Hôn được cử hành tại tư gia</p>
         <p class="label-sm">Vào lúc</p>
         <h3 style="font-size:clamp(3rem,12vw,5rem);font-weight:300;color:var(--navy);letter-spacing:-.01em;margin:.5rem 0">09:00</h3>
@@ -2108,8 +2259,13 @@
         <p class="meta-text" style="font-style:italic">(Tức ngày 19/11 Bính Ngọ)</p>
       </div>
 
-      <div style="padding:clamp(1.5rem,5vw,2.5rem) 0;margin-bottom:1.5rem;border-bottom:1px solid var(--navy-line)">
+      <div class="info-detail-wedding" style="padding:clamp(1.5rem,5vw,2.5rem) 0;margin-bottom:1.5rem;border-bottom:1px solid var(--navy-line)">
         <p class="section-title" style="margin-bottom:1.5rem">THÔNG TIN TIỆC CƯỚI</p>
+
+        <div class="bg-main-deco tl" style="z-index:3;opacity:1"></div>
+        <div class="bg-main-deco tr" style="z-index:3;opacity:1"></div>
+        <div class="bg-main-deco bl" style="z-index:3;opacity:1"></div>
+        <div class="bg-main-deco br" style="z-index:3;opacity:1"></div>
         <p class="label-sm">Tiệc cưới sẽ diễn ra vào lúc</p>
         <h3 style="font-size:clamp(3rem,12vw,5rem);font-weight:300;color:var(--navy);letter-spacing:-.01em;margin:.5rem 0">10:30</h3>
         <div class="date-block" style="padding-top:1rem;border-top:1px solid var(--navy-line);margin-top:.5rem">
@@ -2148,9 +2304,13 @@
     </div>
   </section>
 
-  
-  <section class="section-wrapper reveal border-navy-top" style="padding:clamp(3rem,8vw,6rem) 0">
-    <div class="section-inner-narrow" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:2rem">
+  <!-- ═══════════════ GIFT / LIXI ═══════════════ -->
+  <section class="section-wrapper reveal border-navy-top" style="padding:clamp(3rem,8vw,6rem) 0;position:relative;overflow:visible">
+    <!-- bg-main deco -->
+    <div class="bg-main-deco tl" style="opacity:1"></div>
+    <div class="bg-main-deco tr" style="opacity:1"></div>
+
+    <div class="section-inner-narrow" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:2rem;position:relative;z-index:1">
 
       <p class="font-luxury navy-text" style="font-size:clamp(2rem,7vw,3rem)">Mừng Hạnh Phúc</p>
 
@@ -2187,9 +2347,15 @@
     </div>
   </section>
 
-  
-  <section class="section-wrapper reveal border-navy-top" style="padding:clamp(3rem,8vw,6rem) 0">
-    <div class="section-inner-narrow" style="display:flex;flex-direction:column;align-items:center;text-align:center">
+  <!-- ═══════════════ RSVP ═══════════════ -->
+  <section class="section-wrapper reveal border-navy-top" style="padding:clamp(3rem,8vw,6rem) 0;position:relative;overflow:visible">
+    <!-- bg-main deco -->
+    <div class="bg-main-deco sm-tl"></div>
+    <div class="bg-main-deco sm-tr"></div>
+    <div class="bg-main-deco sm-bl"></div>
+    <div class="bg-main-deco sm-br"></div>
+
+    <div class="section-inner-narrow" style="display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;z-index:1">
 
       <h2 class="font-luxury navy-text" style="font-size:clamp(2.8rem,9vw,5rem);margin-bottom:clamp(1.5rem,4vw,2.5rem)">Lời Chúc Phúc</h2>
 
@@ -2217,10 +2383,14 @@
     </div>
   </section>
 
-  
-  <footer class="section-wrapper border-navy-top" style="padding:clamp(3rem,8vw,5rem) 0;text-align:center">
-    <p class="font-luxury navy-text" style="font-size:clamp(2.2rem,7vw,4rem);margin-bottom:.75rem">Thank You</p>
-    <p class="label-sm" style="letter-spacing:.4em">Jung Kook &amp; Phan Thưởng · Wedding 2026</p>
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer class="section-wrapper border-navy-top" style="padding:clamp(3rem,8vw,5rem) 0;text-align:center;position:relative;overflow:visible">
+    <!-- bg-main deco -->
+    <div class="bg-main-deco tl" style="opacity:1"></div>
+    <div class="bg-main-deco tr" style="opacity:1"></div>
+
+    <p class="font-luxury navy-text" style="font-size:clamp(2.2rem,7vw,4rem);margin-bottom:.75rem;position:relative;z-index:1">Thank You</p>
+    <p class="label-sm" style="letter-spacing:.4em;position:relative;z-index:1">Jung Kook &amp; Phan Thưởng · Wedding 2026</p>
   </footer>
 
   <script>
