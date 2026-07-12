@@ -1,0 +1,130 @@
+{
+  "meta": {
+    "introHint": "Chạm vào con dấu để mở thiệp",
+    "toastCopied": "✦ Đã sao chép số tài khoản"
+  },
+  "hero": {
+    "badge": "Save The Date",
+    "name1": "Nhật Minh",
+    "name2": "Vợ tui",
+    "dateLabel1": "Thứ Sáu",
+    "dateNum": "19",
+    "dateLabel2": "Tháng 12",
+    "dateYear": "2026",
+    "cta": "Xem Thư Ngỏ"
+  },
+  "profile": {
+    "groom": {
+      "label": "Trưởng Nam",
+      "name": "Nhật Minh",
+      "quote": "Tình yêu không chỉ là lời nói, mà là cách chúng ta cùng bước đi qua những năm tháng."
+    },
+    "bride": {
+      "label": "Út Nữ",
+      "name": "Vợ tui",
+      "quote": "Em chọn cùng anh viết tiếp chương hạnh phúc nhất đời mình."
+    }
+  },
+  "moments": {
+    "heading": "Khoảnh Khắc Hạnh Phúc"
+  },
+  "loveStory": {
+    "heading": "Chuyện Tình Chúng Mình",
+    "sub": "Our Love Story",
+    "timeline": [
+      {
+        "year": "2021",
+        "chapter": "Chương I",
+        "title": "Lần Đầu Gặp Gỡ",
+        "body": "Một buổi chiều bình thường, hai người xa lạ tình cờ chạm mắt. Không ai biết rằng khoảnh khắc ngắn ngủi ấy sẽ thay đổi cả cuộc đời."
+      },
+      {
+        "year": "2022",
+        "chapter": "Chương II",
+        "title": "Những Ngày Bên Nhau",
+        "body": "Từng cuộc dạo chơi, từng tách cà phê buổi sáng, từng tin nhắn khuya — chúng mình dần nhận ra rằng bên nhau mới là \"nhà\"."
+      },
+      {
+        "year": "2023",
+        "chapter": "Chương III",
+        "title": "Lời Hứa Trọn Đời",
+        "body": "Anh quỳ xuống, tim đập loạn, chỉ biết rằng mình muốn giữ tay em đến hết cuộc đời này. Và em đã nói — có."
+      },
+      {
+        "year": "2026",
+        "chapter": "Chương IV",
+        "title": "Bắt Đầu Mãi Mãi",
+        "body": "Ngày 19 tháng 12 năm 2026, chúng mình cùng bước qua cánh cửa hạnh phúc — viết tiếp những trang đời đẹp nhất, cùng nhau."
+      }
+    ],
+    "closingQuote": "Tình yêu không phải là nhìn vào nhau, mà là cùng nhìn về một hướng.",
+    "closingSig": "Nhật Minh & Vợ tui"
+  },
+  "gallery": {
+    "heading": "Những Phút Giây Bên Nhau"
+  },
+  "weddingInfo": {
+    "sectionTitle": "THÔNG TIN LỄ CƯỚI",
+    "groomFamily": {
+      "label": "Nhà Trai",
+      "names": "Nguyễn Văn Hùng<br />Trần Thị Lan",
+      "address": "Số 96 Nguyễn Vân Bình,<br />Yên Bắc Duy Tiên Hà Nam"
+    },
+    "brideFamily": {
+      "label": "Nhà Gái",
+      "names": "Lê Văn Bình<br />Phạm Thị Mai",
+      "address": "Số 213 Nguyễn Hữu Tiến,<br />Đồng Văn Duy Tiên Hà Nam"
+    },
+    "announce1": "TRÂN TRỌNG BÁO TIN",
+    "announce2": "LỄ THÀNH HÔN CỦA CON CHÚNG TÔI",
+    "groom": { "name": "Nhật Minh", "label": "Trưởng Nam" },
+    "bride": { "name": "Phan Thưởng", "label": "Út Nữ" },
+    "ceremony": {
+      "note": "Lễ Thành Hôn được cử hành tại tư gia",
+      "atLabel": "Vào lúc",
+      "time": "09:00",
+      "dayLabel": "Thứ Sáu",
+      "dateNum": "19",
+      "monthLabel": "Tháng 12",
+      "year": "2026",
+      "lunar": "(Tức ngày 19/11 Bính Ngọ)"
+    },
+    "reception": {
+      "title": "THÔNG TIN TIỆC CƯỚI",
+      "note": "Tiệc cưới sẽ diễn ra vào lúc",
+      "time": "10:30",
+      "dayLabel": "Thứ Sáu",
+      "dateNum": "19",
+      "monthLabel": "Tháng 12",
+      "year": "2026",
+      "lunar": "(Tức ngày 19/11 Bính Ngọ)",
+      "welcomeLabel": "Đón khách",
+      "welcomeTime": "17:00",
+      "startLabel": "Khai tiệc",
+      "startTime": "18:30"
+    },
+    "location": {
+      "label": "Địa điểm",
+      "venue": "Tư gia họ nhà trai",
+      "address": "Số 213 Nguyễn Hữu Tiến<br />Đồng Văn Duy Tiên Hà Nam"
+    }
+  },
+  "gift": {
+    "heading": "Mừng Hạnh Phúc",
+    "envelopeNames": "Quyến & Thưởng",
+    "hint": "Nhấn để sao chép số tài khoản",
+    "accountNumber": "1234567890"
+  },
+  "rsvp": {
+    "heading": "Lời Chúc Phúc",
+    "namePlaceholder": "Tên của bạn",
+    "attendBtn": "Sẽ đến dự",
+    "declineBtn": "Rất tiếc vắng mặt",
+    "wishPlaceholder": "Gửi lời chúc đến chúng mình nhé...",
+    "submitBtn": "GỬI LỜI CHÚC"
+  },
+  "footer": {
+    "thankYou": "Thank You",
+    "signature": "Nhật Minh & Vợ tui · Wedding 2026"
+  }
+}
