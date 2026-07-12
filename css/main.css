@@ -1990,20 +1990,71 @@ body {
 
 .wish-corner-icon {
   flex: none;
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  background: var(--navy);
-  border: 1px solid rgba(212, 175, 55, 0.55);
+  background: radial-gradient(circle at 35% 30%, var(--navy-mid) 0%, var(--navy) 70%);
+  border: 1.5px solid rgba(212, 175, 55, 0.65);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 16px rgba(26, 42, 58, 0.4);
+  box-shadow:
+    0 4px 16px rgba(26, 42, 58, 0.45),
+    0 0 0 4px rgba(212, 175, 55, 0.1),
+    inset 0 0 10px rgba(212, 175, 55, 0.15);
   opacity: 0;
   transform: scale(0.35) rotate(-18deg);
   transition:
     transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1),
     opacity 0.4s ease;
+  position: relative;
+}
+
+.wish-corner-icon::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  opacity: 0;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+.wish-corner.show .wish-corner-icon {
+  animation: wishIconBounce 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.wish-corner.show .wish-corner-icon::before {
+  opacity: 1;
+  animation: wishIconRing 2.6s ease-out infinite;
+}
+
+@keyframes wishIconBounce {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  40% {
+    transform: scale(1.18) rotate(4deg);
+  }
+  70% {
+    transform: scale(0.95) rotate(-2deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes wishIconRing {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
 }
 
 .wish-corner-icon svg {
@@ -2040,12 +2091,26 @@ body {
 }
 
 .wish-corner-name {
-  font-size: 0.56rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: rgba(243, 220, 160, 0.75);
-  margin-bottom: 2px;
+  font-family: "Great Vibes", cursive;
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: #f3dca0;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  margin-bottom: 3px;
+  line-height: 1.2;
+  position: relative;
+  display: inline-block;
+}
+
+.wish-corner-name::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin-top: 2px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.6), transparent);
 }
 
 .wish-corner-text {
@@ -2613,6 +2678,7 @@ html.intro-locked body {
   mask-position: center;
   opacity: 0;
   animation: gateChuhySpark linear forwards;
+  filter: drop-shadow(0 0 4px rgba(212, 175, 55, 0.8));
 }
 
 @keyframes gateChuhySpark {

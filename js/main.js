@@ -572,7 +572,7 @@ setInterval(createBubble, 140);
     const y = -10 + Math.random() * 120;
     spark.style.left = x + "%";
     spark.style.top = y + "%";
-    const size = 3 + Math.random() * 3; // ~4px
+    const size = 14 + Math.random() * 6;
     spark.style.width = size + "px";
     spark.style.height = size + "px";
     const angle = Math.random() * Math.PI * 2;
@@ -580,7 +580,7 @@ setInterval(createBubble, 140);
     spark.style.setProperty("--gx", Math.cos(angle) * dist + "px");
     spark.style.setProperty("--gy", Math.sin(angle) * dist - 6 + "px");
     spark.style.setProperty("--gr", Math.random() * 180 - 90 + "deg");
-    const dur = 1.8 + Math.random() * 1.4;
+    const dur = 0.8 + Math.random() * 1;
     spark.style.animationDuration = dur + "s";
     wrap.appendChild(spark);
     setTimeout(() => spark.remove(), dur * 1000 + 100);
@@ -592,7 +592,9 @@ setInterval(createBubble, 140);
       return;
     }
     wraps.forEach((w) => {
-      if (Math.random() < 0.55) spawnGateSpark(w);
+      spawnGateSpark(w);
+      if (Math.random() < 0.7) spawnGateSpark(w);
+      if (Math.random() < 0.4) spawnGateSpark(w);
     });
-  }, 650);
+  }, 220);
 })();
