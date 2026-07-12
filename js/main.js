@@ -18,6 +18,9 @@ function applyContent(data) {
   setText("hero-badge", data.hero.badge);
   setText("hero-name1", data.hero.name1);
   setText("hero-name2", data.hero.name2);
+  setText("hero-cta", data.hero.cta);
+  setText("gate-name-groom", data.hero.name1);
+  setText("gate-name-bride", data.hero.name2);
   setText("hero-dateLabel1", data.hero.dateLabel1);
   setText("hero-dateNum", data.hero.dateNum);
   setText(
@@ -556,4 +559,40 @@ setInterval(createBubble, 140);
     },
     { passive: false },
   );
+})();
+
+(function () {
+  const wraps = document.querySelectorAll(".intro-gate-img-wrap");
+  if (!wraps.length) return;
+
+  function spawnGateSpark(wrap) {
+    const spark = document.createElement("span");
+    spark.className = "gate-chuhy-spark";
+    const x = -15 + Math.random() * 130;
+    const y = -10 + Math.random() * 120;
+    spark.style.left = x + "%";
+    spark.style.top = y + "%";
+    const size = 3 + Math.random() * 3; // ~4px
+    spark.style.width = size + "px";
+    spark.style.height = size + "px";
+    const angle = Math.random() * Math.PI * 2;
+    const dist = 14 + Math.random() * 18;
+    spark.style.setProperty("--gx", Math.cos(angle) * dist + "px");
+    spark.style.setProperty("--gy", Math.sin(angle) * dist - 6 + "px");
+    spark.style.setProperty("--gr", Math.random() * 180 - 90 + "deg");
+    const dur = 1.8 + Math.random() * 1.4;
+    spark.style.animationDuration = dur + "s";
+    wrap.appendChild(spark);
+    setTimeout(() => spark.remove(), dur * 1000 + 100);
+  }
+
+  const gateSparkInterval = setInterval(() => {
+    if (!document.getElementById("intro-gate")) {
+      clearInterval(gateSparkInterval);
+      return;
+    }
+    wraps.forEach((w) => {
+      if (Math.random() < 0.55) spawnGateSpark(w);
+    });
+  }, 650);
 })();

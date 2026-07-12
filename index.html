@@ -1,693 +1,890 @@
 <!doctype html>
 <html lang="vi">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nhật Minh & Vợ tui - Wedding Invitation</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Great+Vibes&display=swap"
-    rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-  <link rel="stylesheet" href="./css/lib/animate/4.1.1/animate.min.css" />
-  <link rel="stylesheet" href="./css/main.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nhật Minh & Vợ tui - Wedding Invitation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Great+Vibes&display=swap"
+      rel="stylesheet" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <link rel="stylesheet" href="./css/lib/animate/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="./css/main.css" />
 
-<body>
+    <body>
 
-  <audio id="bg-music" src="./assets/music/chamhoa.mp3" loop preload="auto"></audio>
-   <!-- Intro -->
- <div id="intro-gate" class="intro-gate">
-    <div class="intro-gate-panel left">
-      <div class="intro-gate-img-wrap">
-        <img src="./assets/img/rong.webp" alt="" class="intro-gate-img" />
-      </div>
-    </div>
-    <div class="intro-gate-panel right">
-      <div class="intro-gate-img-wrap">
-        <img src="./assets/img/phuong.webp" alt="" class="intro-gate-img" />
-      </div>
-    </div>
+      <audio id="bg-music" src="./assets/music/chamhoa.mp3" loop
+        preload="auto"></audio>
+      <!-- Intro -->
+      <div id="intro-gate" class="intro-gate">
+        <div class="intro-gate-panel left">
+          <div class="intro-gate-img-wrap">
+            <img src="./assets/img/rong.webp" alt class="intro-gate-img" />
+          </div>
+        </div>
+        <div class="intro-gate-panel right">
+          <div class="intro-gate-img-wrap">
+            <img src="./assets/img/phuong.webp" alt class="intro-gate-img" />
+          </div>
+        </div>
 
-    <button type="button" class="intro-gate-seal" id="intro-gate-seal" aria-label="Mở thiệp cưới">
-      <span class="intro-gate-seal-flash"></span>
-      <span class="intro-gate-seal-ring"></span>
-      <span class="intro-gate-seal-symbol"></span>
-    </button>
-    <div class="intro-gate-smoke" aria-hidden="true">
-      <span class="smoke-puff"></span>
-      <span class="smoke-puff"></span>
-      <span class="smoke-puff"></span>
-      <span class="smoke-puff"></span>
-      <span class="smoke-puff"></span>
-      <span class="smoke-puff"></span>
-    </div>
-
-    <p class="intro-gate-hint" id="meta-introHint">Chạm vào con dấu để mở thiệp</p>
-  </div>
-  <div id="toast">✦ Đã sao chép số tài khoản</div>
-  <div id="petal-container" class="fixed inset-0 pointer-events-none z-50"></div>
-
-  <!-- ═══════════════ HERO ═══════════════ -->
-  <section class="hero-section">
-    <div class="bg-main-deco tl" style="z-index:3;opacity:1"></div>
-    <div class="bg-main-deco tr" style="z-index:3;opacity:1"></div>
-    <div class="bg-main-deco bl" style="z-index:3;opacity:1"></div>
-    <div class="bg-main-deco br" style="z-index:3;opacity:1"></div>
-
-    <div class="absolute inset-0 z-0">
-      <img src="./assets/img/image1.jpg" class="hero-img-desktop w-full h-full object-cover"
-        style="opacity:.45;object-position:center center" alt="" />
-      <img src="./assets/img/image17.jpg" class="hero-img-mobile  w-full h-full object-cover"
-        style="opacity:.50;object-position:center top" alt="" />
-      <div class="absolute inset-0"
-        style="background:linear-gradient(to bottom,rgba(248,245,240,.08) 0%,rgba(248,245,240,0) 35%,rgba(248,245,240,.62) 100%)">
-      </div>
-    </div>
-
-    <div class="hero-shimmer"></div>
-
-    <div class="hero-frame" aria-hidden="true">
-      <svg viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <g class="corner" stroke="#1a2a3a" stroke-width=".8" fill="none" opacity=".75">
-          <line x1="0" y1="8" x2="0" y2="0" />
-          <line x1="0" y1="0" x2="8" y2="0" />
-          <line x1="3" y1="3" x2="3" y2="0" />
-          <line x1="0" y1="3" x2="3" y2="3" />
-        </g>
-        <g class="corner" stroke="#1a2a3a" stroke-width=".8" fill="none" opacity=".75">
-          <line x1="92" y1="0" x2="100" y2="0" />
-          <line x1="100" y1="0" x2="100" y2="8" />
-          <line x1="97" y1="0" x2="97" y2="3" />
-          <line x1="97" y1="3" x2="100" y2="3" />
-        </g>
-        <g class="corner" stroke="#1a2a3a" stroke-width=".8" fill="none" opacity=".75">
-          <line x1="0" y1="92" x2="0" y2="100" />
-          <line x1="0" y1="100" x2="8" y2="100" />
-          <line x1="0" y1="97" x2="3" y2="97" />
-          <line x1="3" y1="97" x2="3" y2="100" />
-        </g>
-        <g class="corner" stroke="#1a2a3a" stroke-width=".8" fill="none" opacity=".75">
-          <line x1="100" y1="92" x2="100" y2="100" />
-          <line x1="92" y1="100" x2="100" y2="100" />
-          <line x1="100" y1="97" x2="97" y2="97" />
-          <line x1="97" y1="97" x2="97" y2="100" />
-        </g>
-        <g stroke="#1a2a3a" stroke-width=".55" fill="none" opacity=".65">
-          <line x1="38" y1="0" x2="46" y2="0" />
-          <line x1="54" y1="0" x2="62" y2="0" />
-          <circle cx="50" cy="0" r="1.2" fill="#1a2a3a" opacity=".6" />
-        </g>
-        <g stroke="#1a2a3a" stroke-width=".55" fill="none" opacity=".65">
-          <line x1="38" y1="100" x2="46" y2="100" />
-          <line x1="54" y1="100" x2="62" y2="100" />
-          <circle cx="50" cy="100" r="1.2" fill="#1a2a3a" opacity=".6" />
-        </g>
-      </svg>
-    </div>
-
-    <div class="hero-content">
-      <div class="hero-badge">
-        <div class="hero-badge-line"></div>
-        <span id="hero-badge">Save The Date</span>
-        <div class="hero-badge-line right"></div>
-      </div>
-
-      <h1 class="hero-name n1" id="hero-name1">Nhật Minh</h1>
-
-      <div class="hero-ornament" style="margin:.4rem 0">
-        <div class="hero-ornament-line"></div>
-        <div class="hero-ornament-diamond"></div>
-        <p class="hero-amp" style="opacity:1;animation:none">&</p>
-        <div class="hero-ornament-diamond"></div>
-        <div class="hero-ornament-line right"></div>
-      </div>
-
-      <h1 class="hero-name n2" id="hero-name2">Vợ tui</h1>
-
-      <div class="hero-date-row">
-        <div class="hero-date-label" id="hero-dateLabel1">Thứ Sáu</div>
-        <div class="hero-date-sep"></div>
-        <div class="hero-date-num" id="hero-dateNum">19</div>
-        <div class="hero-date-sep"></div>
-        <div class="hero-date-label" id="hero-dateLabel2">Tháng 12<br />2026</div>
-      </div>
-
-      <div class="hero-cta">
-        <button onclick="document.getElementById('profile').scrollIntoView({behavior:'smooth'})">
-          <span id="hero-cta">Xem Thư Ngỏ</span>
+        <button type="button" class="intro-gate-seal" id="intro-gate-seal"
+          aria-label="Mở thiệp cưới">
+          <span class="intro-gate-seal-flash"></span>
+          <span class="intro-gate-seal-ring"></span>
+          <span class="intro-gate-seal-symbol"></span>
         </button>
+
+        <div class="intro-gate-couple-names" aria-hidden="true">
+          <svg class="couple-names-svg" viewBox="0 0 200 200"
+            xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <path id="arcGroom" d="M10,100 a90,90 0 1,1 180,0" fill="none" />
+              <path id="arcBride" d="M10,100 a90,90 0 1,0 180,0" fill="none" />
+            </defs>
+            <text class="gate-name-text">
+              <textpath id="gate-name-groom" href="#arcGroom" startOffset="50%"
+                text-anchor="middle"></textpath>
+            </text>
+            <text class="gate-name-text">
+              <textpath id="gate-name-bride" href="#arcBride" startOffset="50%"
+                text-anchor="middle"></textpath>
+            </text>
+          </svg>
+        </div>
+        <div class="intro-gate-smoke" aria-hidden="true">
+          <span class="smoke-puff"></span>
+          <span class="smoke-puff"></span>
+          <span class="smoke-puff"></span>
+          <span class="smoke-puff"></span>
+          <span class="smoke-puff"></span>
+          <span class="smoke-puff"></span>
+        </div>
+
+        <p class="intro-gate-hint" id="meta-introHint">Chạm vào con dấu để mở
+          thiệp</p>
       </div>
-    </div>
-  </section>
+      <div id="toast">✦ Đã sao chép số tài khoản</div>
+      <div id="petal-container"
+        class="fixed inset-0 pointer-events-none z-50"></div>
 
-  <!-- ═══════════════ PROFILE ═══════════════ -->
-  <section id="profile" class="profile-section section-wrapper border-navy-top"
-    style="position:relative;overflow:visible">
-    <div class="bg-main-deco tl"></div>
-    <div class="bg-main-deco br"></div>
+      <!-- ═══════════════ HERO ═══════════════ -->
+      <section class="hero-section">
+        <div class="bg-main-deco tl" style="z-index:3;opacity:1"></div>
+        <div class="bg-main-deco tr" style="z-index:3;opacity:1"></div>
+        <div class="bg-main-deco bl" style="z-index:3;opacity:1"></div>
+        <div class="bg-main-deco br" style="z-index:3;opacity:1"></div>
 
-    <img
-      src="https://png.pngtree.com/png-vector/20230303/ourmid/pngtree-bouquet-of-dried-flowers-and-leaves-png-image_6630449.png"
-      class="floral-bg top-floral" alt="" />
-    <img
-      src="https://png.pngtree.com/png-vector/20230303/ourmid/pngtree-bouquet-of-dried-flowers-and-leaves-png-image_6630449.png"
-      class="floral-bg bottom-floral" alt="" />
-
-    <div class="section-inner" style="position:relative;z-index:1">
-      <div class="profile-card reveal">
-        <div class="profile-photo smoke-wrap profile-photo-sway-1">
-          <canvas class="smoke-canvas" id="smoke-groom"></canvas>
-          <div class="photo-frame">
-            <img src="./assets/img/image2.jpg"
-              style="width:100%;height:clamp(220px,70vw,480px);object-fit:cover;object-position:top;display:block"
-              alt="Groom" />
+        <div class="absolute inset-0 z-0">
+          <img src="./assets/img/image1.jpg"
+            class="hero-img-desktop w-full h-full object-cover"
+            style="opacity:.45;object-position:center center" alt />
+          <img src="./assets/img/image17.jpg"
+            class="hero-img-mobile  w-full h-full object-cover"
+            style="opacity:.50;object-position:center top" alt />
+          <div class="absolute inset-0"
+            style="background:linear-gradient(to bottom,rgba(248,245,240,.08) 0%,rgba(248,245,240,0) 35%,rgba(248,245,240,.62) 100%)">
           </div>
         </div>
-        <div class="profile-text">
-          <p class="label-sm" id="profile-groom-label" style="margin-bottom:.5rem">Trưởng Nam</p>
-          <h2 class="profile-name" id="profile-groom-name">Nhật Minh</h2>
-          <p id="profile-groom-quote"
-            style="margin-top:1.25rem;line-height:1.8;font-style:italic;color:var(--navy);opacity:.75;font-size:.9rem">
-            "Tình yêu không chỉ là lời nói, mà là cách chúng ta cùng bước đi qua những năm tháng."
-          </p>
+
+        <div class="hero-shimmer"></div>
+
+        <div class="hero-frame" aria-hidden="true">
+          <svg viewBox="0 0 100 100" preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <g class="corner" stroke="#1a2a3a" stroke-width=".8" fill="none"
+              opacity=".75">
+              <line x1="0" y1="8" x2="0" y2="0" />
+              <line x1="0" y1="0" x2="8" y2="0" />
+              <line x1="3" y1="3" x2="3" y2="0" />
+              <line x1="0" y1="3" x2="3" y2="3" />
+            </g>
+            <g class="corner" stroke="#1a2a3a" stroke-width=".8" fill="none"
+              opacity=".75">
+              <line x1="92" y1="0" x2="100" y2="0" />
+              <line x1="100" y1="0" x2="100" y2="8" />
+              <line x1="97" y1="0" x2="97" y2="3" />
+              <line x1="97" y1="3" x2="100" y2="3" />
+            </g>
+            <g class="corner" stroke="#1a2a3a" stroke-width=".8" fill="none"
+              opacity=".75">
+              <line x1="0" y1="92" x2="0" y2="100" />
+              <line x1="0" y1="100" x2="8" y2="100" />
+              <line x1="0" y1="97" x2="3" y2="97" />
+              <line x1="3" y1="97" x2="3" y2="100" />
+            </g>
+            <g class="corner" stroke="#1a2a3a" stroke-width=".8" fill="none"
+              opacity=".75">
+              <line x1="100" y1="92" x2="100" y2="100" />
+              <line x1="92" y1="100" x2="100" y2="100" />
+              <line x1="100" y1="97" x2="97" y2="97" />
+              <line x1="97" y1="97" x2="97" y2="100" />
+            </g>
+            <g stroke="#1a2a3a" stroke-width=".55" fill="none" opacity=".65">
+              <line x1="38" y1="0" x2="46" y2="0" />
+              <line x1="54" y1="0" x2="62" y2="0" />
+              <circle cx="50" cy="0" r="1.2" fill="#1a2a3a" opacity=".6" />
+            </g>
+            <g stroke="#1a2a3a" stroke-width=".55" fill="none" opacity=".65">
+              <line x1="38" y1="100" x2="46" y2="100" />
+              <line x1="54" y1="100" x2="62" y2="100" />
+              <circle cx="50" cy="100" r="1.2" fill="#1a2a3a" opacity=".6" />
+            </g>
+          </svg>
         </div>
-      </div>
 
-      <div style="display:flex;align-items:center;justify-content:center;gap:1rem;margin:clamp(2rem,5vw,3.5rem) 0">
-        <div style="height:1px;flex:1;background:var(--navy-line)"></div>
-        <span style="color:var(--navy);opacity:.4">✦</span>
-        <div style="height:1px;flex:1;background:var(--navy-line)"></div>
-      </div>
+        <div class="hero-content">
+          <div class="hero-badge">
+            <div class="hero-badge-line"></div>
+            <span id="hero-badge">Save The Date</span>
+            <div class="hero-badge-line right"></div>
+          </div>
 
-      <div class="profile-card reverse reveal">
-        <div class="profile-photo smoke-wrap profile-photo-sway-2">
-          <canvas class="smoke-canvas" id="smoke-bride"></canvas>
-          <div class="photo-frame">
-            <img src="./assets/img/image3.jpg"
-              style="width:100%;height:clamp(220px,70vw,480px);object-fit:cover;object-position:top;display:block"
-              alt="Bride" />
+          <h1 class="hero-name n1" id="hero-name1">Nhật Minh</h1>
+
+          <div class="hero-ornament" style="margin:.4rem 0">
+            <div class="hero-ornament-line"></div>
+            <div class="hero-ornament-diamond"></div>
+            <p class="hero-amp" style="opacity:1;animation:none">&</p>
+            <div class="hero-ornament-diamond"></div>
+            <div class="hero-ornament-line right"></div>
+          </div>
+
+          <h1 class="hero-name n2" id="hero-name2">Vợ tui</h1>
+
+          <div class="hero-date-row">
+            <div class="hero-date-label" id="hero-dateLabel1">Thứ Sáu</div>
+            <div class="hero-date-sep"></div>
+            <div class="hero-date-num" id="hero-dateNum">19</div>
+            <div class="hero-date-sep"></div>
+            <div class="hero-date-label" id="hero-dateLabel2">Tháng
+              12<br />2026</div>
+          </div>
+
+          <div class="hero-cta">
+            <button
+              onclick="document.getElementById('profile').scrollIntoView({behavior:'smooth'})">
+              <span id="hero-cta">Xem Thư Ngỏ</span>
+            </button>
           </div>
         </div>
-        <div class="profile-text">
-          <p class="label-sm" id="profile-bride-label" style="margin-bottom:.5rem">Út Nữ</p>
-          <h2 class="profile-name" id="profile-bride-name">Vợ tui</h2>
-          <p id="profile-bride-quote"
-            style="margin-top:1.25rem;line-height:1.8;font-style:italic;color:var(--navy);opacity:.75;font-size:.9rem">
-            "Em chọn cùng anh viết tiếp chương hạnh phúc nhất đời mình."
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- ═══════════════ FAN / HAPPY MOMENTS ═══════════════ -->
-  <section class="section-wrapper reveal border-navy-top"
-    style="padding:clamp(3rem,8vw,6rem) 0;position:relative;overflow:visible">
-    <div class="bg-main-deco tl" style="opacity:1"></div>
-    <div class="bg-main-deco tr" style="opacity:1"></div>
-    <div class="bg-main-deco bl" style="opacity:1"></div>
-    <div class="bg-main-deco br" style="opacity:1"></div>
+      <!-- ═══════════════ PROFILE ═══════════════ -->
+      <section id="profile"
+        class="profile-section section-wrapper border-navy-top"
+        style="position:relative;overflow:visible">
+        <div class="bg-main-deco tl"></div>
+        <div class="bg-main-deco br"></div>
 
-    <div class="section-inner-wide" style="text-align:center;position:relative;z-index:1">
-      <h2 class="font-luxury navy-text section-heading" id="moments-heading"
-        style="font-size:clamp(2.5rem,7vw,4rem);margin-bottom:clamp(2rem,5vw,3rem)">Khoảnh Khắc Hạnh Phúc</h2>
-      <div class="fan-container">
-        <div class="fan-item" style="animation:fanFloat1 4.8s ease-in-out infinite;z-index:11">
-          <img src="./assets/img/image4.jpg" class="w-full h-full object-cover" />
-          <div class="fan-shimmer" style="--shim-dur:4.2s;--shim-delay:0s"></div>
-        </div>
-        <div class="fan-item" style="animation:fanFloat2 4.2s ease-in-out infinite;animation-delay:.6s;z-index:13">
-          <img src="./assets/img/image5.jpg" class="w-full h-full object-cover" />
-          <div class="fan-shimmer" style="--shim-dur:3.8s;--shim-delay:1.2s"></div>
-        </div>
-        <div class="fan-item" style="animation:fanFloat3 3.8s ease-in-out infinite;animation-delay:.3s;z-index:15">
-          <img src="./assets/img/image6.jpg" class="w-full h-full object-cover" />
-          <div class="fan-shimmer" style="--shim-dur:4.5s;--shim-delay:.5s"></div>
-        </div>
-        <div class="fan-item" style="animation:fanFloat4 4.2s ease-in-out infinite;animation-delay:.9s;z-index:13">
-          <img src="./assets/img/image7.jpg" class="w-full h-full object-cover" />
-          <div class="fan-shimmer" style="--shim-dur:3.6s;--shim-delay:1.8s"></div>
-        </div>
-        <div class="fan-item" style="animation:fanFloat5 4.8s ease-in-out infinite;animation-delay:1.2s;z-index:11">
-          <img src="./assets/img/image8.jpg" class="w-full h-full object-cover" />
-          <div class="fan-shimmer" style="--shim-dur:4.0s;--shim-delay:.9s"></div>
-        </div>
-      </div>
-    </div>
-  </section>
+        <img
+          src="https://png.pngtree.com/png-vector/20230303/ourmid/pngtree-bouquet-of-dried-flowers-and-leaves-png-image_6630449.png"
+          class="floral-bg top-floral" alt />
+        <img
+          src="https://png.pngtree.com/png-vector/20230303/ourmid/pngtree-bouquet-of-dried-flowers-and-leaves-png-image_6630449.png"
+          class="floral-bg bottom-floral" alt />
 
-  <!-- ═══════════════ LOVE STORY ═══════════════ -->
-  <section class="section-wrapper border-navy-top"
-    style="padding:clamp(3rem,8vw,7rem) 0;overflow:hidden;position:relative">
-    <div class="bg-main-deco tl" style="opacity:1;width:clamp(200px,30vw,420px);height:clamp(200px,30vw,420px)"></div>
-    <div class="bg-main-deco tr" style="opacity:1;width:clamp(200px,30vw,420px);height:clamp(200px,30vw,420px)"></div>
-    <div class="bg-main-deco bl" style="opacity:1"></div>
-    <div class="bg-main-deco br" style="opacity:1"></div>
+        <div class="section-inner" style="position:relative;z-index:1">
+          <div class="profile-card reveal">
+            <div class="profile-photo smoke-wrap profile-photo-sway-1">
+              <canvas class="smoke-canvas" id="smoke-groom"></canvas>
+              <div class="photo-frame">
+                <img src="./assets/img/image2.jpg"
+                  style="width:100%;height:clamp(220px,70vw,480px);object-fit:cover;object-position:top;display:block"
+                  alt="Groom" />
+              </div>
+            </div>
+            <div class="profile-text">
+              <p class="label-sm" id="profile-groom-label"
+                style="margin-bottom:.5rem">Trưởng Nam</p>
+              <h2 class="profile-name" id="profile-groom-name">Nhật Minh</h2>
+              <p id="profile-groom-quote"
+                style="margin-top:1.25rem;line-height:1.8;font-style:italic;color:var(--navy);opacity:.75;font-size:.9rem">
+                "Tình yêu không chỉ là lời nói, mà là cách chúng ta cùng bước đi qua những năm tháng."
+              </p>
+            </div>
+          </div>
 
-    <div class="section-inner-wide" style="position:relative;z-index:1">
+          <div
+            style="display:flex;align-items:center;justify-content:center;gap:1rem;margin:clamp(2rem,5vw,3.5rem) 0">
+            <div style="height:1px;flex:1;background:var(--navy-line)"></div>
+            <span style="color:var(--navy);opacity:.4">✦</span>
+            <div style="height:1px;flex:1;background:var(--navy-line)"></div>
+          </div>
 
-      <div style="text-align:center;margin-bottom:clamp(2.5rem,6vw,5rem)">
-        <h2 class="ls-heading" id="loveStory-heading">Chuyện Tình Chúng Mình</h2>
-        <p class="ls-sub" id="loveStory-sub">Our Love Story</p>
-        <div style="display:flex;align-items:center;justify-content:center;gap:1rem">
-          <div style="height:1px;width:clamp(40px,8vw,80px);background:var(--navy-line)"></div>
-          <span style="color:var(--navy);opacity:.35">✦</span>
-          <div style="height:1px;width:clamp(40px,8vw,80px);background:var(--navy-line)"></div>
-        </div>
-
-        <div class="lantern-scene">
-          <div class="lantern-glow-ring"></div>
-          <div class="lantern-wrap">
-            <div class="lantern-rope"></div>
-            <svg width="42" height="62" viewBox="0 0 90 130" xmlns="http://www.w3.org/2000/svg">
-              <rect x="22" y="8" width="46" height="8" rx="3" fill="#1a2a3a" stroke="rgba(26,42,58,.6)"
-                stroke-width="1.2" />
-              <ellipse cx="45" cy="8" rx="23" ry="5" fill="#2c3e50" stroke="rgba(26,42,58,.5)" stroke-width="1" />
-              <path d="M22 16 Q10 50 10 72 Q10 100 45 112 Q80 100 80 72 Q80 50 68 16 Z" fill="url(#lanternBodyGrad)"
-                stroke="#1a2a3a" stroke-width="1.2" />
-              <path d="M28 20 Q18 52 18 72 Q18 96 45 106 Q72 96 72 72 Q72 52 62 20 Z" fill="url(#lanternInnerGrad)"
-                opacity="0.85" />
-              <path d="M27 18 Q16 52 16 72 Q16 98 45 110" fill="none" stroke="rgba(26,42,58,.4)" stroke-width="1" />
-              <path d="M63 18 Q74 52 74 72 Q74 98 45 110" fill="none" stroke="rgba(26,42,58,.4)" stroke-width="1" />
-              <path d="M45 14 L45 112" fill="none" stroke="rgba(26,42,58,.25)" stroke-width=".8" />
-              <ellipse cx="45" cy="63" rx="35" ry="6" fill="none" stroke="rgba(26,42,58,.5)" stroke-width="1.5"
-                opacity=".8" />
-              <text x="45" y="72" text-anchor="middle" dominant-baseline="middle" font-size="28" fill="#f8f5f0"
-                opacity=".9" font-family="serif">囍</text>
-              <ellipse cx="45" cy="112" rx="22" ry="5" fill="#1a2a3a" stroke="rgba(26,42,58,.5)" stroke-width="1" />
-              <rect x="23" y="112" width="44" height="7" rx="3" fill="#1a2a3a" stroke="rgba(26,42,58,.5)"
-                stroke-width="1.2" />
-              <rect x="20" y="14" width="50" height="3" rx="1.5" fill="none" stroke="rgba(26,42,58,.5)"
-                stroke-width="1.2" opacity=".9" />
-              <rect x="20" y="113" width="50" height="3" rx="1.5" fill="none" stroke="rgba(26,42,58,.5)"
-                stroke-width="1.2" opacity=".9" />
-              <defs>
-                <linearGradient id="lanternBodyGrad" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stop-color="#1a2a3a" />
-                  <stop offset="30%" stop-color="#2c3e50" />
-                  <stop offset="60%" stop-color="#3d5166" />
-                  <stop offset="100%" stop-color="#1a2a3a" />
-                </linearGradient>
-                <radialGradient id="lanternInnerGrad" cx="45%" cy="45%" r="55%" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stop-color="#7fb3d3" stop-opacity=".35" />
-                  <stop offset="40%" stop-color="#4a7a9b" stop-opacity=".2" />
-                  <stop offset="100%" stop-color="#1a2a3a" stop-opacity="0" />
-                </radialGradient>
-              </defs>
-            </svg>
-            <div class="lantern-tassel">
-              <span></span><span></span><span></span><span></span><span></span>
+          <div class="profile-card reverse reveal">
+            <div class="profile-photo smoke-wrap profile-photo-sway-2">
+              <canvas class="smoke-canvas" id="smoke-bride"></canvas>
+              <div class="photo-frame">
+                <img src="./assets/img/image3.jpg"
+                  style="width:100%;height:clamp(220px,70vw,480px);object-fit:cover;object-position:top;display:block"
+                  alt="Bride" />
+              </div>
+            </div>
+            <div class="profile-text">
+              <p class="label-sm" id="profile-bride-label"
+                style="margin-bottom:.5rem">Út Nữ</p>
+              <h2 class="profile-name" id="profile-bride-name">Vợ tui</h2>
+              <p id="profile-bride-quote"
+                style="margin-top:1.25rem;line-height:1.8;font-style:italic;color:var(--navy);opacity:.75;font-size:.9rem">
+                "Em chọn cùng anh viết tiếp chương hạnh phúc nhất đời mình."
+              </p>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="ls-timeline" id="ls-timeline">
-        <div class="ls-spine"></div>
-
-        <div class="ls-card" data-idx="0" style="--ls-delay:.05s">
-          <div class="ls-node">
-            <div class="ls-node-inner"></div>
-          </div>
-          <div class="ls-photo-wrap">
-            <img src="./assets/img/image18.jpg" class="ls-photo" alt="" />
-          </div>
-          <div class="ls-text">
-            <div class="ls-year" id="loveStory-timeline-0-year">2021</div>
-            <p class="ls-chapter" id="loveStory-timeline-0-chapter">Chương I</p>
-            <h3 class="ls-title" id="loveStory-timeline-0-title">Lần Đầu Gặp Gỡ</h3>
-            <p class="ls-body" id="loveStory-timeline-0-body">Một buổi chiều bình thường, hai người xa lạ tình cờ chạm mắt. Không ai biết rằng khoảnh
-              khắc ngắn ngủi ấy sẽ thay đổi cả cuộc đời.</p>
-          </div>
-        </div>
-
-        <div class="ls-card ls-right" data-idx="1" style="--ls-delay:.1s">
-          <div class="ls-node">
-            <div class="ls-node-inner"></div>
-          </div>
-          <div class="ls-photo-wrap">
-            <img src="./assets/img/image19.jpg" class="ls-photo" alt="" />
-          </div>
-          <div class="ls-text">
-            <div class="ls-year" id="loveStory-timeline-1-year">2022</div>
-            <p class="ls-chapter" id="loveStory-timeline-1-chapter">Chương II</p>
-            <h3 class="ls-title" id="loveStory-timeline-1-title">Những Ngày Bên Nhau</h3>
-            <p class="ls-body" id="loveStory-timeline-1-body">Từng cuộc dạo chơi, từng tách cà phê buổi sáng, từng tin nhắn khuya — chúng mình dần nhận
-              ra rằng bên nhau mới là "nhà".</p>
-          </div>
-        </div>
-
-        <div class="ls-card" data-idx="2" style="--ls-delay:.15s">
-          <div class="ls-node">
-            <div class="ls-node-inner"></div>
-          </div>
-          <div class="ls-photo-wrap">
-            <img src="./assets/img/image20.jpg" class="ls-photo" alt="" />
-          </div>
-          <div class="ls-text">
-            <div class="ls-year" id="loveStory-timeline-2-year">2023</div>
-            <p class="ls-chapter" id="loveStory-timeline-2-chapter">Chương III</p>
-            <h3 class="ls-title" id="loveStory-timeline-2-title">Lời Hứa Trọn Đời</h3>
-            <p class="ls-body" id="loveStory-timeline-2-body">Anh quỳ xuống, tim đập loạn, chỉ biết rằng mình muốn giữ tay em đến hết cuộc đời này. Và
-              em đã nói — có.</p>
-          </div>
-        </div>
-
-        <div class="ls-card ls-right" data-idx="3" style="--ls-delay:.2s">
-          <div class="ls-node">
-            <div class="ls-node-inner"></div>
-          </div>
-          <div class="ls-photo-wrap">
-            <img src="./assets/img/image21.jpg" class="ls-photo" alt="" />
-          </div>
-          <div class="ls-text">
-            <div class="ls-year" id="loveStory-timeline-3-year">2026</div>
-            <p class="ls-chapter" id="loveStory-timeline-3-chapter">Chương IV</p>
-            <h3 class="ls-title" id="loveStory-timeline-3-title">Bắt Đầu Mãi Mãi</h3>
-            <p class="ls-body" id="loveStory-timeline-3-body">Ngày 19 tháng 12 năm 2026, chúng mình cùng bước qua cánh cửa hạnh phúc — viết tiếp những
-              trang đời đẹp nhất, cùng nhau.</p>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="ls-closing">
-        <p class="ls-closing-quote" id="loveStory-closingQuote">
-          Tình yêu không phải là nhìn vào nhau, mà là cùng nhìn về một hướng.
-        </p>
-        <p class="ls-closing-sig" id="loveStory-closingSig">Nhật Minh &amp; Vợ tui</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ═══════════════ GALLERY ═══════════════ -->
-  <section class="gallery-section section-wrapper"
-    style="padding:clamp(3rem,8vw,6rem) 0;position:relative;overflow:visible">
-    <div class="bg-main-deco tl" style="opacity:1"></div>
-    <div class="bg-main-deco tr" style="opacity:1"></div>
-    <div class="bg-main-deco bl" style="opacity:1"></div>
-    <div class="bg-main-deco br" style="opacity:1"></div>
-
-    <div class="section-inner-wide" style="position:relative;z-index:1">
-
-      <div class="text-center gallery-reveal" style="margin-bottom:clamp(2rem,5vw,4rem)">
-        <h2 class="font-luxury navy-text section-heading" id="gallery-heading" style="font-size:clamp(2.5rem,7vw,4.5rem)">Những Phút Giây Bên
-          Nhau</h2>
-        <div style="display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1.25rem">
-          <div style="height:1px;width:60px;background:var(--navy-line)"></div>
-          <span style="color:var(--navy);opacity:.4">✦</span>
-          <div style="height:1px;width:60px;background:var(--navy-line)"></div>
-        </div>
-      </div>
-
-      <div class="gallery-grid">
-        <div class="gallery-col">
-          <div class="gallery-item gallery-reveal" style="--delay:.1s"><img src="./assets/img/image9.jpg" alt="" />
-            <div class="gallery-overlay"><span class="gallery-icon">✦</span></div>
-          </div>
-          <div class="gallery-item gallery-reveal tall" style="--delay:.2s"><img src="./assets/img/image10.jpg"
-              alt="" />
-            <div class="gallery-overlay"><span class="gallery-icon">✦</span></div>
-          </div>
-        </div>
-        <div class="gallery-col col-offset">
-          <div class="gallery-item gallery-reveal tall" style="--delay:.15s"><img src="./assets/img/image11.jpg"
-              alt="" />
-            <div class="gallery-overlay"><span class="gallery-icon">✦</span></div>
-          </div>
-          <div class="gallery-item gallery-reveal" style="--delay:.25s"><img src="./assets/img/image12.jpg" alt="" />
-            <div class="gallery-overlay"><span class="gallery-icon">✦</span></div>
-          </div>
-        </div>
-        <div class="gallery-col">
-          <div class="gallery-item gallery-reveal tall" style="--delay:.2s"><img src="./assets/img/image13.jpg"
-              alt="" />
-            <div class="gallery-overlay"><span class="gallery-icon">✦</span></div>
-          </div>
-          <div class="gallery-item gallery-reveal medium" style="--delay:.3s"><img src="./assets/img/image16.jpg"
-              alt="" />
-            <div class="gallery-overlay"><span class="gallery-icon">✦</span></div>
-          </div>
-          <div class="gallery-item gallery-reveal medium" style="--delay:.3s"><img src="./assets/img/image23.jpg"
-              alt="" />
-            <div class="gallery-overlay"><span class="gallery-icon">✦</span></div>
-          </div>
-        </div>
-        <div class="gallery-col col-offset-2">
-          <div class="gallery-item gallery-reveal" style="--delay:.1s"><img src="./assets/img/image14.jpg" alt="" />
-            <div class="gallery-overlay"><span class="gallery-icon">✦</span></div>
-          </div>
-          <div class="gallery-item gallery-reveal medium" style="--delay:.2s"><img src="./assets/img/image15.jpg"
-              alt="" />
-            <div class="gallery-overlay"><span class="gallery-icon">✦</span></div>
-          </div>
-          <div class="gallery-item gallery-reveal medium" style="--delay:.2s"><img src="./assets/img/image24.jpg"
-              alt="" />
-            <div class="gallery-overlay"><span class="gallery-icon">✦</span></div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ═══════════════ WEDDING INFO ═══════════════ -->
-  <section class="section-wrapper reveal border-navy-top"
-    style="padding:clamp(3rem,8vw,5rem) 0;position:relative;overflow:visible">
-    <div class="bg-main-deco tl" style="opacity:1"></div>
-    <div class="bg-main-deco tr" style="opacity:1"></div>
-    <div class="bg-main-deco bl" style="opacity:1"></div>
-    <div class="bg-main-deco br" style="opacity:1"></div>
-
-    <div class="section-inner-narrow" style="text-align:center;position:relative;z-index:1">
-      <p class="section-title" id="weddingInfo-sectionTitle" style="margin-bottom:2.5rem">THÔNG TIN LỄ CƯỚI</p>
-
-      <div class="chinese-seal" id="seal-container">
-        <div class="seal-bg"></div>
-        <div class="seal-icon"></div>
-      </div>
-
-      <div class="parents-grid"
-        style="margin-bottom:clamp(2rem,5vw,3.5rem);padding-bottom:clamp(2rem,5vw,3rem);border-bottom:1px solid var(--navy-line)">
-        <div style="text-align:center">
-          <p class="label-sm" id="weddingInfo-groomFamily-label" style="margin-bottom:.75rem">Nhà Trai</p>
-          <p id="weddingInfo-groomFamily-names" style="font-size:.85rem;font-weight:600;color:var(--navy);line-height:1.7">Nguyễn Văn Hùng<br />Trần Thị
-            Lan</p>
-          <p class="meta-text" id="weddingInfo-groomFamily-address" style="margin-top:.5rem">Số 96 Nguyễn Vân Bình,<br />Yên Bắc Duy Tiên Hà Nam</p>
-        </div>
-        <div style="text-align:center">
-          <p class="label-sm" id="weddingInfo-brideFamily-label" style="margin-bottom:.75rem">Nhà Gái</p>
-          <p id="weddingInfo-brideFamily-names" style="font-size:.85rem;font-weight:600;color:var(--navy);line-height:1.7">Lê Văn Bình<br />Phạm Thị Mai
-          </p>
-          <p class="meta-text" id="weddingInfo-brideFamily-address" style="margin-top:.5rem">Số 213 Nguyễn Hữu Tiến,<br />Đồng Văn Duy Tiên Hà Nam</p>
-        </div>
-      </div>
-
-      <p class="section-title" id="weddingInfo-announce1">TRÂN TRỌNG BÁO TIN</p>
-      <p class="section-title" id="weddingInfo-announce2" style="margin-top:.4rem;margin-bottom:clamp(1.5rem,4vw,2.5rem)">LỄ THÀNH HÔN CỦA CON
-        CHÚNG TÔI</p>
-
-      <div
-        style="position:relative;margin-bottom:clamp(2rem,5vw,3.5rem);padding:clamp(1rem,3vw,2rem) 0;overflow:visible">
-        <div class="rong-img"
-          style="top:50%;left:clamp(-160px,-22vw,-60px);width:clamp(180px,24vw,360px);height:clamp(220px,30vw,460px)">
-          <img src="./assets/img/rong.webp" alt=""
-            style="width:100%;height:100%;object-fit:contain;opacity:0;display:block" />
-        </div>
-        <div class="phuong-img"
-          style="top:50%;right:clamp(-160px,-22vw,-60px);width:clamp(160px,22vw,340px);height:clamp(200px,28vw,440px)">
-          <img src="./assets/img/phuong.webp" alt=""
-            style="width:100%;height:100%;object-fit:contain;opacity:0;display:block" />
-        </div>
-        <h2 class="font-luxury navy-text" id="weddingInfo-groom-name" style="font-size:clamp(2.4rem,9vw,4rem);position:relative;z-index:1">Nhật Minh
-        </h2>
-        <p class="label-sm" id="weddingInfo-groom-label" style="margin-top:.3rem;position:relative;z-index:1">Trưởng Nam</p>
-        <div class="font-luxury navy-light"
-          style="font-size:clamp(1.8rem,5vw,2.5rem);opacity:.45;padding:.5rem 0;position:relative;z-index:1">&</div>
-        <h2 class="font-luxury navy-text" id="weddingInfo-bride-name" style="font-size:clamp(2.4rem,9vw,4rem);position:relative;z-index:1">Phan
-          Thưởng</h2>
-        <p class="label-sm" id="weddingInfo-bride-label" style="margin-top:.3rem;position:relative;z-index:1">Út Nữ</p>
-      </div>
-
-      <div
-        style="padding:clamp(1.5rem,5vw,2.5rem) 0;margin-bottom:1.5rem;border-top:1px solid var(--navy-line);border-bottom:1px solid var(--navy-line); position: relative;">
+      <!-- ═══════════════ FAN / HAPPY MOMENTS ═══════════════ -->
+      <section class="section-wrapper reveal border-navy-top"
+        style="padding:clamp(3rem,8vw,6rem) 0;position:relative;overflow:visible">
         <div class="bg-main-deco tl" style="opacity:1"></div>
         <div class="bg-main-deco tr" style="opacity:1"></div>
         <div class="bg-main-deco bl" style="opacity:1"></div>
         <div class="bg-main-deco br" style="opacity:1"></div>
 
-        <p class="section-title" id="weddingInfo-ceremony-note" style="margin-bottom:1rem">Lễ Thành Hôn được cử hành tại tư gia</p>
-        <p class="label-sm" id="weddingInfo-ceremony-atLabel">Vào lúc</p>
-        <h3 id="weddingInfo-ceremony-time"
-          style="font-size:clamp(3rem,12vw,5rem);font-weight:300;color:var(--navy);letter-spacing:-.01em;margin:.5rem 0">
-          09:00</h3>
-        <div class="date-block" style="padding-top:1rem;border-top:1px solid var(--navy-line);margin-top:.5rem">
-          <span class="label-sm" id="weddingInfo-ceremony-dayLabel">Thứ Sáu</span>
-          <span class="date-num" id="weddingInfo-ceremony-dateNum">19</span>
-          <span class="label-sm" id="weddingInfo-ceremony-monthLabel">Tháng 12</span>
+        <div class="section-inner-wide"
+          style="text-align:center;position:relative;z-index:1">
+          <h2 class="font-luxury navy-text section-heading" id="moments-heading"
+            style="font-size:clamp(2.5rem,7vw,4rem);margin-bottom:clamp(2rem,5vw,3rem)">Khoảnh
+            Khắc Hạnh Phúc</h2>
+          <div class="fan-container">
+            <div class="fan-item"
+              style="animation:fanFloat1 4.8s ease-in-out infinite;z-index:11">
+              <img src="./assets/img/image4.jpg"
+                class="w-full h-full object-cover" />
+              <div class="fan-shimmer"
+                style="--shim-dur:4.2s;--shim-delay:0s"></div>
+            </div>
+            <div class="fan-item"
+              style="animation:fanFloat2 4.2s ease-in-out infinite;animation-delay:.6s;z-index:13">
+              <img src="./assets/img/image5.jpg"
+                class="w-full h-full object-cover" />
+              <div class="fan-shimmer"
+                style="--shim-dur:3.8s;--shim-delay:1.2s"></div>
+            </div>
+            <div class="fan-item"
+              style="animation:fanFloat3 3.8s ease-in-out infinite;animation-delay:.3s;z-index:15">
+              <img src="./assets/img/image6.jpg"
+                class="w-full h-full object-cover" />
+              <div class="fan-shimmer"
+                style="--shim-dur:4.5s;--shim-delay:.5s"></div>
+            </div>
+            <div class="fan-item"
+              style="animation:fanFloat4 4.2s ease-in-out infinite;animation-delay:.9s;z-index:13">
+              <img src="./assets/img/image7.jpg"
+                class="w-full h-full object-cover" />
+              <div class="fan-shimmer"
+                style="--shim-dur:3.6s;--shim-delay:1.8s"></div>
+            </div>
+            <div class="fan-item"
+              style="animation:fanFloat5 4.8s ease-in-out infinite;animation-delay:1.2s;z-index:11">
+              <img src="./assets/img/image8.jpg"
+                class="w-full h-full object-cover" />
+              <div class="fan-shimmer"
+                style="--shim-dur:4.0s;--shim-delay:.9s"></div>
+            </div>
+          </div>
         </div>
-        <p id="weddingInfo-ceremony-year"
-          style="font-size:clamp(1.2rem,4vw,1.5rem);font-weight:300;color:var(--navy);letter-spacing:.2em;margin:.75rem 0 .25rem">
+      </section>
+
+      <!-- ═══════════════ LOVE STORY ═══════════════ -->
+      <section class="section-wrapper border-navy-top"
+        style="padding:clamp(3rem,8vw,7rem) 0;overflow:hidden;position:relative">
+        <div class="bg-main-deco tl"
+          style="opacity:1;width:clamp(200px,30vw,420px);height:clamp(200px,30vw,420px)"></div>
+        <div class="bg-main-deco tr"
+          style="opacity:1;width:clamp(200px,30vw,420px);height:clamp(200px,30vw,420px)"></div>
+        <div class="bg-main-deco bl" style="opacity:1"></div>
+        <div class="bg-main-deco br" style="opacity:1"></div>
+
+        <div class="section-inner-wide" style="position:relative;z-index:1">
+
+          <div style="text-align:center;margin-bottom:clamp(2.5rem,6vw,5rem)">
+            <h2 class="ls-heading" id="loveStory-heading">Chuyện Tình Chúng
+              Mình</h2>
+            <p class="ls-sub" id="loveStory-sub">Our Love Story</p>
+            <div
+              style="display:flex;align-items:center;justify-content:center;gap:1rem">
+              <div
+                style="height:1px;width:clamp(40px,8vw,80px);background:var(--navy-line)"></div>
+              <span style="color:var(--navy);opacity:.35">✦</span>
+              <div
+                style="height:1px;width:clamp(40px,8vw,80px);background:var(--navy-line)"></div>
+            </div>
+
+            <div class="lantern-scene">
+              <div class="lantern-glow-ring"></div>
+              <div class="lantern-wrap">
+                <div class="lantern-rope"></div>
+                <svg width="42" height="62" viewBox="0 0 90 130"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <rect x="22" y="8" width="46" height="8" rx="3" fill="#1a2a3a"
+                    stroke="rgba(26,42,58,.6)"
+                    stroke-width="1.2" />
+                  <ellipse cx="45" cy="8" rx="23" ry="5" fill="#2c3e50"
+                    stroke="rgba(26,42,58,.5)" stroke-width="1" />
+                  <path
+                    d="M22 16 Q10 50 10 72 Q10 100 45 112 Q80 100 80 72 Q80 50 68 16 Z"
+                    fill="url(#lanternBodyGrad)"
+                    stroke="#1a2a3a" stroke-width="1.2" />
+                  <path
+                    d="M28 20 Q18 52 18 72 Q18 96 45 106 Q72 96 72 72 Q72 52 62 20 Z"
+                    fill="url(#lanternInnerGrad)"
+                    opacity="0.85" />
+                  <path d="M27 18 Q16 52 16 72 Q16 98 45 110" fill="none"
+                    stroke="rgba(26,42,58,.4)" stroke-width="1" />
+                  <path d="M63 18 Q74 52 74 72 Q74 98 45 110" fill="none"
+                    stroke="rgba(26,42,58,.4)" stroke-width="1" />
+                  <path d="M45 14 L45 112" fill="none"
+                    stroke="rgba(26,42,58,.25)" stroke-width=".8" />
+                  <ellipse cx="45" cy="63" rx="35" ry="6" fill="none"
+                    stroke="rgba(26,42,58,.5)" stroke-width="1.5"
+                    opacity=".8" />
+                  <text x="45" y="72" text-anchor="middle"
+                    dominant-baseline="middle" font-size="28" fill="#f8f5f0"
+                    opacity=".9" font-family="serif">囍</text>
+                  <ellipse cx="45" cy="112" rx="22" ry="5" fill="#1a2a3a"
+                    stroke="rgba(26,42,58,.5)" stroke-width="1" />
+                  <rect x="23" y="112" width="44" height="7" rx="3"
+                    fill="#1a2a3a" stroke="rgba(26,42,58,.5)"
+                    stroke-width="1.2" />
+                  <rect x="20" y="14" width="50" height="3" rx="1.5" fill="none"
+                    stroke="rgba(26,42,58,.5)"
+                    stroke-width="1.2" opacity=".9" />
+                  <rect x="20" y="113" width="50" height="3" rx="1.5"
+                    fill="none" stroke="rgba(26,42,58,.5)"
+                    stroke-width="1.2" opacity=".9" />
+                  <defs>
+                    <lineargradient id="lanternBodyGrad" x1="0" y1="0" x2="1"
+                      y2="0">
+                      <stop offset="0%" stop-color="#1a2a3a" />
+                      <stop offset="30%" stop-color="#2c3e50" />
+                      <stop offset="60%" stop-color="#3d5166" />
+                      <stop offset="100%" stop-color="#1a2a3a" />
+                    </lineargradient>
+                    <radialgradient id="lanternInnerGrad" cx="45%" cy="45%"
+                      r="55%" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stop-color="#7fb3d3"
+                        stop-opacity=".35" />
+                      <stop offset="40%" stop-color="#4a7a9b"
+                        stop-opacity=".2" />
+                      <stop offset="100%" stop-color="#1a2a3a"
+                        stop-opacity="0" />
+                    </radialgradient>
+                  </defs>
+                </svg>
+                <div class="lantern-tassel">
+                  <span></span><span></span><span></span><span></span><span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ls-timeline" id="ls-timeline">
+            <div class="ls-spine"></div>
+
+            <div class="ls-card" data-idx="0" style="--ls-delay:.05s">
+              <div class="ls-node">
+                <div class="ls-node-inner"></div>
+              </div>
+              <div class="ls-photo-wrap">
+                <img src="./assets/img/image18.jpg" class="ls-photo" alt />
+              </div>
+              <div class="ls-text">
+                <div class="ls-year" id="loveStory-timeline-0-year">2021</div>
+                <p class="ls-chapter" id="loveStory-timeline-0-chapter">Chương
+                  I</p>
+                <h3 class="ls-title" id="loveStory-timeline-0-title">Lần Đầu Gặp
+                  Gỡ</h3>
+                <p class="ls-body" id="loveStory-timeline-0-body">Một buổi chiều
+                  bình thường, hai người xa lạ tình cờ chạm mắt. Không ai biết
+                  rằng khoảnh
+                  khắc ngắn ngủi ấy sẽ thay đổi cả cuộc đời.</p>
+              </div>
+            </div>
+
+            <div class="ls-card ls-right" data-idx="1" style="--ls-delay:.1s">
+              <div class="ls-node">
+                <div class="ls-node-inner"></div>
+              </div>
+              <div class="ls-photo-wrap">
+                <img src="./assets/img/image19.jpg" class="ls-photo" alt />
+              </div>
+              <div class="ls-text">
+                <div class="ls-year" id="loveStory-timeline-1-year">2022</div>
+                <p class="ls-chapter" id="loveStory-timeline-1-chapter">Chương
+                  II</p>
+                <h3 class="ls-title" id="loveStory-timeline-1-title">Những Ngày
+                  Bên Nhau</h3>
+                <p class="ls-body" id="loveStory-timeline-1-body">Từng cuộc dạo
+                  chơi, từng tách cà phê buổi sáng, từng tin nhắn khuya — chúng
+                  mình dần nhận
+                  ra rằng bên nhau mới là "nhà".</p>
+              </div>
+            </div>
+
+            <div class="ls-card" data-idx="2" style="--ls-delay:.15s">
+              <div class="ls-node">
+                <div class="ls-node-inner"></div>
+              </div>
+              <div class="ls-photo-wrap">
+                <img src="./assets/img/image20.jpg" class="ls-photo" alt />
+              </div>
+              <div class="ls-text">
+                <div class="ls-year" id="loveStory-timeline-2-year">2023</div>
+                <p class="ls-chapter" id="loveStory-timeline-2-chapter">Chương
+                  III</p>
+                <h3 class="ls-title" id="loveStory-timeline-2-title">Lời Hứa
+                  Trọn Đời</h3>
+                <p class="ls-body" id="loveStory-timeline-2-body">Anh quỳ xuống,
+                  tim đập loạn, chỉ biết rằng mình muốn giữ tay em đến hết cuộc
+                  đời này. Và
+                  em đã nói — có.</p>
+              </div>
+            </div>
+
+            <div class="ls-card ls-right" data-idx="3" style="--ls-delay:.2s">
+              <div class="ls-node">
+                <div class="ls-node-inner"></div>
+              </div>
+              <div class="ls-photo-wrap">
+                <img src="./assets/img/image21.jpg" class="ls-photo" alt />
+              </div>
+              <div class="ls-text">
+                <div class="ls-year" id="loveStory-timeline-3-year">2026</div>
+                <p class="ls-chapter" id="loveStory-timeline-3-chapter">Chương
+                  IV</p>
+                <h3 class="ls-title" id="loveStory-timeline-3-title">Bắt Đầu Mãi
+                  Mãi</h3>
+                <p class="ls-body" id="loveStory-timeline-3-body">Ngày 19 tháng
+                  12 năm 2026, chúng mình cùng bước qua cánh cửa hạnh phúc —
+                  viết tiếp những
+                  trang đời đẹp nhất, cùng nhau.</p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="ls-closing">
+            <p class="ls-closing-quote" id="loveStory-closingQuote">
+              Tình yêu không phải là nhìn vào nhau, mà là cùng nhìn về một
+              hướng.
+            </p>
+            <p class="ls-closing-sig" id="loveStory-closingSig">Nhật Minh &amp;
+              Vợ tui</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ═══════════════ GALLERY ═══════════════ -->
+      <section class="gallery-section section-wrapper"
+        style="padding:clamp(3rem,8vw,6rem) 0;position:relative;overflow:visible">
+        <div class="bg-main-deco tl" style="opacity:1"></div>
+        <div class="bg-main-deco tr" style="opacity:1"></div>
+        <div class="bg-main-deco bl" style="opacity:1"></div>
+        <div class="bg-main-deco br" style="opacity:1"></div>
+
+        <div class="section-inner-wide" style="position:relative;z-index:1">
+
+          <div class="text-center gallery-reveal"
+            style="margin-bottom:clamp(2rem,5vw,4rem)">
+            <h2 class="font-luxury navy-text section-heading"
+              id="gallery-heading"
+              style="font-size:clamp(2.5rem,7vw,4.5rem)">Những Phút Giây Bên
+              Nhau</h2>
+            <div
+              style="display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1.25rem">
+              <div
+                style="height:1px;width:60px;background:var(--navy-line)"></div>
+              <span style="color:var(--navy);opacity:.4">✦</span>
+              <div
+                style="height:1px;width:60px;background:var(--navy-line)"></div>
+            </div>
+          </div>
+
+          <div class="gallery-grid">
+            <div class="gallery-col">
+              <div class="gallery-item gallery-reveal" style="--delay:.1s"><img
+                  src="./assets/img/image9.jpg" alt />
+                <div class="gallery-overlay"><span
+                    class="gallery-icon">✦</span></div>
+              </div>
+              <div class="gallery-item gallery-reveal tall"
+                style="--delay:.2s"><img src="./assets/img/image10.jpg"
+                  alt />
+                <div class="gallery-overlay"><span
+                    class="gallery-icon">✦</span></div>
+              </div>
+            </div>
+            <div class="gallery-col col-offset">
+              <div class="gallery-item gallery-reveal tall"
+                style="--delay:.15s"><img src="./assets/img/image11.jpg"
+                  alt />
+                <div class="gallery-overlay"><span
+                    class="gallery-icon">✦</span></div>
+              </div>
+              <div class="gallery-item gallery-reveal" style="--delay:.25s"><img
+                  src="./assets/img/image12.jpg" alt />
+                <div class="gallery-overlay"><span
+                    class="gallery-icon">✦</span></div>
+              </div>
+            </div>
+            <div class="gallery-col">
+              <div class="gallery-item gallery-reveal tall"
+                style="--delay:.2s"><img src="./assets/img/image13.jpg"
+                  alt />
+                <div class="gallery-overlay"><span
+                    class="gallery-icon">✦</span></div>
+              </div>
+              <div class="gallery-item gallery-reveal medium"
+                style="--delay:.3s"><img src="./assets/img/image16.jpg"
+                  alt />
+                <div class="gallery-overlay"><span
+                    class="gallery-icon">✦</span></div>
+              </div>
+              <div class="gallery-item gallery-reveal medium"
+                style="--delay:.3s"><img src="./assets/img/image23.jpg"
+                  alt />
+                <div class="gallery-overlay"><span
+                    class="gallery-icon">✦</span></div>
+              </div>
+            </div>
+            <div class="gallery-col col-offset-2">
+              <div class="gallery-item gallery-reveal" style="--delay:.1s"><img
+                  src="./assets/img/image14.jpg" alt />
+                <div class="gallery-overlay"><span
+                    class="gallery-icon">✦</span></div>
+              </div>
+              <div class="gallery-item gallery-reveal medium"
+                style="--delay:.2s"><img src="./assets/img/image15.jpg"
+                  alt />
+                <div class="gallery-overlay"><span
+                    class="gallery-icon">✦</span></div>
+              </div>
+              <div class="gallery-item gallery-reveal medium"
+                style="--delay:.2s"><img src="./assets/img/image24.jpg"
+                  alt />
+                <div class="gallery-overlay"><span
+                    class="gallery-icon">✦</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ═══════════════ WEDDING INFO ═══════════════ -->
+      <section class="section-wrapper reveal border-navy-top"
+        style="padding:clamp(3rem,8vw,5rem) 0;position:relative;overflow:visible">
+        <div class="bg-main-deco tl" style="opacity:1"></div>
+        <div class="bg-main-deco tr" style="opacity:1"></div>
+        <div class="bg-main-deco bl" style="opacity:1"></div>
+        <div class="bg-main-deco br" style="opacity:1"></div>
+
+        <div class="section-inner-narrow"
+          style="text-align:center;position:relative;z-index:1">
+          <p class="section-title" id="weddingInfo-sectionTitle"
+            style="margin-bottom:2.5rem">THÔNG TIN LỄ CƯỚI</p>
+
+          <div class="chinese-seal" id="seal-container">
+            <div class="seal-bg"></div>
+            <div class="seal-icon"></div>
+          </div>
+
+          <div class="parents-grid"
+            style="margin-bottom:clamp(2rem,5vw,3.5rem);padding-bottom:clamp(2rem,5vw,3rem);border-bottom:1px solid var(--navy-line)">
+            <div style="text-align:center">
+              <p class="label-sm" id="weddingInfo-groomFamily-label"
+                style="margin-bottom:.75rem">Nhà Trai</p>
+              <p id="weddingInfo-groomFamily-names"
+                style="font-size:.85rem;font-weight:600;color:var(--navy);line-height:1.7">Nguyễn
+                Văn Hùng<br />Trần Thị
+                Lan</p>
+              <p class="meta-text" id="weddingInfo-groomFamily-address"
+                style="margin-top:.5rem">Số 96 Nguyễn Vân Bình,<br />Yên Bắc Duy
+                Tiên Hà Nam</p>
+            </div>
+            <div style="text-align:center">
+              <p class="label-sm" id="weddingInfo-brideFamily-label"
+                style="margin-bottom:.75rem">Nhà Gái</p>
+              <p id="weddingInfo-brideFamily-names"
+                style="font-size:.85rem;font-weight:600;color:var(--navy);line-height:1.7">Lê
+                Văn Bình<br />Phạm Thị Mai
+              </p>
+              <p class="meta-text" id="weddingInfo-brideFamily-address"
+                style="margin-top:.5rem">Số 213 Nguyễn Hữu Tiến,<br />Đồng Văn
+                Duy Tiên Hà Nam</p>
+            </div>
+          </div>
+
+          <p class="section-title" id="weddingInfo-announce1">TRÂN TRỌNG BÁO
+            TIN</p>
+          <p class="section-title" id="weddingInfo-announce2"
+            style="margin-top:.4rem;margin-bottom:clamp(1.5rem,4vw,2.5rem)">LỄ
+            THÀNH HÔN CỦA CON
+            CHÚNG TÔI</p>
+
+          <div
+            style="position:relative;margin-bottom:clamp(2rem,5vw,3.5rem);padding:clamp(1rem,3vw,2rem) 0;overflow:visible">
+            <div class="rong-img"
+              style="top:50%;left:clamp(-160px,-22vw,-60px);width:clamp(180px,24vw,360px);height:clamp(220px,30vw,460px)">
+              <img src="./assets/img/rong.webp" alt
+                style="width:100%;height:100%;object-fit:contain;opacity:0;display:block" />
+            </div>
+            <div class="phuong-img"
+              style="top:50%;right:clamp(-160px,-22vw,-60px);width:clamp(160px,22vw,340px);height:clamp(200px,28vw,440px)">
+              <img src="./assets/img/phuong.webp" alt
+                style="width:100%;height:100%;object-fit:contain;opacity:0;display:block" />
+            </div>
+            <h2 class="font-luxury navy-text" id="weddingInfo-groom-name"
+              style="font-size:clamp(2.4rem,9vw,4rem);position:relative;z-index:1">Nhật
+              Minh
+            </h2>
+            <p class="label-sm" id="weddingInfo-groom-label"
+              style="margin-top:.3rem;position:relative;z-index:1">Trưởng
+              Nam</p>
+            <div class="font-luxury navy-light"
+              style="font-size:clamp(1.8rem,5vw,2.5rem);opacity:.45;padding:.5rem 0;position:relative;z-index:1">&</div>
+            <h2 class="font-luxury navy-text" id="weddingInfo-bride-name"
+              style="font-size:clamp(2.4rem,9vw,4rem);position:relative;z-index:1">Phan
+              Thưởng</h2>
+            <p class="label-sm" id="weddingInfo-bride-label"
+              style="margin-top:.3rem;position:relative;z-index:1">Út Nữ</p>
+          </div>
+
+          <div
+            style="padding:clamp(1.5rem,5vw,2.5rem) 0;margin-bottom:1.5rem;border-top:1px solid var(--navy-line);border-bottom:1px solid var(--navy-line); position: relative;">
+            <div class="bg-main-deco tl" style="opacity:1"></div>
+            <div class="bg-main-deco tr" style="opacity:1"></div>
+            <div class="bg-main-deco bl" style="opacity:1"></div>
+            <div class="bg-main-deco br" style="opacity:1"></div>
+
+            <p class="section-title" id="weddingInfo-ceremony-note"
+              style="margin-bottom:1rem">Lễ Thành Hôn được cử hành tại tư
+              gia</p>
+            <p class="label-sm" id="weddingInfo-ceremony-atLabel">Vào lúc</p>
+            <h3 id="weddingInfo-ceremony-time"
+              style="font-size:clamp(3rem,12vw,5rem);font-weight:300;color:var(--navy);letter-spacing:-.01em;margin:.5rem 0">
+              09:00</h3>
+            <div class="date-block"
+              style="padding-top:1rem;border-top:1px solid var(--navy-line);margin-top:.5rem">
+              <span class="label-sm" id="weddingInfo-ceremony-dayLabel">Thứ
+                Sáu</span>
+              <span class="date-num" id="weddingInfo-ceremony-dateNum">19</span>
+              <span class="label-sm" id="weddingInfo-ceremony-monthLabel">Tháng
+                12</span>
+            </div>
+            <p id="weddingInfo-ceremony-year"
+              style="font-size:clamp(1.2rem,4vw,1.5rem);font-weight:300;color:var(--navy);letter-spacing:.2em;margin:.75rem 0 .25rem">
+              2026</p>
+            <p class="meta-text" id="weddingInfo-ceremony-lunar"
+              style="font-style:italic">(Tức ngày 19/11 Bính Ngọ)</p>
+          </div>
+
+          <div class="info-detail-wedding"
+            style="padding:clamp(1.5rem,5vw,2.5rem) 0;margin-bottom:1.5rem;border-bottom:1px solid var(--navy-line)">
+            <p class="section-title" id="weddingInfo-reception-title"
+              style="margin-bottom:1.5rem">THÔNG TIN TIỆC CƯỚI</p>
+
+            <div class="bg-main-deco tl" style="z-index:3;opacity:1"></div>
+            <div class="bg-main-deco tr" style="z-index:3;opacity:1"></div>
+            <div class="bg-main-deco bl" style="z-index:3;opacity:1"></div>
+            <div class="bg-main-deco br" style="z-index:3;opacity:1"></div>
+            <p class="label-sm" id="weddingInfo-reception-note">Tiệc cưới sẽ
+              diễn ra vào lúc</p>
+            <h3 id="weddingInfo-reception-time"
+              style="font-size:clamp(3rem,12vw,5rem);font-weight:300;color:var(--navy);letter-spacing:-.01em;margin:.5rem 0">
+              10:30</h3>
+            <div class="date-block"
+              style="padding-top:1rem;border-top:1px solid var(--navy-line);margin-top:.5rem">
+              <span class="label-sm" id="weddingInfo-reception-dayLabel">Thứ
+                Sáu</span>
+              <span class="date-num"
+                id="weddingInfo-reception-dateNum">19</span>
+              <span class="label-sm" id="weddingInfo-reception-monthLabel">Tháng
+                12</span>
+            </div>
+            <p id="weddingInfo-reception-year"
+              style="font-size:clamp(1.2rem,4vw,1.5rem);font-weight:300;color:var(--navy);letter-spacing:.2em;margin:.75rem 0 .25rem">
+              2026</p>
+            <p class="meta-text" id="weddingInfo-reception-lunar"
+              style="font-style:italic">(Tức ngày 19/11 Bính Ngọ)</p>
+
+            <div class="reception-row"
+              style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--navy-line)">
+              <div style="text-align:center">
+                <p class="label-sm" id="weddingInfo-reception-welcomeLabel"
+                  style="margin-bottom:.25rem">Đón khách</p>
+                <p id="weddingInfo-reception-welcomeTime"
+                  style="font-size:1.1rem;font-weight:600;color:var(--navy)">17:00</p>
+              </div>
+              <div class="reception-sep"></div>
+              <div style="text-align:center">
+                <p class="label-sm" id="weddingInfo-reception-startLabel"
+                  style="margin-bottom:.25rem">Khai tiệc</p>
+                <p id="weddingInfo-reception-startTime"
+                  style="font-size:1.1rem;font-weight:600;color:var(--navy)">18:30</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:clamp(1.5rem,4vw,2.5rem)">
+            <p class="section-title" id="weddingInfo-location-label"
+              style="margin-bottom:1rem">Địa điểm</p>
+            <p id="weddingInfo-location-venue"
+              style="font-size:.875rem;font-weight:600;color:var(--navy)">Tư gia
+              họ nhà trai</p>
+            <p class="meta-text" id="weddingInfo-location-address"
+              style="margin-top:.4rem">Số 213 Nguyễn Hữu Tiến<br />Đồng Văn Duy
+              Tiên Hà Nam</p>
+            <div
+              style="border-radius:1rem;overflow:hidden;height:clamp(180px,40vw,260px);opacity:.55;filter:grayscale(.6);border:1px solid var(--navy-line);margin-top:1.5rem;transition:opacity 1s,filter 1s"
+              onmouseenter="this.style.opacity='.9';this.style.filter='grayscale(0)'"
+              onmouseleave="this.style.opacity='.55';this.style.filter='grayscale(.6)'">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.3496668747447!2d106.6998492758385!3d10.784509159046772!2m3!1f0!2f0!3f0!3m2!1i1024!2i1024!4t31.1!3m3!1m2!1s0x31752f49459560a9%3A0xc173f47e3a96606c!2sGEM%20CENTER!5e0!3m2!1svi!2s!4v1715678000000!5m2!1svi!2s"
+                width="100%" height="100%" style="border:0" allowfullscreen
+                loading="lazy"></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════ GIFT / LIXI ═══════════════ -->
+      <section class="section-wrapper reveal border-navy-top"
+        style="padding:clamp(3rem,8vw,6rem) 0;position:relative;overflow:visible">
+        <div class="bg-main-deco tl" style="opacity:1"></div>
+        <div class="bg-main-deco tr" style="opacity:1"></div>
+
+        <div class="section-inner-narrow"
+          style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:2rem;position:relative;z-index:1">
+
+          <p class="font-luxury navy-text" id="gift-heading"
+            style="font-size:clamp(2rem,7vw,3rem)">Mừng Hạnh Phúc</p>
+
+          <div class="lixi-wrapper" id="lixi-wrapper"
+            style="display:flex;flex-direction:column;align-items:center;gap:1.5rem">
+            <div class="lixi-scene" id="lixi-main">
+              <div class="money-container" id="money-main"></div>
+              <div class="lixi-envelope">
+                <svg viewBox="0 0 180 260" xmlns="http://www.w3.org/2000/svg"
+                  class="envelope-svg">
+                  <rect x="5" y="5" width="170" height="250" rx="14"
+                    fill="url(#redGradMain)" />
+                  <rect x="5" y="5" width="170" height="250" rx="14" fill="none"
+                    stroke="#d4af37" stroke-width="3" />
+                  <circle cx="28" cy="28" r="12" fill="none" stroke="#d4af37"
+                    stroke-width="1.5" opacity=".5" />
+                  <circle cx="152" cy="28" r="12" fill="none" stroke="#d4af37"
+                    stroke-width="1.5" opacity=".5" />
+                  <circle cx="28" cy="232" r="12" fill="none" stroke="#d4af37"
+                    stroke-width="1.5" opacity=".5" />
+                  <circle cx="152" cy="232" r="12" fill="none" stroke="#d4af37"
+                    stroke-width="1.5" opacity=".5" />
+                  <rect x="14" y="14" width="152" height="232" rx="10"
+                    fill="none" stroke="#d4af37" stroke-width=".8"
+                    opacity=".3" stroke-dasharray="4 3" />
+                  <circle cx="90" cy="130" r="55" fill="#d4af37" opacity=".1" />
+                  <circle cx="90" cy="130" r="46" fill="none" stroke="#d4af37"
+                    stroke-width="1.5" opacity=".45" />
+                  <text x="90" y="150" text-anchor="middle" font-size="58"
+                    fill="#d4af37" opacity=".95"
+                    font-family="serif">囍</text>
+                  <text x="90" y="200" text-anchor="middle"
+                    id="gift-envelopeNames" font-size="13" fill="#d4af37"
+                    opacity=".8"
+                    font-family="Great Vibes,cursive" letter-spacing="1">Quyến
+                    &amp; Thưởng</text>
+                  <path d="M5 5 Q90 80 175 5" fill="#8e1c14" stroke="#d4af37"
+                    stroke-width="1.5" />
+                  <defs>
+                    <lineargradient id="redGradMain" x1="0" y1="0" x2="1"
+                      y2="1">
+                      <stop offset="0%" stop-color="#e84040" />
+                      <stop offset="100%" stop-color="#8e1c14" />
+                    </lineargradient>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+            <p class="meta-text" id="gift-hint"
+              style="font-size:.72rem;letter-spacing:.15em">Nhấn để sao chép số
+              tài khoản</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ═══════════════ RSVP ═══════════════ -->
+      <section class="section-wrapper reveal border-navy-top"
+        style="padding:clamp(3rem,8vw,6rem) 0;position:relative;overflow:visible">
+        <div class="bg-main-deco sm-tl"></div>
+        <div class="bg-main-deco sm-tr"></div>
+        <div class="bg-main-deco sm-bl"></div>
+        <div class="bg-main-deco sm-br"></div>
+
+        <div class="section-inner-narrow"
+          style="display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;z-index:1">
+
+          <h2 class="font-luxury navy-text" id="rsvp-heading"
+            style="font-size:clamp(2.8rem,9vw,5rem);margin-bottom:clamp(1.5rem,4vw,2.5rem)">
+            Lời Chúc Phúc</h2>
+
+          <div class="rsvp-card">
+            <input type="text" id="rsvp-nameInput" placeholder="Tên của bạn"
+              style="width:100%;background:transparent;border:none;border-bottom:2px solid var(--navy-line);padding:.9rem 0;text-align:center;font-size:1rem;outline:none;color:var(--navy);margin-bottom:1.5rem;display:block" />
+
+            <div class="rsvp-btns" style="margin-bottom:1.5rem">
+              <button id="rsvp-attendBtn"
+                style="padding:.9rem;border-radius:.9rem;font-size:.8rem;border:2px solid var(--navy-line);color:var(--navy);background:transparent;cursor:pointer;transition:border-color .2s,background .2s;width:100%"
+                onmouseover="this.style.borderColor='rgba(26,42,58,.5)';this.style.background='rgba(26,42,58,.06)'"
+                onmouseout="this.style.borderColor='var(--navy-line)';this.style.background='transparent'">Sẽ
+                đến
+                dự</button>
+              <button id="rsvp-declineBtn"
+                style="padding:.9rem;border-radius:.9rem;font-size:.8rem;border:2px solid var(--navy-line);color:var(--navy);background:transparent;cursor:pointer;transition:border-color .2s,background .2s;width:100%"
+                onmouseover="this.style.borderColor='rgba(26,42,58,.5)';this.style.background='rgba(26,42,58,.06)'"
+                onmouseout="this.style.borderColor='var(--navy-line)';this.style.background='transparent'">Rất
+                tiếc vắng
+                mặt</button>
+            </div>
+
+            <textarea id="rsvp-wishInput"
+              placeholder="Gửi lời chúc đến chúng mình nhé..." rows="3"
+              style="width:100%;background:transparent;border:none;border-bottom:2px solid var(--navy-line);padding:.9rem 0;text-align:center;font-family:inherit;font-size:.9rem;outline:none;color:var(--navy);resize:none;margin-bottom:1.5rem;display:block"></textarea>
+
+            <button id="rsvp-submitBtn"
+              style="width:100%;padding:1.1rem;border-radius:.9rem;font-weight:700;letter-spacing:.2em;font-size:.72rem;text-transform:uppercase;background:rgba(26,42,58,.08);border:1px solid rgba(26,42,58,.35);color:var(--navy);cursor:pointer;transition:background .2s,transform .2s"
+              onmouseover="this.style.background='rgba(26,42,58,.15)';this.style.transform='scale(1.02)'"
+              onmouseout="this.style.background='rgba(26,42,58,.08)';this.style.transform='scale(1)'">GỬI
+              LỜI CHÚC</button>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ═══════════════ FOOTER ═══════════════ -->
+      <footer class="section-wrapper border-navy-top"
+        style="padding:clamp(3rem,8vw,5rem) 0;text-align:center;position:relative;overflow:visible">
+        <div class="bg-main-deco tl" style="opacity:1"></div>
+        <div class="bg-main-deco tr" style="opacity:1"></div>
+
+        <p class="font-luxury navy-text"
+          id="footer-thankYou"
+          style="font-size:clamp(2.2rem,7vw,4rem);margin-bottom:.75rem;position:relative;z-index:1">Thank
+          You</p>
+        <p class="label-sm" id="footer-signature"
+          style="letter-spacing:.4em;position:relative;z-index:1">Nhật Minh
+          &amp; Vợ tui · Wedding
           2026</p>
-        <p class="meta-text" id="weddingInfo-ceremony-lunar" style="font-style:italic">(Tức ngày 19/11 Bính Ngọ)</p>
-      </div>
+      </footer>
+      <div id="wish-float"></div>
 
-      <div class="info-detail-wedding"
-        style="padding:clamp(1.5rem,5vw,2.5rem) 0;margin-bottom:1.5rem;border-bottom:1px solid var(--navy-line)">
-        <p class="section-title" id="weddingInfo-reception-title" style="margin-bottom:1.5rem">THÔNG TIN TIỆC CƯỚI</p>
+      <script src="./js/main.js"> </script>
+    </body>
 
-        <div class="bg-main-deco tl" style="z-index:3;opacity:1"></div>
-        <div class="bg-main-deco tr" style="z-index:3;opacity:1"></div>
-        <div class="bg-main-deco bl" style="z-index:3;opacity:1"></div>
-        <div class="bg-main-deco br" style="z-index:3;opacity:1"></div>
-        <p class="label-sm" id="weddingInfo-reception-note">Tiệc cưới sẽ diễn ra vào lúc</p>
-        <h3 id="weddingInfo-reception-time"
-          style="font-size:clamp(3rem,12vw,5rem);font-weight:300;color:var(--navy);letter-spacing:-.01em;margin:.5rem 0">
-          10:30</h3>
-        <div class="date-block" style="padding-top:1rem;border-top:1px solid var(--navy-line);margin-top:.5rem">
-          <span class="label-sm" id="weddingInfo-reception-dayLabel">Thứ Sáu</span>
-          <span class="date-num" id="weddingInfo-reception-dateNum">19</span>
-          <span class="label-sm" id="weddingInfo-reception-monthLabel">Tháng 12</span>
-        </div>
-        <p id="weddingInfo-reception-year"
-          style="font-size:clamp(1.2rem,4vw,1.5rem);font-weight:300;color:var(--navy);letter-spacing:.2em;margin:.75rem 0 .25rem">
-          2026</p>
-        <p class="meta-text" id="weddingInfo-reception-lunar" style="font-style:italic">(Tức ngày 19/11 Bính Ngọ)</p>
-
-        <div class="reception-row" style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--navy-line)">
-          <div style="text-align:center">
-            <p class="label-sm" id="weddingInfo-reception-welcomeLabel" style="margin-bottom:.25rem">Đón khách</p>
-            <p id="weddingInfo-reception-welcomeTime" style="font-size:1.1rem;font-weight:600;color:var(--navy)">17:00</p>
-          </div>
-          <div class="reception-sep"></div>
-          <div style="text-align:center">
-            <p class="label-sm" id="weddingInfo-reception-startLabel" style="margin-bottom:.25rem">Khai tiệc</p>
-            <p id="weddingInfo-reception-startTime" style="font-size:1.1rem;font-weight:600;color:var(--navy)">18:30</p>
-          </div>
-        </div>
-      </div>
-
-      <div style="margin-top:clamp(1.5rem,4vw,2.5rem)">
-        <p class="section-title" id="weddingInfo-location-label" style="margin-bottom:1rem">Địa điểm</p>
-        <p id="weddingInfo-location-venue" style="font-size:.875rem;font-weight:600;color:var(--navy)">Tư gia họ nhà trai</p>
-        <p class="meta-text" id="weddingInfo-location-address" style="margin-top:.4rem">Số 213 Nguyễn Hữu Tiến<br />Đồng Văn Duy Tiên Hà Nam</p>
-        <div
-          style="border-radius:1rem;overflow:hidden;height:clamp(180px,40vw,260px);opacity:.55;filter:grayscale(.6);border:1px solid var(--navy-line);margin-top:1.5rem;transition:opacity 1s,filter 1s"
-          onmouseenter="this.style.opacity='.9';this.style.filter='grayscale(0)'"
-          onmouseleave="this.style.opacity='.55';this.style.filter='grayscale(.6)'">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.3496668747447!2d106.6998492758385!3d10.784509159046772!2m3!1f0!2f0!3f0!3m2!1i1024!2i1024!4t31.1!3m3!1m2!1s0x31752f49459560a9%3A0xc173f47e3a96606c!2sGEM%20CENTER!5e0!3m2!1svi!2s!4v1715678000000!5m2!1svi!2s"
-            width="100%" height="100%" style="border:0" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════ GIFT / LIXI ═══════════════ -->
-  <section class="section-wrapper reveal border-navy-top"
-    style="padding:clamp(3rem,8vw,6rem) 0;position:relative;overflow:visible">
-    <div class="bg-main-deco tl" style="opacity:1"></div>
-    <div class="bg-main-deco tr" style="opacity:1"></div>
-
-    <div class="section-inner-narrow"
-      style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:2rem;position:relative;z-index:1">
-
-      <p class="font-luxury navy-text" id="gift-heading" style="font-size:clamp(2rem,7vw,3rem)">Mừng Hạnh Phúc</p>
-
-      <div class="lixi-wrapper" id="lixi-wrapper" style="display:flex;flex-direction:column;align-items:center;gap:1.5rem">
-        <div class="lixi-scene" id="lixi-main">
-          <div class="money-container" id="money-main"></div>
-          <div class="lixi-envelope">
-            <svg viewBox="0 0 180 260" xmlns="http://www.w3.org/2000/svg" class="envelope-svg">
-              <rect x="5" y="5" width="170" height="250" rx="14" fill="url(#redGradMain)" />
-              <rect x="5" y="5" width="170" height="250" rx="14" fill="none" stroke="#d4af37" stroke-width="3" />
-              <circle cx="28" cy="28" r="12" fill="none" stroke="#d4af37" stroke-width="1.5" opacity=".5" />
-              <circle cx="152" cy="28" r="12" fill="none" stroke="#d4af37" stroke-width="1.5" opacity=".5" />
-              <circle cx="28" cy="232" r="12" fill="none" stroke="#d4af37" stroke-width="1.5" opacity=".5" />
-              <circle cx="152" cy="232" r="12" fill="none" stroke="#d4af37" stroke-width="1.5" opacity=".5" />
-              <rect x="14" y="14" width="152" height="232" rx="10" fill="none" stroke="#d4af37" stroke-width=".8"
-                opacity=".3" stroke-dasharray="4 3" />
-              <circle cx="90" cy="130" r="55" fill="#d4af37" opacity=".1" />
-              <circle cx="90" cy="130" r="46" fill="none" stroke="#d4af37" stroke-width="1.5" opacity=".45" />
-              <text x="90" y="150" text-anchor="middle" font-size="58" fill="#d4af37" opacity=".95"
-                font-family="serif">囍</text>
-              <text x="90" y="200" text-anchor="middle" id="gift-envelopeNames" font-size="13" fill="#d4af37" opacity=".8"
-                font-family="Great Vibes,cursive" letter-spacing="1">Quyến &amp; Thưởng</text>
-              <path d="M5 5 Q90 80 175 5" fill="#8e1c14" stroke="#d4af37" stroke-width="1.5" />
-              <defs>
-                <linearGradient id="redGradMain" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stop-color="#e84040" />
-                  <stop offset="100%" stop-color="#8e1c14" />
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
-        </div>
-        <p class="meta-text" id="gift-hint" style="font-size:.72rem;letter-spacing:.15em">Nhấn để sao chép số tài khoản</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ═══════════════ RSVP ═══════════════ -->
-  <section class="section-wrapper reveal border-navy-top"
-    style="padding:clamp(3rem,8vw,6rem) 0;position:relative;overflow:visible">
-    <div class="bg-main-deco sm-tl"></div>
-    <div class="bg-main-deco sm-tr"></div>
-    <div class="bg-main-deco sm-bl"></div>
-    <div class="bg-main-deco sm-br"></div>
-
-    <div class="section-inner-narrow"
-      style="display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;z-index:1">
-
-      <h2 class="font-luxury navy-text" id="rsvp-heading" style="font-size:clamp(2.8rem,9vw,5rem);margin-bottom:clamp(1.5rem,4vw,2.5rem)">
-        Lời Chúc Phúc</h2>
-
-      <div class="rsvp-card">
-        <input type="text" id="rsvp-nameInput" placeholder="Tên của bạn"
-          style="width:100%;background:transparent;border:none;border-bottom:2px solid var(--navy-line);padding:.9rem 0;text-align:center;font-size:1rem;outline:none;color:var(--navy);margin-bottom:1.5rem;display:block" />
-
-        <div class="rsvp-btns" style="margin-bottom:1.5rem">
-          <button id="rsvp-attendBtn"
-            style="padding:.9rem;border-radius:.9rem;font-size:.8rem;border:2px solid var(--navy-line);color:var(--navy);background:transparent;cursor:pointer;transition:border-color .2s,background .2s;width:100%"
-            onmouseover="this.style.borderColor='rgba(26,42,58,.5)';this.style.background='rgba(26,42,58,.06)'"
-            onmouseout="this.style.borderColor='var(--navy-line)';this.style.background='transparent'">Sẽ đến
-            dự</button>
-          <button id="rsvp-declineBtn"
-            style="padding:.9rem;border-radius:.9rem;font-size:.8rem;border:2px solid var(--navy-line);color:var(--navy);background:transparent;cursor:pointer;transition:border-color .2s,background .2s;width:100%"
-            onmouseover="this.style.borderColor='rgba(26,42,58,.5)';this.style.background='rgba(26,42,58,.06)'"
-            onmouseout="this.style.borderColor='var(--navy-line)';this.style.background='transparent'">Rất tiếc vắng
-            mặt</button>
-        </div>
-
-        <textarea id="rsvp-wishInput" placeholder="Gửi lời chúc đến chúng mình nhé..." rows="3"
-          style="width:100%;background:transparent;border:none;border-bottom:2px solid var(--navy-line);padding:.9rem 0;text-align:center;font-family:inherit;font-size:.9rem;outline:none;color:var(--navy);resize:none;margin-bottom:1.5rem;display:block"></textarea>
-
-        <button id="rsvp-submitBtn"
-          style="width:100%;padding:1.1rem;border-radius:.9rem;font-weight:700;letter-spacing:.2em;font-size:.72rem;text-transform:uppercase;background:rgba(26,42,58,.08);border:1px solid rgba(26,42,58,.35);color:var(--navy);cursor:pointer;transition:background .2s,transform .2s"
-          onmouseover="this.style.background='rgba(26,42,58,.15)';this.style.transform='scale(1.02)'"
-          onmouseout="this.style.background='rgba(26,42,58,.08)';this.style.transform='scale(1)'">GỬI LỜI CHÚC</button>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ═══════════════ FOOTER ═══════════════ -->
-  <footer class="section-wrapper border-navy-top"
-    style="padding:clamp(3rem,8vw,5rem) 0;text-align:center;position:relative;overflow:visible">
-    <div class="bg-main-deco tl" style="opacity:1"></div>
-    <div class="bg-main-deco tr" style="opacity:1"></div>
-
-    <p class="font-luxury navy-text"
-      id="footer-thankYou" style="font-size:clamp(2.2rem,7vw,4rem);margin-bottom:.75rem;position:relative;z-index:1">Thank You</p>
-    <p class="label-sm" id="footer-signature" style="letter-spacing:.4em;position:relative;z-index:1">Nhật Minh &amp; Vợ tui · Wedding
-      2026</p>
-  </footer>
-  <div id="wish-float"></div>
-
-  <script src="./js/main.js"> </script>
-</body>
-
-</html>
+  </html>

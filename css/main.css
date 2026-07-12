@@ -2174,11 +2174,11 @@ html.intro-locked body {
 }
 
 .intro-gate-panel.left .intro-gate-img-wrap {
-  right: clamp(4%, 6vw, 60px);
+  right: clamp(8%, 9vw, 90px);
 }
 
 .intro-gate-panel.right .intro-gate-img-wrap {
-  left: clamp(4%, 6vw, 60px);
+  left: clamp(8%, 9vw, 90px);
 }
 
 .intro-gate-img {
@@ -2227,10 +2227,10 @@ html.intro-locked body {
 
 .intro-gate-seal-symbol {
   position: absolute;
-  inset: 14%;
+  inset: 4%;
   background: linear-gradient(160deg, #f3dca0, #d4af37 55%, #f3dca0);
-  -webkit-mask-image: url("../assets/img/chinese_happiness.webp");
-  mask-image: url("../assets/img/chinese_happiness.webp");
+  -webkit-mask-image: url("../assets/img/chu-hy.webp");
+  mask-image: url("../assets/img/chu-hy.webp");
   -webkit-mask-size: contain;
   mask-size: contain;
   -webkit-mask-repeat: no-repeat;
@@ -2479,4 +2479,155 @@ html.intro-locked body {
   transform: scale(1.08);
   opacity: 0.75;
   filter: drop-shadow(0 12px 30px rgba(0, 0, 0, 0.5)) blur(1.5px);
+}
+
+.intro-gate-seal {
+  animation: sealIdleBreathe 2.8s ease-in-out infinite;
+}
+.intro-gate.opening .intro-gate-seal {
+  animation: introSealUnlock 2.1s cubic-bezier(0.45, 0, 0.2, 1) forwards;
+}
+
+@keyframes sealIdleBreathe {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.045);
+  }
+}
+
+.intro-gate-seal-ring {
+  animation: sealIdleGlow 6.5s ease-in-out infinite;
+}
+
+@keyframes sealIdleGlow {
+  0%,
+  78%,
+  100% {
+    box-shadow:
+      0 0 0 4px rgba(212, 175, 55, 0.12),
+      inset 0 0 14px rgba(212, 175, 55, 0.25);
+  }
+  88% {
+    box-shadow:
+      0 0 0 4px rgba(212, 175, 55, 0.12),
+      inset 0 0 14px rgba(212, 175, 55, 0.25),
+      0 0 34px 10px rgba(212, 175, 55, 0.55);
+  }
+}
+
+.intro-gate-couple-names {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3; /* nằm trên seal-ring nhưng dưới seal-flash */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+  transition:
+    transform 0.85s cubic-bezier(0.55, 0, 0.2, 1),
+    opacity 0.55s ease 0.15s;
+}
+
+.intro-gate-couple-names {
+  width: calc(var(--intro-notch) * 2 + 80px);
+  height: calc(var(--intro-notch) * 2 + 80px);
+}
+
+.couple-names-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.gate-name-text {
+  font-family: "Great Vibes", cursive;
+  font-size: 24px;
+  fill: #f3dca0;
+  letter-spacing: 3px;
+}
+
+.couple-names-svg textPath {
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.5));
+}
+
+.intro-gate.opening .intro-gate-couple-names {
+  opacity: 0;
+  transform: translate(-50%, -50%) translateY(-14px);
+}
+
+.intro-gate-couple-name.left {
+  right: 0;
+  text-align: right;
+  padding-right: 14px;
+}
+
+.intro-gate-couple-name.right {
+  left: 0;
+  text-align: left;
+  padding-left: 14px;
+}
+
+.intro-gate-couple-name.left::before {
+  content: "❀";
+  margin-right: 8px;
+  color: rgba(212, 175, 55, 0.75);
+  font-size: 0.85em;
+}
+
+.intro-gate-couple-name.right::after {
+  content: "❀";
+  margin-left: 8px;
+  color: rgba(212, 175, 55, 0.75);
+  font-size: 0.85em;
+}
+
+/* tên bay theo cùng lúc cánh cổng mở */
+.intro-gate.opening .intro-gate-couple-name.left {
+  transform: translateY(-100%) translateX(-40px);
+  opacity: 0;
+  transition-delay: 1.7s;
+}
+.intro-gate.opening .intro-gate-couple-name.right {
+  transform: translateY(-100%) translateX(40px);
+  opacity: 0;
+  transition-delay: 1.7s;
+}
+
+.gate-chuhy-spark {
+  position: absolute;
+  pointer-events: none;
+  z-index: 3;
+  background: linear-gradient(160deg, #f3dca0, #d4af37 55%, #f3dca0);
+  -webkit-mask-image: url("../assets/img/chu-hy.webp");
+  mask-image: url("../assets/img/chu-hy.webp");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  opacity: 0;
+  animation: gateChuhySpark linear forwards;
+}
+
+@keyframes gateChuhySpark {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.6) rotate(0deg);
+  }
+  15% {
+    opacity: 0.85;
+  }
+  80% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--gx), var(--gy)) scale(1.4) rotate(var(--gr));
+  }
 }
