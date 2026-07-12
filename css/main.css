@@ -2534,8 +2534,8 @@ html.intro-locked body {
 }
 
 .intro-gate-couple-names {
-  width: calc(var(--intro-notch) * 2 + 34px);
-  height: calc(var(--intro-notch) * 2 + 34px);
+  width: calc(var(--intro-notch) * 2 + 50px);
+  height: calc(var(--intro-notch) * 2 + 50px);
 }
 
 .couple-names-svg {
