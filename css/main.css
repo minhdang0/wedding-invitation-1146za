@@ -2534,8 +2534,8 @@ html.intro-locked body {
 }
 
 .intro-gate-couple-names {
-  width: calc(var(--intro-notch) * 2 + 80px);
-  height: calc(var(--intro-notch) * 2 + 80px);
+  width: calc(var(--intro-notch) * 2 + 34px);
+  height: calc(var(--intro-notch) * 2 + 34px);
 }
 
 .couple-names-svg {
@@ -2546,7 +2546,7 @@ html.intro-locked body {
 
 .gate-name-text {
   font-family: "Great Vibes", cursive;
-  font-size: 24px;
+  font-size: 22px;
   fill: #f3dca0;
   letter-spacing: 3px;
 }
