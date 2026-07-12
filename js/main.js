@@ -534,11 +534,18 @@ setInterval(createBubble, 140);
     if (gate.classList.contains("opening")) return;
     gate.classList.add("opening");
 
-    const audio = document.getElementById("bg-music");
-    if (audio) {
-      audio.currentTime = 0;
-      audio.play().catch(() => {});
+    const unlockSound = document.getElementById("unlock-sound");
+    if (unlockSound) {
+      unlockSound.currentTime = 0;
+      unlockSound.play().catch(() => {});
     }
+    setTimeout(() => {
+      const audio = document.getElementById("bg-music");
+      if (audio) {
+        audio.currentTime = 0;
+        audio.play().catch(() => {});
+      }
+    }, 3000);
 
     setTimeout(() => {
       document.documentElement.classList.remove("intro-locked");
